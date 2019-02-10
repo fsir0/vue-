@@ -182,6 +182,8 @@
                     } else {
                         this.month --;
                     }
+                    let days = new Date(this.year, this.month, 0).getDate();
+                    this.day = this.day < days ? this.day : days;
                 },
                 nextMonth() {
                     if(this.month == 12) {
@@ -190,6 +192,8 @@
                     } else {
                         this.month ++;
                     }
+                    let days = new Date(this.year, this.month, 0).getDate();
+                    this.day = this.day < days ? this.day : days;
                 }
             },
             computed: {
