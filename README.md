@@ -1,4 +1,29 @@
-# vue-这里只是一个component
-#可录入信息，可修改作为任务托管的插件
-#对输入进行双向绑定，时刻监听输入变化，监听已添加项的参数是否重叠
-#对输入进行规范化，不规范可以提示(可以根据自己需要修改)
+# project
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
