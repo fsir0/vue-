@@ -8,7 +8,7 @@
 			<input type="submit" value="添加">
 		</form>
 		<ul>
-			<li v-for="user in users">
+			<li v-for="user in users" :key="user">
 				<!--v-model="use.contacted":选中时候变成true;可在dele函数中打印验证-->
 				<input type="checkbox" v-model="user.contacted">
 				<span :class="{contacted: user.contacted}">{{ user.name }} : {{ user.email}}</span>

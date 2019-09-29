@@ -1,12 +1,10 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
+    <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/> -->
-    <a href="/">home</a>
-    <a href="/about">about</a>
+    <router-view/>
   </div>
 </template>
 
@@ -18,5 +16,16 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+button {
+  vertical-align: middle;
+  width: 50px;
+  height: 20px;
+  border: none;
+  background-color: #00d3ff;
+  border-radius: 6px;
+  margin-left: 15px;
+  cursor: pointer;
+  outline: none;
 }
 </style>
