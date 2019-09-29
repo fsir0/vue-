@@ -17,7 +17,7 @@ const mutations = {
 	uploadWarning(state, { msg }) {
 		state.warning = msg || '';
 	},
-	updateData1(state, {list}) {
+	updateData1(state, { list }) {
 		state.data1 = list;
 	}
 };
@@ -34,8 +34,8 @@ const actions = {
 		testApi.testapi({ page: 1 }, res => {
 			// eslint-disable-next-line no-console
 			console.log('storeRequest:', res);
-			if(res && res.data && res.data.length) {
-				commit('updateData1', {list: res.data})
+			if (res && res.data && res.data.length) {
+				commit('updateData1', { list: res.data })
 			}
 		}, err => {
 			// eslint-disable-next-line no-console

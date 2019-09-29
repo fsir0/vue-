@@ -5,7 +5,7 @@ import stateTest from './modules/stateTest';
 
 Vue.use(Vuex);
 export default new Vuex.Store({
-    modules: {
-        stateTest
-    }
+	modules: {
+		stateTest
+	}
 })
