@@ -9,11 +9,7 @@ Vue.config.productionTip = false
 // 此处引入axios仅为在组建内部也可以使用axios（通常不建议在组建内部直接axios，请求请走api）
 Vue.use(VueAxios, axios)
 new Vue({
-  store,
-  router,
-  render: h => h(App)
+	store,
+	router,
+	render: h => h(App)
 }).$mount('#app')
-
-// router -> 路由
-// npm install vue-router -s  之前得安装方式
-// 现在直接vue add router

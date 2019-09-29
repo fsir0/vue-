@@ -1,20 +1,20 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Home</router-link>|
+      <router-link to="/page1">Page1</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
-
+<!-- 此处定义全局样式，也可采用引入的方式 -->
+<style lang="less" src="./assets/common/common.less"></style>
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 button {
@@ -24,7 +24,6 @@ button {
   border: none;
   background-color: #00d3ff;
   border-radius: 6px;
-  margin-left: 15px;
   cursor: pointer;
   outline: none;
 }
