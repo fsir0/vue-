@@ -1,10 +1,10 @@
 <template>
     <div class="hello">
-        <h1>{{ msg }}</h1>
         <input type="text" :value="initData" />
         <input type="text" :value="stateData" />
-        <button @click="clickme"></button>
+        <button class="hello-btn" @click="clickme">hellow-btn</button>
         <ul class="wrapper">
+            <h5 class="tit">{{msg}}</h5>
             <li class="card">
                 <span class="index">序号</span>
                 <span class="name">名</span>

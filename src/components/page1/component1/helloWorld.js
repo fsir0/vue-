@@ -3,18 +3,26 @@ export default {
 	name: "HelloWorld",
 	defineTest: 'onlyTestUse',
 	props: {
-		msg: String,
+		msg: {
+            type: String,
+            required: true
+        },
 	},
 	data() {
 		return {
 			text: '',
 			stateDataNum: 0
 		}
-	},
+    },
+    mounted() {
+        const {dispatch} = this.$store;
+        dispatch('duData1');
+    },
 	methods: {
 		clickme() {
-			this.$store.dispatch('dispatchDiscount');
-			this.$store.dispatch('dispatchUploadWarning', '996');
+            const {dispatch} = this.$store;
+			dispatch('dispatchDiscount');
+			dispatch('duWarning', '996');
 			// this.axios.get('http://jsonplaceholder.typicode.com/users', {params: {page: 1}})
 			//   .then(res => {
 			//     console.log('单纯测试', res);

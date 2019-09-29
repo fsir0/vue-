@@ -14,10 +14,10 @@ const mutations = {
 	discount(state) {
 		state.count--;
 	},
-	uploadWarning(state, { msg }) {
+	uWarning(state, { msg }) {
 		state.warning = msg || '';
 	},
-	updateData1(state, { list }) {
+	uData1(state, { list }) {
 		state.data1 = list;
 	}
 };
@@ -29,25 +29,36 @@ const actions = {
 	dispatchDiscount({ commit }) {
 		commit('discount');
 	},
-	dispatchUploadWarning({ state, commit }, questData) {
-		// 模拟请求数据 请求时间1s
-		testApi.testapi({ page: 1 }, res => {
-			// eslint-disable-next-line no-console
-			console.log('storeRequest:', res);
-			if (res && res.data && res.data.length) {
-				commit('updateData1', { list: res.data })
-			}
-		}, err => {
-			// eslint-disable-next-line no-console
-			console.log('storeRequest:', err);
-		});
+	duWarning({ state, commit }, questData) {
+        // 请求开始触发全局loading开始
+        commit('uLoadingFlag', true);
+        // 模拟请求数据 请求时间1s
 		setTimeout(() => {
 			if (questData == '996') {
-				commit('uploadWarning', { msg: '996~~wenna~~wenna~~' + state.count });
+				commit('uWarning', { msg: '996~~wenna~~wenna~~' + state.count });
 			} else {
-				commit('uploadWarning', { msg: 'green work environment!!nice!' });
-			}
+				commit('uWarning', { msg: 'green work environment!!nice!' });
+            }
+            // 请求结束触发全局loading结束
+            commit('uLoadingFlag', false);
 		}, 1000);
-	}
+    },
+    duData1({commit}) {
+        // 请求开始触发全局loading开始
+		commit('uLoadingFlag', true);
+        // 获取api数据
+		testApi.testapi({ page: 1 }, res => {
+			if (res && res.data && res.data.length) {
+				commit('uData1', { list: res.data })
+            }
+            // 请求结束触发全局loading结束
+            commit('uLoadingFlag', false);
+		}, err => {
+			// eslint-disable-next-line no-console
+            console.log('storeRequest:', err);
+            // 请求结束触发全局loading结束
+            commit('uLoadingFlag', false);
+		});
+    }
 };
 export default { state, getters, mutations, actions }

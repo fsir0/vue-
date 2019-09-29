@@ -1,8 +1,7 @@
 <template>
     <div class="about">
-        <h1>{{name}}</h1>
-        <h2>{{stateCount}}</h2>
-        <button @click="countAdd">click me and add the number</button>
+        <h1>{{stateCount}}</h1>
+        <button class="page1-btn" @click="countAdd">click me and add the number</button>
         <HellowWorld msg="weleclome to you Vue.js app project!"></HellowWorld>
     </div>
 </template>
@@ -15,16 +14,10 @@ export default {
     components: {
         HellowWorld
     },
-    data() {
-        return {
-            name: "testName"
-        };
-    },
     methods: {
         countAdd() {
-            this.name = "testing Name";
             this.$store.dispatch("dispatchAdd");
-            this.$store.dispatch("dispatchUploadWarning", "");
+            this.$store.dispatch("duWarning", "");
         }
     },
     computed: {
@@ -37,7 +30,14 @@ export default {
 </script>
 
 <style scoped>
-button {
+.page1-btn {
     width: auto;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 3px;
+    text-align: center;
+    color: #00d3ff;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 </style>
