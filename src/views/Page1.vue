@@ -17,7 +17,11 @@ export default {
     methods: {
         countAdd() {
             this.$store.dispatch("dispatchAdd");
-            this.$store.dispatch("duWarning", "");
+            if(this.stateCount < 0) {
+                this.$store.dispatch("duWarning", "996");
+            } else {
+                this.$store.dispatch("duWarning", "");
+            }
         }
     },
     computed: {
