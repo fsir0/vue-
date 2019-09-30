@@ -16,7 +16,9 @@ export default {
     },
     mounted() {
         const {dispatch} = this.$store;
-        dispatch('duData1');
+		dispatch('duData1');
+		dispatch('duData2', {page: 1});
+		dispatch('duData3', {userId: 1})
     },
 	methods: {
 		clickme() {
@@ -34,9 +36,17 @@ export default {
 		...mapState({
 			initData: state => state.stateTest.warning,
 			stateData: state => state.stateTest.count,
-			stateListData1: state => {
-				return state.stateTest.data1
-			}
+			stateListData1: state => state.stateTest.data1,
+			stateListData2: state => {
+				if(state.stateTest.data2.length) {
+					state.stateTest.data2.forEach(
+						// eslint-disable-next-line no-console
+						ele => {console.log(ele.id + ':' + ele.userId + '|' + ele.title)}
+					);
+				}
+				return state.stateTest.data2;
+			},
+			stateListData3: state => state.stateTest.data3,
 		})
 	}
 };

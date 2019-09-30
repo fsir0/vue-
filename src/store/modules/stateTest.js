@@ -2,6 +2,8 @@ import testApi from '../../api/apitest'
 // 定义state并初始化state
 const state = {
 	data1: [],
+	data2: [],
+	data3: [],
 	warning: '警告信息唷！',
 	count: 0
 }
@@ -19,6 +21,12 @@ const mutations = {
 	},
 	uData1(state, { list }) {
 		state.data1 = list;
+	},
+	uData2(state, { list }) {
+		state.data2 = list
+	},
+	uData3(state, { list }) {
+		state.data3 = list
 	}
 };
 // 触发的方法，在这里完成数请求将得到的数据commit返回给mutations内部的函数，方法第一位参数为当前store对象，内部有触发mutations的commit方法
@@ -29,12 +37,12 @@ const actions = {
 	dispatchDiscount({ commit }) {
 		commit('discount');
 	},
-	duWarning({ state, commit }, questData) {
+	duWarning({ state, commit }, query) {
         // 请求开始触发全局loading开始
         commit('uLoadingFlag', true);
         // 模拟请求数据 请求时间1s
 		setTimeout(() => {
-			if (questData == '996') {
+			if (query == '996') {
 				commit('uWarning', { msg: '996~~wenna~~wenna~~' + state.count });
 			} else {
 				commit('uWarning', { msg: 'green work environment!!nice!' });
@@ -59,6 +67,38 @@ const actions = {
             // 请求结束触发全局loading结束
             commit('uLoadingFlag', false);
 		});
-    }
+	},
+	duData2({commit}, query) {
+		// 请求开始触发全局loading开始
+		commit('uLoadingFlag', true);
+		testApi.testArticleApi(query, res => {
+			if(res && res.data && res.data.length) {
+				commit('uData2', {list: res.data});
+			}
+			// 请求结束触发全局loading结束
+            commit('uLoadingFlag', false);
+		}, err => {
+			// eslint-disable-next-line no-console
+			console.log(err);
+			// 请求结束触发全局loading结束
+            commit('uLoadingFlag', false);
+		})
+	},
+	duData3({commit}, query) {
+		// 请求开始触发全局loading开始
+		commit('uLoadingFlag', true);
+		testApi.testUserApi(query, res => {
+			if(res && res.data && res.data.length) {
+				commit('uData3', {list: res.data});
+			}
+			// 请求结束触发全局loading结束
+            commit('uLoadingFlag', false);
+		}, err => {
+			// eslint-disable-next-line no-console
+			console.log(err);
+			// 请求结束触发全局loading结束
+            commit('uLoadingFlag', false);
+		})
+	}
 };
 export default { state, getters, mutations, actions }
