@@ -5,7 +5,17 @@
             <router-link to="/page1">Page1</router-link>
         </div>
         <router-view />
-        <div v-if="cloadingFlag" class="app-loading"></div>
+        <!-- <div v-if="cloadingFlag" class="app-loading"></div> -->
+        <div v-if="cloadingFlag" class="my-loading all-loading">
+            <div class="my-loading-box">
+                <div class="loading-bol"></div>
+                <div class="loading-bol"></div>
+                <div class="loading-bol"></div>
+                <div class="loading-bol"></div>
+                <div class="loading-bol"></div>
+                <div class="loading-bol"></div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -24,5 +34,12 @@ import {mapState} from 'vuex';
 #app {
     text-align: center;
     margin-top: 60px;
+}
+.all-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 </style>

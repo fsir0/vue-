@@ -49,7 +49,7 @@ const actions = {
             }
             // 请求结束触发全局loading结束
             commit('uLoadingFlag', false);
-		}, 1000);
+		}, 1500);
     },
     duData1({commit}) {
         // 请求开始触发全局loading开始
