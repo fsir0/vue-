@@ -14,6 +14,7 @@
                 <div class="loading-bol"></div>
                 <div class="loading-bol"></div>
                 <div class="loading-bol"></div>
+                
             </div>
         </div>
     </div>
