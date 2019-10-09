@@ -32,7 +32,18 @@
                 <span class="address">{{prop1.body}}</span>
             </li>
         </ul>
+        <v-table
+            style="width: 100%;"
+            :width='1000'
+            :columns="columns"
+            :table-data="stateListData3"
+            :show-vertical-border="false"
+            is-horizontal-resize
+        ></v-table>
     </div>
 </template>
 <script src="./helloWorld.js"></script>
 <style scoped lang="less" src="./helloWord.less"></style>
+<style lang="stylus" scoped>
+
+</style>
