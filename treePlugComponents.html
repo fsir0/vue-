@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li span {
+            cursor: pointer;
+        }
+        .treeli::before {
+            content: '';
+            display: inline-block;
+            position: relative;
+            top: -3px;
+            left: -2px;
+            border-style: solid;
+            border-color: transparent;
+            border-top-color: #000;
+            border-width: 3px 3px 0 3px;
+            transform: rotateZ(-90deg);
+            transition: transform 0.4s ease;
+        }
+        .active::before {
+            transform: rotateZ(0);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <tree :data="treeData"></tree>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        const treeData = [
+            {
+                name: '1一级',
+                children: [
+                    {
+                        name: '二级',
+                        children: [
+                            {
+                                name: '三级',
+                                children: [
+                                    {
+                                        name: '四级'
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: '2一级',
+                children: [
+                    {
+                        name: '二级',
+                        children: [
+                            {
+                                name: '三级',
+                                children: [
+                                    {
+                                        name: '四级'
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                name: '3一级',
+                children: [
+                    {
+                        name: '二级',
+                        children: [
+                            {
+                                name: '三级',
+                                children: [
+                                    {
+                                        name: '四级'
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
+        Vue.component('tree', {
+            props: ['data'],
+            template: `<ul>
+                            <li v-for="(item, index) in data">
+                                <span @click="handleClick(index)"
+                                    :class="{
+                                        'treeli': item.children,
+                                        'active': showChildren[index]
+                                    }">{{item.name}}</span>
+                                <tree :data="item.children"
+                                    v-show="showChildren[index]"
+                                    v-if="readyShow[index]"></tree>
+                            </li>
+                        </ul>`,
+            data() {
+                return {
+                    showChildren: [],
+                    readyShow: []
+                }
+            },
+            methods: {
+                handleClick(index) {
+                    const show = !this.showChildren[index];
+                    this.showChildren.splice(index, 1, show);
+                    this.readyShow.splice(index, 1, true);
+                }
+            }
+        })
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                treeData
+            }
+        });
+    </script>
+</body>
+</html>

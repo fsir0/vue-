@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .calendar {
+            width: 350px;
+            cursor: default;
+        }
+        .calendar .date-header {
+            position: relative;
+            width: 100%;
+            height: 30px;
+        }
+        .calendar .date-header .prev-month {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 15px 15px 0;
+            border-color: transparent yellowgreen transparent transparent;
+            cursor: pointer;
+        }
+        .calendar .date-header .next-month {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px 0 15px 15px;
+            border-color: transparent transparent transparent yellowgreen;
+            cursor: pointer;
+        }
+        .calendar .date-header .show-date {
+            width: 100%;
+            height: 100%;
+            line-height: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .calendar .date-content {
+            width: 100%;
+        }
+        .calendar .date-content .week-header {
+            width: 100%;
+            height: 30px;
+            background-color: yellowgreen;
+        }
+        .calendar .date-content .week-header div {
+            float: left;
+            width: 50px;
+            height: 100%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+        .calendar .date-content .week-day {
+            width: 100%;
+            overflow: hidden;
+        }
+        .calendar .date-content .week-day .every-day {
+            box-sizing: border-box;
+            width: 50px;
+            height: 30px;
+            padding: 5px;
+            float: left;
+        }
+        .calendar .date-content .week-day .every-day div {
+            box-sizing: border-box;
+            border: 1px solid transparent;
+            width: 40px;
+            height: 20px;
+            text-align: center;
+            line-height: 18px;
+            font-size: 14px;
+        }
+        .calendar .date-content .week-day .every-day .gray {
+            color: gray;
+        }
+        .calendar .date-content .week-day .every-day .active {
+            color: #fff !important;
+            background-color: yellowgreen;
+            border-color: yellowgreen;
+        }
+        .calendar .date-content .week-day .every-day .selected {
+            color: yellowgreen;
+            border-color: yellowgreen;
+        }
+        .calendar .date-content .week-day .every-day div:hover {
+            border-color: yellowgreen;
+        }
+    </style>
+    <title>calendar</title>
+</head>
+<body>
+    <div id="app">
+        <div class="calendar">
+            <div class="date-header">
+                <div class="prev-month" @click="prevMonth"></div>
+                <div class="show-date">{{`${year}年${month}月${day}日`}}</div>
+                <div class="next-month" @click="nextMonth"></div>
+            </div>
+            <div class="date-content">
+                <div class="week-header">
+                    <div>日</div>
+                    <div>一</div>
+                    <div>二</div>
+                    <div>三</div>
+                    <div>四</div>
+                    <div>五</div>
+                    <div>六</div>
+                </div>
+                <div class="week-day">
+                    <div class="every-day" v-for="item in 42">
+                        <div v-if="item - beginDay < 1" class="gray">{{item - beginDay + prevDays}}</div>
+                        <div v-else-if="item - beginDay > 0 && item - beginDay <= curDays"
+                            :class="{
+                                'active': `${year}-${month}-${item - beginDay}` == curDate,
+                                'selected': item - beginDay == day
+                            }"
+                            @click="handleChoose(item-beginDay)">{{item - beginDay}}</div>
+                        <div v-else class="gray">{{item - beginDay - curDays}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                year: null,
+                month: null,
+                day: null,
+                curDate: null
+            },
+            // 在生命周期里面获取当前日期
+            created () {
+                this.getInitDate();
+            },
+            methods: {
+                getInitDate() {
+                    const date = new Date();
+                    this.year = date.getFullYear();
+                    this.month = date.getMonth() + 1;
+                    this.day = date.getDate();
+                    this.curDate = `${this.year}-${this.month}-${this.day}`;
+                },
+                // 计算属性里面的curday可直接获取当前月份的天数
+                // getCurDays() {
+                //     const month = this.month;
+                //     const year = this.year;
+                //     if([1, 3, 5, 7, 8, 10, 12].includes(month)) {
+                //         return 31;
+                //     } else if([4, 6, 9, 11].includes(month)) {
+                //         return 30;
+                //     } else {
+                //         if(year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+                //             return 29;
+                //         } else {
+                //             return 28;
+                //         }
+                //     }
+                // }
+                handleChoose(day) {
+                    this.day = day;
+                },
+                prevMonth() {
+                    // this.month -= 1;
+                    if(this.month == 1) {
+                        this.year --;
+                        this.month = 12;
+                    } else {
+                        this.month --;
+                    }
+                    let days = new Date(this.year, this.month, 0).getDate();
+                    this.day = this.day < days ? this.day : days;
+                },
+                nextMonth() {
+                    if(this.month == 12) {
+                        this.year ++;
+                        this.month = 1;
+                    } else {
+                        this.month ++;
+                    }
+                    let days = new Date(this.year, this.month, 0).getDate();
+                    this.day = this.day < days ? this.day : days;
+                }
+            },
+            computed: {
+                beginDay() {
+                    return new Date(this.year, this.month - 1, 1).getDay();
+                },
+                // 当前月份天数
+                curDays() {
+                    return new Date(this.year, this.month, 0).getDate();
+                },
+                // 上个月天数
+                prevDays() {
+                    return new Date(this.year, this.month - 1, 0).getDate();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
