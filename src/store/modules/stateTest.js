@@ -3,7 +3,7 @@ import testApi from '../../api/apitest'
 const state = {
 	data1: [],
 	data2: [],
-	data3: [],
+	data3: {total: 0, list: [], loading: true},
 	warning: '警告信息唷！',
 	count: 0
 }
@@ -28,8 +28,9 @@ const mutations = {
 	uData2(state, { list }) {
 		state.data2 = list
 	},
-	uData3(state, { list }) {
-		state.data3 = list
+	uData3(state, data) {
+		// 此处做合并，在切换时保留之前数据，切换完成后获得最新数据
+		state.data3 = Object.assign(state.data3, data);
 	}
 };
 // 触发的方法，在这里完成数请求将得到的数据commit返回给mutations内部的函数，方法第一位参数为当前store对象，内部有触发mutations的commit方法
@@ -98,17 +99,20 @@ const actions = {
 		// 请求开始触发全局loading开始
 		commit('uLoadingFlag', true);
 		// 模拟让接口慢0.2秒
-		commit('uData3', {list: []});// 请求时置空，让列表出现加载中动画
+		commit('uData3', {total: 0, loading: true});// 请求时置空，让列表出现加载中动画
 		setTimeout(() => {
 			testApi.testUserApi(query, res => {
 				if(res && res.data && res.data.length) {
-					commit('uData3', {list: res.data});
+					commit('uData3', {total: 100, list: res.data, loading: false});
+				} else {
+					commit('uData3', {total: 0, list: [], loading: false});
 				}
 				// 请求结束触发全局loading结束
 				commit('uLoadingFlag', false);
 			}, err => {
 				// eslint-disable-next-line no-console
 				console.log(err);
+				commit('uData3', {total: 0, list: [], loading: false});
 				// 请求结束触发全局loading结束
 				commit('uLoadingFlag', false);
 			})

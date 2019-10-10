@@ -8,14 +8,14 @@
             style="width: 100%;"
             :width='1000'
             :columns="columns"
-            :table-data="stateListData3"
+            :table-data="stateListData3.list"
             :show-vertical-border="false"
-            :is-loading="stateListData3 && stateListData3.length ? false : true"
+            :is-loading="stateListData3.loading"
             is-horizontal-resize
             @on-custom-comp="operateMethod"
         ></v-table>
         <div class="pagination-wrapper">
-            <v-pagination @page-change="pageChange" @page-size-change="pageSizeChange" :total="stateListData3 ? stateListData3.length: 0" :page-size="pageSize" :layout="['total', 'prev', 'pager', 'next', 'sizer', 'jumper']"></v-pagination>
+            <v-pagination @page-change="pageChange" @page-size-change="pageSizeChange" :total="stateListData3.total" :page-size="pageSize" :layout="['total', 'prev', 'pager', 'next', 'sizer', 'jumper']"></v-pagination>
         </div>
         <ul class="wrapper">
             <h5 class="tit">{{msg}}</h5>
@@ -37,7 +37,7 @@
                 <span class="name">标题</span>
                 <span class="address">内容</span>
             </li>
-            <li class="card" v-for="prop1 in stateListData3" :key="prop1.id + prop1.title">
+            <li class="card" v-for="prop1 in stateListData3.list" :key="prop1.id + prop1.title">
                 <span class="index">{{prop1.id}}</span>
                 <span class="index">{{prop1.userId}}</span>
                 <span class="name">{{prop1.title}}</span>

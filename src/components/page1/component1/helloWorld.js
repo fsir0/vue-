@@ -69,7 +69,7 @@ export default {
         const {dispatch} = this.$store;
 		dispatch('duData1');
 		dispatch('duData2', {page: 1});
-		dispatch('duData3', {userId: 1})
+		dispatch('duData3', {userId: 1});
     },
 	methods: {
 		clickme() {
@@ -89,7 +89,8 @@ export default {
 		pageChange(pageIndex) {
 			let {dispatch} = this.$store;
 			dispatch('duData3', {
-				page: pageIndex,
+				// 此处用userId代替page，因为此接口不支持page，但支持uaserId筛选
+				userId: pageIndex,
 				pageSize: this.pageSize
 			})
 		},
@@ -97,7 +98,8 @@ export default {
 			let {dispatch} = this.$store;
 			this.pageSize = size;
 			dispatch('duData3', {
-				page: 1,
+				// 此处用userId代替page，因为此接口不支持page，但支持uaserId筛选
+				userId: 1,
 				pageSize: size
 			})
 		},
