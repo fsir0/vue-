@@ -3,8 +3,20 @@
         <input type="text" :value="initData" />
         <input type="text" :value="stateData" />
         <input type="hidden" :value="stateListData2">
-        <input type="hidden" :value="stateListData3">
         <button class="hello-btn" @click="clickme">hellow-btn</button>
+        <v-table
+            style="width: 100%;"
+            :width='1000'
+            :columns="columns"
+            :table-data="stateListData3"
+            :show-vertical-border="false"
+            :is-loading="stateListData3 && stateListData3.length ? false : true"
+            is-horizontal-resize
+            @on-custom-comp="operateMethod"
+        ></v-table>
+        <div class="pagination-wrapper">
+            <v-pagination @page-change="pageChange" @page-size-change="pageSizeChange" :total="stateListData3 ? stateListData3.length: 0" :page-size="pageSize" :layout="['total', 'prev', 'pager', 'next', 'sizer', 'jumper']"></v-pagination>
+        </div>
         <ul class="wrapper">
             <h5 class="tit">{{msg}}</h5>
             <li class="card">
@@ -32,18 +44,9 @@
                 <span class="address">{{prop1.body}}</span>
             </li>
         </ul>
-        <v-table
-            style="width: 100%;"
-            :width='1000'
-            :columns="columns"
-            :table-data="stateListData3"
-            :show-vertical-border="false"
-            is-horizontal-resize
-        ></v-table>
     </div>
 </template>
 <script src="./helloWorld.js"></script>
 <style scoped lang="less" src="./helloWord.less"></style>
-<style lang="stylus" scoped>
-
-</style>
+<!-- 定义自定义组件样式 -->
+<style lang="less" src="./component.less"></style>

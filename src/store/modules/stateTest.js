@@ -16,6 +16,9 @@ const mutations = {
 	discount(state) {
 		state.count--;
 	},
+	updateCount(state, num) {
+		state.count = num;
+	},
 	uWarning(state, { msg }) {
 		state.warning = msg || '';
 	},
@@ -36,6 +39,13 @@ const actions = {
 	},
 	dispatchDiscount({ commit }) {
 		commit('discount');
+	},
+	duCount({commit}, query) {
+		if(typeof query == 'number') {
+			commit('updateCount', query);
+		} else {
+			commit('updateCount', 0);
+		}
 	},
 	duWarning({ state, commit }, query) {
         // 请求开始触发全局loading开始
@@ -87,18 +97,22 @@ const actions = {
 	duData3({commit}, query) {
 		// 请求开始触发全局loading开始
 		commit('uLoadingFlag', true);
-		testApi.testUserApi(query, res => {
-			if(res && res.data && res.data.length) {
-				commit('uData3', {list: res.data});
-			}
-			// 请求结束触发全局loading结束
-            commit('uLoadingFlag', false);
-		}, err => {
-			// eslint-disable-next-line no-console
-			console.log(err);
-			// 请求结束触发全局loading结束
-            commit('uLoadingFlag', false);
-		})
+		// 模拟让接口慢0.2秒
+		commit('uData3', {list: []});// 请求时置空，让列表出现加载中动画
+		setTimeout(() => {
+			testApi.testUserApi(query, res => {
+				if(res && res.data && res.data.length) {
+					commit('uData3', {list: res.data});
+				}
+				// 请求结束触发全局loading结束
+				commit('uLoadingFlag', false);
+			}, err => {
+				// eslint-disable-next-line no-console
+				console.log(err);
+				// 请求结束触发全局loading结束
+				commit('uLoadingFlag', false);
+			})
+		}, 200);
 	}
 };
 export default { state, getters, mutations, actions }

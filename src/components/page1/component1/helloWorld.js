@@ -1,5 +1,6 @@
 import { mapState } from 'vuex'
 import 'vue-easytable/libs/themes-base/index.css'
+import Vue from 'vue'
 export default {
 	name: "HelloWorld",
 	defineTest: 'onlyTestUse',
@@ -13,6 +14,7 @@ export default {
 		return {
 			text: '',
 			stateDataNum: 0,
+			pageSize: 10,
 			columns: [
 				{
 					field: 'id',
@@ -49,14 +51,16 @@ export default {
 				{
 					field: 'operation',
 					title: '操作',
-					width: 200,
+					width: 150,
 					titleAlign: 'center',
 					columnAlign: 'center',
 					isResize: true,
-					formatter: function(row, index) {
-						// console.log(row, index);
-						return `<span @click="update">编辑一下${index}</span>`;
-					}
+					// formatter: function(row, index) {
+					// 	// console.log(row, index);
+					// 	return `<span @click="update">编辑一下${index}</span>`;
+					// }
+					// 传入组件的参数为rowData field index
+					componentName: 'op-btn'
 				}
 			]
 		}
@@ -76,7 +80,28 @@ export default {
 			//   .then(res => {
 			//     console.log('单纯测试', res);
 			//   })
-		}
+		},
+		operateMethod(data) {
+			// eslint-disable-next-line no-console
+			console.log(data, 'emmit');
+		},
+		// 分页按钮
+		pageChange(pageIndex) {
+			let {dispatch} = this.$store;
+			dispatch('duData3', {
+				page: pageIndex,
+				pageSize: this.pageSize
+			})
+		},
+		pageSizeChange(size) {
+			let {dispatch} = this.$store;
+			this.pageSize = size;
+			dispatch('duData3', {
+				page: 1,
+				pageSize: size
+			})
+		},
+		
 	},
 	computed: {
 		// 引入state变化的计算属性，并且computed中可添加自己想要的计算属性
@@ -97,3 +122,28 @@ export default {
 		})
 	}
 };
+// 自定义table列的组件，将传入三个参数rowData, field, index
+Vue.component('op-btn', {
+	template: '<span class="operate-btn" @click="getData(rowData, field, index)">获得此行信息{{index}}</span>',
+	props: {
+		rowData: {
+			type: Object
+		},
+		field: {
+			type: String
+		},
+		index: {
+			type: Number
+		}
+	},
+	methods: {
+		getData(rowData, field, index) {
+			// 传给父组件用$emit方式进行触发父组件方法，参数为方法名 + params;
+			this.$emit('on-custom-comp', {rowData, field, index});
+			// 此处可以直接dispatch一个action去发起请求或者更新数据，就不再需要触发父组件的方法再去操作data了（得益于使用vuex）
+			let {dispatch} = this.$store;
+			dispatch('duCount', index);
+			dispatch('duWarning', '996');
+		}
+	}
+})
