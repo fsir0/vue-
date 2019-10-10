@@ -6,7 +6,7 @@
         </div>
         <router-view />
         <!-- <div v-if="cloadingFlag" class="app-loading"></div> -->
-        <!-- <div v-if="cloadingFlag" class="my-loading all-loading">
+        <div v-if="cloadingFlag" class="my-loading all-loading">
             <div class="my-loading-box">
                 <div class="loading-bol"></div>
                 <div class="loading-bol"></div>
@@ -14,9 +14,8 @@
                 <div class="loading-bol"></div>
                 <div class="loading-bol"></div>
                 <div class="loading-bol"></div>
-                
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 <script>
