@@ -99,7 +99,7 @@ const actions = {
 		// 请求开始触发全局loading开始
 		commit('uLoadingFlag', true);
 		// 模拟让接口慢0.2秒
-		commit('uData3', {total: 0, loading: true});// 请求时置空，让列表出现加载中动画
+		commit('uData3', {loading: true});// 请求时置空，让列表出现加载中动画
 		setTimeout(() => {
 			testApi.testUserApi(query, res => {
 				if(res && res.data && res.data.length) {

@@ -89,7 +89,7 @@ export default {
 		pageChange(pageIndex) {
 			let {dispatch} = this.$store;
 			dispatch('duData3', {
-				// 此处用userId代替page，因为此接口不支持page，但支持uaserId筛选
+				// 此处用userId代替page，因为此接口不支持page，但支持uaserId筛选，仅10条数据有效
 				userId: pageIndex,
 				pageSize: this.pageSize
 			})
@@ -98,7 +98,7 @@ export default {
 			let {dispatch} = this.$store;
 			this.pageSize = size;
 			dispatch('duData3', {
-				// 此处用userId代替page，因为此接口不支持page，但支持uaserId筛选
+				// 此处用userId代替page，因为此接口不支持page，但支持uaserId筛选，仅10条数据有效
 				userId: 1,
 				pageSize: size
 			})
