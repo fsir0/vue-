@@ -5,6 +5,7 @@
         <input type="hidden" :value="stateListData2">
         <button class="hello-btn" @click="clickme">hellow-btn</button>
         <v-table
+            class="plugin-table"
             style="width: 100%;"
             :width='1000'
             :columns="columns"
