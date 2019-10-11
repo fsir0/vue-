@@ -22,9 +22,9 @@
 import { mapState } from 'vuex';
 export default {
     computed: {
-    ...mapState({
-        cloadingFlag: state => state.loadingFlag
-    })
+        ...mapState({
+            cloadingFlag: state => state.loadingFlag
+        })
     }
 };
 </script>
