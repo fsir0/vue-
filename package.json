@@ -23,6 +23,7 @@
 		"eslint-plugin-vue": "^5.0.0",
 		"less": "^3.10.3",
 		"less-loader": "^5.0.0",
+		"pre-commit": "^1.2.2",
 		"vue-easytable": "^1.7.2",
 		"vue-template-compiler": "^2.6.10"
 	},
@@ -35,7 +36,23 @@
 			"plugin:vue/essential",
 			"eslint:recommended"
 		],
-		"rules": {},
+		"rules": {
+			"indent": [
+				"error",
+				4
+			],
+			"vue/script-indent": [
+				"error",
+				4,
+				{
+					"baseIndent": 0
+				}
+			],
+			"quotes": [
+				"error",
+				"single"
+			]
+		},
 		"parserOptions": {
 			"parser": "babel-eslint"
 		}
@@ -48,5 +65,6 @@
 	"browserslist": [
 		"> 1%",
 		"last 2 versions"
-	]
+	],
+	"pre-commit": ["lint"]
 }

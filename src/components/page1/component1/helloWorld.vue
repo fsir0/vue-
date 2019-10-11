@@ -2,12 +2,12 @@
     <div class="hello">
         <input type="text" :value="initData" />
         <input type="text" :value="stateData" />
-        <input type="hidden" :value="stateListData2">
+        <input type="hidden" :value="stateListData2" />
         <button class="hello-btn" @click="clickme">hellow-btn</button>
         <v-table
             class="plugin-table"
             style="width: 100%;"
-            :width='1000'
+            :width="1000"
             :columns="columns"
             :table-data="stateListData3.list"
             :show-vertical-border="false"
@@ -16,7 +16,13 @@
             @on-custom-comp="operateMethod"
         ></v-table>
         <div class="pagination-wrapper">
-            <v-pagination @page-change="pageChange" @page-size-change="pageSizeChange" :total="stateListData3.total" :page-size="pageSize" :layout="['total', 'prev', 'pager', 'next', 'sizer', 'jumper']"></v-pagination>
+            <v-pagination
+                @page-change="pageChange"
+                @page-size-change="pageSizeChange"
+                :total="stateListData3.total"
+                :page-size="pageSize"
+                :layout="['total', 'prev', 'pager', 'next', 'sizer', 'jumper']"
+            ></v-pagination>
         </div>
         <ul class="wrapper">
             <h5 class="tit">{{msg}}</h5>

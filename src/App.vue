@@ -19,14 +19,14 @@
     </div>
 </template>
 <script>
-import {mapState} from 'vuex';
-    export default {
-        computed: {
-            ...mapState({
-                cloadingFlag: state => state.loadingFlag
-            })
-        }
+import { mapState } from 'vuex';
+export default {
+    computed: {
+        ...mapState({
+            cloadingFlag: state => state.loadingFlag
+        })
     }
+};
 </script>
 <!-- 此处定义全局样式，也可采用引入的方式 -->
 <style lang="less" src="./assets/common/common.less"></style>

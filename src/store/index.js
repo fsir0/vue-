@@ -14,7 +14,7 @@ export default new Vuex.Store({
             state.loadingFlag = flag;
         }
     },
-	modules: {
-		stateTest
-	}
+    modules: {
+        stateTest
+    }
 })

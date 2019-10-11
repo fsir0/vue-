@@ -1,4 +1,4 @@
-import Axios from "axios";
+import Axios from 'axios';
 
 export default {
     // 获取10条数据，有城市、地址、电话等信息

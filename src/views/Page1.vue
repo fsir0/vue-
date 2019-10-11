@@ -7,20 +7,20 @@
 </template>
 
 <script>
-import HellowWorld from "../components/page1/component1/helloWorld.vue";
-import { mapState } from "vuex";
+import HellowWorld from '../components/page1/component1/helloWorld.vue';
+import { mapState } from 'vuex';
 export default {
-    name: "page1",
+    name: 'page1',
     components: {
         HellowWorld
     },
     methods: {
         countAdd() {
-            this.$store.dispatch("dispatchAdd");
-            if(this.stateCount < 0) {
-                this.$store.dispatch("duWarning", "996");
+            this.$store.dispatch('dispatchAdd');
+            if (this.stateCount < 0) {
+                this.$store.dispatch('duWarning', '996');
             } else {
-                this.$store.dispatch("duWarning", "");
+                this.$store.dispatch('duWarning', '');
             }
         }
     },
