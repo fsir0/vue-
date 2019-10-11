@@ -24,7 +24,7 @@ export default {
     computed: {
         ...mapState({
             cloadingFlag: state => state.loadingFlag
-        })
+    })
     }
 };
 </script>
