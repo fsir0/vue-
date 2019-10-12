@@ -16,15 +16,50 @@
                 <div class="loading-bol"></div>
             </div>
         </div>
+        <Modal
+            :showModal="modal"
+            @confirm="confirm"
+            @cancel="cancel"
+        >
+            <template v-slot:header>
+                <b>标题</b>
+            </template>
+            <span>test body</span>
+        </Modal>
+        <button @click='showModal'>展示弹窗</button>
     </div>
 </template>
 <script>
 import { mapState } from 'vuex';
+import Modal from './components/common/modal/modal.vue';
 export default {
+    data() {
+        return {
+            modal: false
+        }
+    },
+    components: {
+        Modal
+    },
     computed: {
         ...mapState({
             cloadingFlag: state => state.loadingFlag
         })
+    },
+    methods: {
+        showModal() {
+            this.modal = true;
+        },
+        confirm(e) {
+            // eslint-disable-next-line no-console
+            console.log(e);
+            this.modal = false;
+        },
+        cancel(e) {
+            // eslint-disable-next-line no-console
+            console.log(e, 'cancel');
+            this.modal = false;
+        }
     }
 };
 </script>

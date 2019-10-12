@@ -1,0 +1,95 @@
+.modal {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .modal-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, .4);
+    }
+    .modal-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 10;
+        border-radius: 8px;
+        min-width: 200px;
+        background-color: #fff;
+        transition: transform .2s;
+        .header {
+            position: relative;
+            width: 100%;
+            height: 26px;
+            text-align: center;
+            .close {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                color: #666;
+                cursor: pointer;
+                &:hover {
+                    color: #ff2500;
+                }
+            }
+        }
+        .footer {
+            box-sizing: border-box;
+            width: 100%;
+            height: 40px;
+            padding: 8px;
+            text-align: center;
+            span {
+                display: inline-block;
+                vertical-align: top;
+                padding: 3px 10px;
+                font-size: 14px;
+                margin: 0 10px;
+                border-radius: 4px;
+                background-color: #fff;
+                cursor: pointer;
+                transition: all .4s ease;
+                &:hover {
+                    color: #fff;
+                    border-color: #fff;
+                }
+            }
+            .confirm {
+                color: #00d3ff;
+                border: 1px solid #00d3ff;
+                &:hover {
+                    background-color: #00d3ff;
+                }
+            }
+            .cancel {
+                color: #ff2500;
+                border: 1px solid #ff2500;
+                &:hover {
+                    background-color: #ff2500;
+                }
+            }
+        }
+    }
+}
+// 弹窗展示和退出动画
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .4s;
+}
+.fade-enter .modal-wrapper {
+    transform: translate(-50%, -50%) scale(.2);
+}
+.fade-leave-active .modal-wrapper {
+    top: 48%;
+    transition: top .4s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
