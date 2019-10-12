@@ -4,7 +4,7 @@
             <div class="modal-mask"></div>
             <div class="modal-wrapper">
                 <div class="header">
-                    <span class="close" @click="cancel">X</span>
+                    <span class="close" @click="cancel">×</span>
                     <slot name="header"></slot>
                 </div>
                 <div class="content">

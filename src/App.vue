@@ -22,7 +22,7 @@
             @cancel="cancel"
         >
             <template v-slot:header>
-                <b>标题</b>
+                <b>title</b>
             </template>
             <span>test body</span>
         </Modal>
