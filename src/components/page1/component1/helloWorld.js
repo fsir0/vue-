@@ -1,5 +1,7 @@
 import { mapState } from 'vuex';
 import 'vue-easytable/libs/themes-base/index.css';
+import utils from '../../../assets/common/util'
+const { formatTime } = utils;
 import Vue from 'vue';
 export default {
     name: 'HelloWorld',
@@ -15,6 +17,7 @@ export default {
             text: '',
             stateDataNum: 0,
             pageSize: 10,
+            time: new Date(),
             columns: [
                 {
                     field: 'id',
@@ -70,8 +73,10 @@ export default {
         dispatch('duData1');
         dispatch('duData2', { page: 1 });
         dispatch('duData3', { userId: 1 });
+        // console.log(formatTime(1571031324281, 'YY-mm-dd HH:mm'));
     },
     methods: {
+        formatTime,
         clickme() {
             const { dispatch } = this.$store;
             dispatch('dispatchDiscount');
@@ -102,7 +107,7 @@ export default {
                 userId: 1,
                 pageSize: size
             })
-        },
+        }
     },
     computed: {
         // 引入state变化的计算属性，并且computed中可添加自己想要的计算属性

@@ -1,14 +1,14 @@
 <template>
     <transition name="fade">
-        <div class="modal" v-if="showModal">
+        <div class="f-modal" v-if="showModal">
             <div class="modal-mask"></div>
             <div class="modal-wrapper">
                 <div class="header">
                     <span class="close" @click="cancel">×</span>
-                    <slot name="header"></slot>
+                    <slot name="header"><b>弹窗</b></slot>
                 </div>
                 <div class="content">
-                    <slot></slot>
+                    <slot><span>暂无内容</span></slot>
                 </div>
                 <div class="footer" v-if="footer">
                     <span class="confirm" @click="confirm">确定</span>

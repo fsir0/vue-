@@ -24,7 +24,22 @@
             <template v-slot:header>
                 <b>title</b>
             </template>
-            <span>test body</span>
+            <span class="modal-content">test body</span>
+        </Modal>
+        <Modal
+            :showModal="modal1"
+            @confirm="confirm1"
+            @cancel="cancel1"
+        >
+            <span>test body1</span>
+            <button @click="test1">click show another init modal</button>
+        </Modal>
+        <Modal
+            :showModal="modal2"
+            :nofooter="true"
+            @confirm="confirm2('datatt')"
+            @cancel="cancel2"
+        >
         </Modal>
         <button @click='showModal'>展示弹窗</button>
     </div>
@@ -35,7 +50,9 @@ import Modal from './components/common/modal/modal.vue';
 export default {
     data() {
         return {
-            modal: false
+            modal: false,
+            modal1: false,
+            modal2: false
         }
     },
     components: {
@@ -53,12 +70,29 @@ export default {
         confirm(e) {
             // eslint-disable-next-line no-console
             console.log(e);
-            this.modal = false;
+            this.modal1 = true;
         },
         cancel(e) {
             // eslint-disable-next-line no-console
             console.log(e, 'cancel');
             this.modal = false;
+        },
+        confirm1() {
+            this.modal1 = false
+        },
+        cancel1() {
+            this.modal1 = false
+        },
+        test1() {
+            this.modal2 = true;
+        },
+        confirm2(test) {
+            // eslint-disable-next-line no-console
+            console.log(test);
+            this.modal2 = false;
+        },
+        cancel2() {
+            this.modal2 = false;
         }
     }
 };
@@ -76,5 +110,10 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
+}
+.modal-content {
+    display: inline-block;
+    width: 500px;
+    height: 300px;
 }
 </style>

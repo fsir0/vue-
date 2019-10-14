@@ -39,6 +39,7 @@
                 >{{prop.address.city + ',' + prop.address.street + ',' + prop.address.suite}}</span>
             </li>
         </ul>
+        <span>{{ formatTime(time, 'YY-mm-dd HH:mm') }}</span>
     </div>
 </template>
 <script src="./helloWorld.js"></script>
