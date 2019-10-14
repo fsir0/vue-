@@ -82,6 +82,8 @@ const actions = {
     duData2({commit}, query) {
         // 请求开始触发全局loading开始
         commit('uLoadingFlag', true);
+        // testApi.testRapApi({}, res => {console.log(res)}, err => {console.log(err)});
+        // testApi.testRapApip({name: '呵呵', world: '112233'}, res => {console.log(res)}, err => {console.log(err)});
         testApi.testArticleApi(query, res => {
             if(res && res.data && res.data.length) {
                 commit('uData2', {list: res.data});
