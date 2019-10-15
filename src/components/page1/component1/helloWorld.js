@@ -1,8 +1,9 @@
-import { mapState } from 'vuex';
-import 'vue-easytable/libs/themes-base/index.css';
+import { mapState } from 'vuex'
+import 'vue-easytable/libs/themes-base/index.css'
 import utils from '../../../assets/common/util'
 const { formatTime } = utils;
-import Vue from 'vue';
+import Vue from 'vue'
+import { elSwitch } from 'element-ui'
 export default {
     name: 'HelloWorld',
     defineTest: 'onlyTestUse',
@@ -12,12 +13,16 @@ export default {
             required: true
         },
     },
+    component: {
+        elSwitch
+    },
     data() {
         return {
             text: '',
             stateDataNum: 0,
             pageSize: 10,
             time: new Date(),
+            value: true,
             columns: [
                 {
                     field: 'id',

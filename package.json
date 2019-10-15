@@ -11,6 +11,7 @@
 	"dependencies": {
 		"axios": "^0.19.0",
 		"core-js": "^2.6.5",
+		"element-ui": "^2.12.0",
 		"vue": "^2.6.10",
 		"vue-axios": "^2.1.4",
 		"vue-router": "^3.0.3",
@@ -33,11 +34,26 @@
 		"env": {
 			"node": true
 		},
-		"extends": ["plugin:vue/essential", "eslint:recommended"],
+		"extends": [
+			"plugin:vue/essential",
+			"eslint:recommended"
+		],
 		"rules": {
-			"indent": ["error", 4],
-			"vue/script-indent": ["error", 4, {"baseIndent": 0}],
-			"quotes": ["error", "single"]
+			"indent": [
+				"error",
+				4
+			],
+			"vue/script-indent": [
+				"error",
+				4,
+				{
+					"baseIndent": 0
+				}
+			],
+			"quotes": [
+				"error",
+				"single"
+			]
 		},
 		"parserOptions": {
 			"parser": "babel-eslint"
@@ -48,6 +64,11 @@
 			"autoprefixer": {}
 		}
 	},
-	"browserslist": ["> 1%", "last 2 versions"],
-	"pre-commit": ["lint"]
+	"browserslist": [
+		"> 1%",
+		"last 2 versions"
+	],
+	"pre-commit": [
+		"lint"
+	]
 }
