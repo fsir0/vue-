@@ -107,6 +107,10 @@ export default {
                 userId: 1,
                 pageSize: size
             })
+        },
+        tohome() {
+            // console.log(this.$router);
+            this.$router.push({path: '/'});
         }
     },
     computed: {

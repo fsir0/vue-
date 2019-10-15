@@ -1,8 +1,8 @@
 <template>
     <div id="app">
         <div id="nav">
-            <router-link to="/">Home</router-link>|
-            <router-link to="/page1">Page1</router-link>
+            <!-- <router-link to="/">Home</router-link>|
+            <router-link to="/page1">Page1</router-link> -->
         </div>
         <router-view />
         <!-- <div v-if="cloadingFlag" class="app-loading"></div> -->
@@ -36,10 +36,12 @@
         </Modal>
         <Modal
             :showModal="modal2"
-            :nofooter="true"
+            :nofooter="false"
             @confirm="confirm2('datatt')"
             @cancel="cancel2"
         >
+            <span>去page1页面？</span>
+            <router-link to="/page1">去</router-link>
         </Modal>
         <button @click='showModal'>展示弹窗</button>
     </div>
@@ -90,6 +92,9 @@ export default {
             // eslint-disable-next-line no-console
             console.log(test);
             this.modal2 = false;
+            // console.log(this.$router);
+            // console.log(window.location.href)
+            this.$router.push({path: '/page1'});
         },
         cancel2() {
             this.modal2 = false;

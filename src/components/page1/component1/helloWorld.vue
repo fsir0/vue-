@@ -40,6 +40,7 @@
             </li>
         </ul>
         <span>{{ formatTime(time, 'YY-mm-dd HH:mm') }}</span>
+        <button @click="tohome">home</button>
     </div>
 </template>
 <script src="./helloWorld.js"></script>
