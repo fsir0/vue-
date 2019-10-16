@@ -78,7 +78,7 @@ export default {
             this.modal1 = false
         },
         test1 () {
-            this.modal2 = true;
+            this.modal2 = true
         },
         confirm2 (test) {
             // eslint-disable-next-line no-console
