@@ -1,9 +1,9 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from 'vue'
+import Vuex from 'vuex'
 // 引入定义的state
-import stateTest from './modules/stateTest';
+import stateTest from './modules/stateTest'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         loadingFlag: false
@@ -11,7 +11,7 @@ export default new Vuex.Store({
     mutations: {
         // 修改全局loading状态，在./modules下的请求开始时commit('uLoadingFlag', true);结束时commit('uLoadingFlag', false);
         uLoadingFlag(state, flag) {
-            state.loadingFlag = flag;
+            state.loadingFlag = flag
         }
     },
     modules: {

@@ -7,37 +7,38 @@ export default {
      */
     formatTime(time, type) {
         if (!time) {
-            return '';
+            return ''
         }
-        let tp = typeof(time);
-        if(tp == 'string' || tp == 'number') {
-            if((parseInt(time) + '').length == 10) {
-                time *= 1000;
+        let tp = typeof (time)
+        if (tp === 'string' || tp === 'number') {
+            if ((parseInt(time) + '').length === 10) {
+                time *= 1000
             } else {
-                time = parseInt(time);
+                time = parseInt(time)
             }
         }
-        let _date = new Date(time);
-        let Y = _date.getFullYear(),
+        // eslint-disable-next-line one-var
+        let _date = new Date(time),
+            Y = _date.getFullYear(),
             M = _date.getMonth() + 1,
             D = _date.getDate(),
             h = _date.getHours(),
             m = _date.getMinutes(),
-            s = _date.getSeconds();
-        M = M < 10 ? '0' + M : M;
-        D = D < 10 ? '0' + D : D;
-        h = h < 10 ? '0' + h : h;
-        m = m < 10 ? '0' + m : m;
-        s = s < 10 ? '0' + s : s;
+            s = _date.getSeconds()
+        M = M < 10 ? '0' + M : M
+        D = D < 10 ? '0' + D : D
+        h = h < 10 ? '0' + h : h
+        m = m < 10 ? '0' + m : m
+        s = s < 10 ? '0' + s : s
         switch (type) {
         case 'YY-mm-dd':
-            return Y + '-' + M + '-' + D;
+            return Y + '-' + M + '-' + D
         case 'YY-mm-dd HH:mm':
-            return Y + '-' + M + '-' + D + ' ' + h + ':' + m;
+            return Y + '-' + M + '-' + D + ' ' + h + ':' + m
         case 'YY-mm-dd HH:mm:ss':
-            return Y + '-' + M + '-' + D + ' ' + h + ':' + m + ':' + s;
+            return Y + '-' + M + '-' + D + ' ' + h + ':' + m + ':' + s
         default:
-            return _date;
+            return _date
         }
     }
 }

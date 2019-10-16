@@ -44,3 +44,6 @@ cancel      Function    (必须)弹窗取消时的回调,参数为事件源对�
  传入内容                        说明
 template v-slot:header          template包含内容为header区域模板,缺省为<template v-slot:header><b>弹窗</b></template>
 template外内容                  content区域模板,缺省为<span>暂无内容</span>
+
+
+other: ^\s*(?=\r?$)\n 匹配空行

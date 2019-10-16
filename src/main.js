@@ -6,7 +6,7 @@ import store from './store/index'
 import router from './router'
 import { VTable, VPagination } from 'vue-easytable'
 import ElementUi from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css';
+import 'element-ui/lib/theme-chalk/index.css'
 Vue.component(VTable.name, VTable)
 Vue.component(VPagination.name, VPagination)
 

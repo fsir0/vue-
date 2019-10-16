@@ -1,9 +1,9 @@
+import Vue from 'vue'
 import { mapState } from 'vuex'
 import 'vue-easytable/libs/themes-base/index.css'
 import utils from '../../../assets/common/util'
-const { formatTime } = utils;
-import Vue from 'vue'
 import { elSwitch } from 'element-ui'
+const { formatTime } = utils
 export default {
     name: 'HelloWorld',
     defineTest: 'onlyTestUse',
@@ -11,7 +11,7 @@ export default {
         msg: {
             type: String,
             required: true
-        },
+        }
     },
     component: {
         elSwitch
@@ -30,7 +30,7 @@ export default {
                     width: 30,
                     titleAlign: 'center',
                     columnAlign: 'center',
-                    isResize: true,
+                    isResize: true
                 },
                 {
                     field: 'userId',
@@ -38,7 +38,7 @@ export default {
                     width: 60,
                     titleAlign: 'center',
                     columnAlign: 'center',
-                    isResize: true,
+                    isResize: true
                 },
                 {
                     field: 'title',
@@ -46,7 +46,7 @@ export default {
                     width: 200,
                     titleAlign: 'center',
                     columnAlign: 'left',
-                    isResize: true,
+                    isResize: true
                 },
                 {
                     field: 'body',
@@ -54,7 +54,7 @@ export default {
                     width: 400,
                     titleAlign: 'center',
                     columnAlign: 'left',
-                    isResize: true,
+                    isResize: true
                 },
                 {
                     field: 'operation',
@@ -64,7 +64,9 @@ export default {
                     columnAlign: 'center',
                     isResize: true,
                     // formatter: function(row, index) {
+                    // eslint-disable-next-line no-tabs
                     // 	// console.log(row, index);
+                    // eslint-disable-next-line no-tabs
                     // 	return `<span @click="update">编辑一下${index}</span>`;
                     // }
                     // 传入组件的参数为rowData field index
@@ -74,18 +76,18 @@ export default {
         }
     },
     mounted() {
-        const { dispatch } = this.$store;
-        dispatch('duData1');
-        dispatch('duData2', { page: 1 });
-        dispatch('duData3', { userId: 1 });
+        const { dispatch } = this.$store
+        dispatch('duData1')
+        dispatch('duData2', { page: 1 })
+        dispatch('duData3', { userId: 1 })
         // console.log(formatTime(1571031324281, 'YY-mm-dd HH:mm'));
     },
     methods: {
         formatTime,
         clickme() {
-            const { dispatch } = this.$store;
-            dispatch('dispatchDiscount');
-            dispatch('duWarning', '996');
+            const { dispatch } = this.$store
+            dispatch('dispatchDiscount')
+            dispatch('duWarning', '996')
             // this.axios.get('http://jsonplaceholder.typicode.com/users', {params: {page: 1}})
             //   .then(res => {
             //     console.log('单纯测试', res);
@@ -93,11 +95,11 @@ export default {
         },
         operateMethod(data) {
             // eslint-disable-next-line no-console
-            console.log(data, 'emmit');
+            console.log(data, 'emmit')
         },
         // 分页按钮
         pageChange(pageIndex) {
-            let { dispatch } = this.$store;
+            let { dispatch } = this.$store
             dispatch('duData3', {
                 // 此处用userId代替page，因为此接口不支持page，但支持uaserId筛选，仅10条数据有效
                 userId: pageIndex,
@@ -105,8 +107,8 @@ export default {
             })
         },
         pageSizeChange(size) {
-            let { dispatch } = this.$store;
-            this.pageSize = size;
+            let { dispatch } = this.$store
+            this.pageSize = size
             dispatch('duData3', {
                 // 此处用userId代替page，因为此接口不支持page，但支持uaserId筛选，仅10条数据有效
                 userId: 1,
@@ -115,7 +117,7 @@ export default {
         },
         tohome() {
             // console.log(this.$router);
-            this.$router.push({path: '/'});
+            this.$router.push({ path: '/' })
         }
     },
     computed: {
@@ -124,19 +126,11 @@ export default {
             initData: state => state.stateTest.warning,
             stateData: state => state.stateTest.count,
             stateListData1: state => state.stateTest.data1,
-            stateListData2: state => {
-                // if(state.stateTest.data2.length) {
-                // 	state.stateTest.data2.forEach(
-                // 		// eslint-disable-next-line no-console
-                // 		ele => {console.log(ele.id + ':' + ele.userId + '|' + ele.title)}
-                // 	);
-                // }
-                return state.stateTest.data2;
-            },
-            stateListData3: state => state.stateTest.data3,
+            stateListData2: state => state.stateTest.data2,
+            stateListData3: state => state.stateTest.data3
         })
     }
-};
+}
 // 自定义table列的组件，将传入三个参数rowData, field, index
 Vue.component('op-btn', {
     template: '<span class="operate-btn" @click="getData(rowData, field, index)">获得此行信息{{index}}</span>',
@@ -154,11 +148,11 @@ Vue.component('op-btn', {
     methods: {
         getData(rowData, field, index) {
             // 传给父组件用$emit方式进行触发父组件方法，参数为方法名 + params;
-            this.$emit('on-custom-comp', { rowData, field, index });
+            this.$emit('on-custom-comp', { rowData, field, index })
             // 此处可以直接dispatch一个action去发起请求或者更新数据，就不再需要触发父组件的方法再去操作data了（得益于使用vuex）
-            let { dispatch } = this.$store;
-            dispatch('duCount', index);
-            dispatch('duWarning', '996');
+            let { dispatch } = this.$store
+            dispatch('duCount', index)
+            dispatch('duWarning', '996')
         }
     }
-});
+})

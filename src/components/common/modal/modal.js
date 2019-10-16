@@ -15,10 +15,10 @@ export default {
     },
     methods: {
         confirm(e) {
-            this.$emit('confirm', e);
+            this.$emit('confirm', e)
         },
         cancel(e) {
-            this.$emit('cancel', e);
+            this.$emit('cancel', e)
         }
     }
 }
