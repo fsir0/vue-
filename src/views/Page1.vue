@@ -2,7 +2,7 @@
     <div class="about">
         <h1>{{stateCount}}</h1>
         <button class="page1-btn" @click="countAdd">click me and add the number</button>
-        <HellowWorld msg="weleclome to you Vue.js app project!"></HellowWorld>
+        <HellowWorld></HellowWorld>
     </div>
 </template>
 

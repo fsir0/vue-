@@ -28,7 +28,6 @@
 		"less": "^3.10.3",
 		"less-loader": "^5.0.0",
 		"pre-commit": "^1.2.2",
-		"vue-easytable": "^1.7.2",
 		"vue-template-compiler": "^2.6.10"
 	},
 	"eslintConfig": {

@@ -1,23 +1,17 @@
 import Vue from 'vue'
 import { mapState } from 'vuex'
-import 'vue-easytable/libs/themes-base/index.css'
 import utils from '../../../assets/common/util'
-import { elSwitch, elTable, elTtableColumn, elPagination } from 'element-ui'
+import { elTable, elTtableColumn, elPagination, elButton } from 'element-ui'
 const { formatTime } = utils
 export default {
     name: 'HelloWorld',
     defineTest: 'onlyTestUse',
-    props: {
-        msg: {
-            type: String,
-            required: true
-        }
-    },
+    props: {},
     component: {
-        elSwitch,
         elTable,
         elTtableColumn,
-        elPagination
+        elPagination,
+        elButton
     },
     data() {
         return {
@@ -25,58 +19,7 @@ export default {
             stateDataNum: 0,
             currentPage: 1,
             pageSize: 10,
-            time: new Date(),
-            value: true,
-            columns: [
-                {
-                    field: 'id',
-                    title: 'id',
-                    width: 30,
-                    titleAlign: 'center',
-                    columnAlign: 'center',
-                    isResize: true
-                },
-                {
-                    field: 'userId',
-                    title: '用户id',
-                    width: 60,
-                    titleAlign: 'center',
-                    columnAlign: 'center',
-                    isResize: true
-                },
-                {
-                    field: 'title',
-                    title: '名称',
-                    width: 200,
-                    titleAlign: 'center',
-                    columnAlign: 'left',
-                    isResize: true
-                },
-                {
-                    field: 'body',
-                    title: '内容',
-                    width: 400,
-                    titleAlign: 'center',
-                    columnAlign: 'left',
-                    isResize: true
-                },
-                {
-                    field: 'operation',
-                    title: '操作',
-                    width: 150,
-                    titleAlign: 'center',
-                    columnAlign: 'center',
-                    isResize: true,
-                    // formatter: function(row, index) {
-                    // eslint-disable-next-line no-tabs
-                    // 	// console.log(row, index);
-                    // eslint-disable-next-line no-tabs
-                    // 	return `<span @click="update">编辑一下${index}</span>`;
-                    // }
-                    // 传入组件的参数为rowData field index
-                    componentName: 'op-btn'
-                }
-            ]
+            time: new Date()
         }
     },
     mounted() {
@@ -84,7 +27,6 @@ export default {
         dispatch('duData1')
         dispatch('duData2', { page: 1 })
         dispatch('duData3', { userId: 1 })
-        // console.log(formatTime(1571031324281, 'YY-mm-dd HH:mm'));
     },
     methods: {
         formatTime,
@@ -99,7 +41,16 @@ export default {
         },
         operateMethod(data) {
             // eslint-disable-next-line no-console
-            console.log(data, 'emmit')
+            console.log(data, 'operate')
+            // const loading = this.$loading({
+            //     lock: true,
+            //     text: 'Loading',
+            //     spinner: 'el-icon-loading',
+            //     background: 'rgba(0, 0, 0, 0.7)'
+            // })
+            // setTimeout(() => {
+            //     loading.close()
+            // }, 1000)
         },
         // 分页按钮
         pageChange(pageIndex) {
@@ -122,15 +73,6 @@ export default {
         tohome() {
             // console.log(this.$router);
             this.$router.push({ path: '/' })
-        },
-        elTableClick(prop) {
-            console.log(prop)
-        },
-        handleCurrentChange(page) {
-            console.log(page)
-        },
-        handleSizeChange(pageSize) {
-            console.log(pageSize)
         }
     },
     computed: {
