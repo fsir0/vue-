@@ -2,7 +2,7 @@ import Vue from 'vue'
 import { mapState } from 'vuex'
 import 'vue-easytable/libs/themes-base/index.css'
 import utils from '../../../assets/common/util'
-import { elSwitch } from 'element-ui'
+import { elSwitch, elTable, elTtableColumn, elPagination } from 'element-ui'
 const { formatTime } = utils
 export default {
     name: 'HelloWorld',
@@ -14,12 +14,16 @@ export default {
         }
     },
     component: {
-        elSwitch
+        elSwitch,
+        elTable,
+        elTtableColumn,
+        elPagination
     },
     data() {
         return {
             text: '',
             stateDataNum: 0,
+            currentPage: 1,
             pageSize: 10,
             time: new Date(),
             value: true,
@@ -118,6 +122,15 @@ export default {
         tohome() {
             // console.log(this.$router);
             this.$router.push({ path: '/' })
+        },
+        elTableClick(prop) {
+            console.log(prop)
+        },
+        handleCurrentChange(page) {
+            console.log(page)
+        },
+        handleSizeChange(pageSize) {
+            console.log(pageSize)
         }
     },
     computed: {

@@ -24,6 +24,58 @@
                 :layout="['total', 'prev', 'pager', 'next', 'sizer', 'jumper']"
             ></v-pagination>
         </div>
+        <el-table
+            v-loading="stateListData3.loading"
+            :data="stateListData3.list"
+            style="width: 100%; text-align: center;"
+        >
+            <el-table-column
+                prop="id"
+                label="id"
+                width="40"
+            />
+            <el-table-column
+                prop="userId"
+                label="用户id"
+                width="70"
+            />
+            <el-table-column
+                prop="title"
+                label="标题"
+                width="200"
+            >
+                <template slot-scope="prop">
+                    <span class="el-table-title">{{prop.row.title}}</span>
+                </template>
+            </el-table-column>
+            <el-table-column
+                prop="body"
+                label="内容"
+                width="400"
+            >
+                <template slot-scope="prop">
+                    <span class="el-table-body">{{prop.row.body}}</span>
+                </template>
+            </el-table-column>
+            <el-table-column
+                prop="operate"
+                label="操作"
+                width="150"
+            >
+                <template slot-scope="prop">
+                    <span class="operate-btn" @click="elTableClick(prop)">click{{prop.$index}}</span>
+                </template>
+            </el-table-column>
+        </el-table>
+        <el-pagination
+            @size-change="pageSizeChange"
+            @current-change="pageChange"
+            :current-page="currentPage"
+            :page-sizes="[10, 20, 50, 100]"
+            :page-size="pageSize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="stateListData3.total"
+        />
         <ul class="wrapper">
             <h5 class="tit">{{msg}}</h5>
             <li class="card">
