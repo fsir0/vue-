@@ -2,17 +2,7 @@
     <div class="index">
         <el-container>
             <el-header>
-                <el-row>
-                    <el-col :span="10">
-                        header-left
-                    </el-col>
-                    <el-col :span="14">
-                        header-right
-                    </el-col>
-                </el-row>
-                <el-row>
-                    search
-                </el-row>
+                <my-header />
             </el-header>
             <el-main>main</el-main>
         </el-container>
@@ -20,15 +10,17 @@
 </template>
 
 <script>
-import { elContainer, elHeader, elMain, elRow, elCol } from 'element-ui'
+import { elContainer, elHeader, elMain } from 'element-ui'
+import myHeader from '../components/index/header/header.vue'
 export default {
     name: 'index',
     component: {
         elContainer,
         elHeader,
-        elMain,
-        elRow,
-        elCol
+        elMain
+    },
+    components: {
+        myHeader
     }
 }
 </script>

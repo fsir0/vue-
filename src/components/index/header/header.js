@@ -1,5 +1,10 @@
+import { elRow, elCol } from 'element-ui'
 export default {
-    name: 'header',
+    name: 'my-header',
+    component: {
+        elRow,
+        elCol
+    },
     data() {
         return {}
     }
