@@ -124,7 +124,7 @@
                         />
                         <div class="input-advice">
                             <h5 class="hot-tit">热门搜索</h5>
-                            
+
                         </div>
                     </el-col>
                     <el-col :span="4">
