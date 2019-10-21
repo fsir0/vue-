@@ -13,17 +13,17 @@
             <el-table-column prop="id" label="id" width="40" />
             <el-table-column prop="userId" label="用户id" width="70" />
             <el-table-column prop="title" label="标题" width="200">
-                <template slot-scope="prop">
+                <template v-slot="prop">
                     <span class="el-table-title">{{prop.row.title}}</span>
                 </template>
             </el-table-column>
             <el-table-column prop="body" label="内容" width="400">
-                <template slot-scope="prop">
+                <template v-slot="prop">
                     <span class="el-table-body">{{prop.row.body}}</span>
                 </template>
             </el-table-column>
             <el-table-column prop="operate" label="操作">
-                <template slot-scope="prop">
+                <template v-slot="prop">
                     <el-button @click="operateMethod(prop)">click{{prop.$index}}</el-button>
                 </template>
             </el-table-column>

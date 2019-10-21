@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="header-wrapper">
         <el-row class="header-n">
-            <el-col class="header-nl" :span="10">
+            <el-col class="header-nl" :span="11">
                 <i class="el-icon-location-outline"></i>
                 <p class="city-name">北京</p>
                 <p class="city-change"><a href="#">切换城市</a></p>
@@ -13,7 +13,7 @@
                 <p class="login"><a href="#">立即登录</a></p>
                 <p class="reg"><a href="#">注册</a></p>
             </el-col>
-            <el-col class="header-nr" :span="14">
+            <el-col class="header-nr" :span="13">
                 <div class="nav-menu">
                     <a href="#" class="menu-name">我的美团</a>
                     <ul class="menu-list">
@@ -23,10 +23,10 @@
                         <li><a href="#">账户设置</a></li>
                     </ul>
                 </div>
-                <div class="nav-menu">
+                <div class="nav-menu phone-app">
                     <a href="#" class="menu-name">手机APP</a>
                 </div>
-                <div class="nav-menu">
+                <div class="nav-menu store-center">
                     <a href="#" class="menu-name">商家中心</a>
                     <ul class="menu-list">
                         <li><a href="#">商家中心</a></li>
@@ -46,47 +46,47 @@
                         <li><a href="#">规则评议院</a></li>
                     </ul>
                 </div>
-                <div class="nav-menu">
+                <div class="nav-menu web-more">
                     <a href="#" class="menu-name">网站导航</a>
                     <ul class="menu-list">
-                        <li>
+                        <li class="hotail">
                             <b class="tit">酒店旅游</b>
                             <dl>
-                                <dd>国际机票</dd>
-                                <dd>火车票</dd>
-                                <dd>榛果民宿</dd>
-                                <dd>国际机票</dd>
-                                <dd>火车票</dd>
-                                <dd>榛果民宿</dd>
-                                <dd>国际机票</dd>
-                                <dd>火车票</dd>
-                                <dd>榛果民宿</dd>
+                                <dd><a href="#">国际机票</a></dd>
+                                <dd><a href="#">火车票</a></dd>
+                                <dd><a href="#">榛果民宿</a></dd>
+                                <dd><a href="#">国际机票</a></dd>
+                                <dd><a href="#">火车票</a></dd>
+                                <dd><a href="#">榛果民宿</a></dd>
+                                <dd><a href="#">国际机票</a></dd>
+                                <dd><a href="#">火车票</a></dd>
+                                <dd><a href="#">榛果民宿</a></dd>
                             </dl>
                         </li>
-                        <li>
+                        <li class="food">
                             <b class="tit">吃美食</b>
                             <dl>
-                                <dd>烤鱼</dd>
-                                <dd>特色小吃</dd>
-                                <dd>烧烤</dd>
-                                <dd>自助餐</dd>
-                                <dd>烧烤</dd>
-                                <dd>自助餐</dd>
+                                <dd><a href="#">烤鱼</a></dd>
+                                <dd><a href="#">特色小吃</a></dd>
+                                <dd><a href="#">烧烤</a></dd>
+                                <dd><a href="#">自助餐</a></dd>
+                                <dd><a href="#">烧烤</a></dd>
+                                <dd><a href="#">自助餐</a></dd>
                             </dl>
                         </li>
-                        <li>
+                        <li class="move">
                             <b class="tit">看电影</b>
                             <dl>
-                                <dd>热映电影</dd>
-                                <dd>热门影院</dd>
-                                <dd>热映电影口碑榜</dd>
-                                <dd>最受期待的电影</dd>
-                                <dd>国内票房榜</dd>
-                                <dd>北美票房榜</dd>
-                                <dd>电影排行榜</dd>
+                                <dd><a href="#">热映电影</a></dd>
+                                <dd><a href="#">热门影院</a></dd>
+                                <dd><a href="#">热映电影口碑榜</a></dd>
+                                <dd><a href="#">最受期待的电影</a></dd>
+                                <dd><a href="#">国内票房榜</a></dd>
+                                <dd><a href="#">北美票房榜</a></dd>
+                                <dd><a href="#">电影排行榜</a></dd>
                             </dl>
                         </li>
-                        <li>
+                        <li class="app">
                             <b class="tit">手机应用</b>
                             <dl>
                                 <dd><a href="#" class="el-icon-platform-eleme"></a></dd>

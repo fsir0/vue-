@@ -1,5 +1,21 @@
+.header-wrapper {
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        top: 0;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #eee;
+    }
+}
 .header-n {
-    padding: 5px 0;
+    width: 1190px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    margin: 0 auto;
     p,
     div {
         display: inline-block;
@@ -9,9 +25,6 @@
     }
     a {
         text-decoration: none;
-        &:hover {
-            color: #f80;
-        }
     }
     .header-nl {
         white-space: nowrap;
@@ -19,10 +32,16 @@
             margin-right: 5px;
         }
         .city-change {
+            height: 20px;
+            line-height: 20px;
             padding: 0 3px;
             background-color: #f4f4f4;
+            border-radius: 3px;
             border: 1px solid #efefef;
             cursor: pointer;
+            a:hover {
+                color: #f80;
+            }
         }
         .city-detail {
             margin-left: 5px;
@@ -47,7 +66,141 @@
         }
         .reg {
             margin-left: 5px;
+            a {
+                color: #999;
+                &:hover {
+                    color: #f80;
+                }
+            }
             cursor: pointer;
         }
     }
+    .header-nr {
+        white-space: nowrap;
+        text-align: right;
+        ul,
+        li,
+        dl,
+        dd {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            color: #999;
+            &:hover {
+                color: #f80;
+            }
+        }
+        .nav-menu {
+            position: relative;
+            width: 65px;
+            height: 100%;
+            text-align: center;
+            line-height: 40px;
+            .menu-list {
+                position: absolute;
+                box-sizing: border-box;
+                top: 99%;
+                left: -1px;
+                min-width: 70px;
+                padding: 0 8px;
+                display: none;
+                background-color: #fff;
+                border: 1px solid #eee;
+                box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.1);
+                z-index: 98;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #fff;
+                    top: -1px;
+                    left: 0;
+                }
+                li {
+                    line-height: 40px;
+                    a {
+                        display: inline-block;
+                        width: 100%;
+                    }
+                }
+            }
+            &:hover {
+                background: #fff;
+                border-radius: 3px;
+                box-shadow: 0 -2px 5px -2px rgba(0, 0, 0, 0.1);
+                .menu-name {
+                    color: #f80;
+                }
+                .menu-list {
+                    display: block;
+                }
+            }
+        }
+        .phone-app:hover {
+            background-color: inherit;
+            box-shadow: none;
+        }
+        .web-more .menu-list {
+            right: -1px;
+            left: auto;
+            padding-bottom: 25px;
+            li {
+                display: inline-block;
+                vertical-align: top;
+                margin: 0 40px;
+                .tit {
+                    display: inline-block;
+                    margin: 15px auto;
+                }
+                dl {
+                    width: 100%;
+                    white-space: normal;
+                    text-align: justify;
+                    line-height: 26px;
+                    dd {
+                        display: inline-block;
+                        text-align: center;
+                    }
+                }
+            }
+            .hotail {
+                width: 210px;
+                dl dd {
+                    width: calc(100% / 3);
+                }
+            }
+            .food {
+                width: 140px;
+                dl dd {
+                    width: 50%;
+                }
+            }
+            .move {
+                width: 90px;
+                dl dd {
+                    width: 100%;
+                }
+            }
+            .app {
+                width: 400px;
+                dl dd {
+                    display: inline-block;
+                    width: 60px;
+                    height: 60px;
+                    margin: 0 10px;
+                    white-space: nowrap;
+                    a {
+                        font-size: 60px;
+                    }
+                }
+            }
+        }
+    }
+}
+.header-s {
+    width: 1190px;
+    margin: 0 auto;
 }
