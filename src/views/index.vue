@@ -1,7 +1,7 @@
 <template>
     <div class="index">
         <el-container>
-            <el-header>
+            <el-header style="height: auto;">
                 <my-header />
             </el-header>
             <el-main>main</el-main>

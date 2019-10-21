@@ -100,7 +100,49 @@
                 </div>
             </el-col>
         </el-row>
-        <el-row class="header-s">search</el-row>
+        <el-row class="header-s">
+            <!-- <div class="top-logo">
+                <i class="el-icon-platform-eleme"></i>
+            </div>
+            <div class="search-wrapper">
+                <div class="input-area">
+
+                </div>
+                <div class="hot-service"></div>
+            </div> -->
+            <el-col class="top-logo" :span="6">
+                <i class="el-icon-platform-eleme"></i>
+            </el-col>
+            <el-col class="search-wrapper" :span="12">
+                <el-row class="input-area">
+                    <el-col :span="20">
+                        <el-input
+                            placeholder="搜索商家或地点"
+                            prefix-icon="el-icon-search"
+                            v-model="navSearch"
+                            @input="changeInput"
+                        />
+                        <div class="input-advice">
+                            <h5 class="hot-tit">热门搜索</h5>
+                            
+                        </div>
+                    </el-col>
+                    <el-col :span="4">
+                        <el-button class="search-btn" type="primary" icon="el-icon-search"/>
+                    </el-col>
+                </el-row>
+                <el-row class="hot-service">
+                    <ul>
+                        <li><a href="#">苏宁影城</a></li>
+                        <li><a href="#">韩盛炭火自主烧烤</a></li>
+                        <li><a href="#">金逸影城</a></li>
+                        <li><a href="#">汉唐水汇</a></li>
+                        <li><a href="#">全盛海鲜烤肉自助</a></li>
+                        <li><a href="#">千山风景名胜区</a></li>
+                    </ul>
+                </el-row>
+            </el-col>
+        </el-row>
     </div>
 </template>
 <script src="./header.js"></script>
