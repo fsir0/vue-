@@ -124,12 +124,15 @@ export default {
             this.$router.push({ path: '/' })
         },
         elTableClick(prop) {
+            // eslint-disable-next-line no-console
             console.log(prop)
         },
         handleCurrentChange(page) {
+            // eslint-disable-next-line no-console
             console.log(page)
         },
         handleSizeChange(pageSize) {
+            // eslint-disable-next-line no-console
             console.log(pageSize)
         }
     },

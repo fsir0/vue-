@@ -57,7 +57,9 @@
 				"error",
 				"single"
 			],
-			"space-before-function-paren": 0
+			"space-before-function-paren": 0,
+			"no-console": "error",
+			"no-debugger": "error"
 		},
 		"parserOptions": {
 			"parser": "babel-eslint"
