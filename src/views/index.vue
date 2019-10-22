@@ -4,7 +4,9 @@
             <el-header style="height: auto;">
                 <my-header />
             </el-header>
-            <el-main>main</el-main>
+            <el-main>
+                <my-nav />
+            </el-main>
             <el-footer style="height: auto;">
                 <my-footer />
             </el-footer>
@@ -14,8 +16,9 @@
 
 <script>
 import { elContainer, elHeader, elMain } from 'element-ui'
-import myHeader from '../components/index/header/header.vue'
+import myHeader from '@/components/index/header/header.vue'
 import myFooter from '@/components/index/footer/footer.vue'
+import myNav from '@/components/index/nav/nav.vue'
 export default {
     name: 'index',
     component: {
@@ -25,7 +28,8 @@ export default {
     },
     components: {
         myHeader,
-        myFooter
+        myFooter,
+        myNav
     }
 }
 </script>
