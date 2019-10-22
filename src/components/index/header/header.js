@@ -23,6 +23,7 @@ export default {
     },
     methods: {
         changeInput(val) {
+            // eslint-disable-next-line no-console
             console.log(val)
             // do somethings
         },
