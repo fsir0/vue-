@@ -1,15 +1,19 @@
 * {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    color: #2c3e50;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 body {
     margin: 0;
     padding: 0;
+    color: #444;
 }
-.el-container .el-header {
-    padding: 0;
+.el-container {
+    .el-header,
+    .el-main,
+    .el-footer {
+        padding: 0;
+    }
 }
 // 加载中的遮罩层
 .app-loading {

@@ -9,13 +9,28 @@ export default {
     },
     data() {
         return {
-            navSearch: ''
+            navSearch: '',
+            focusSearch: false
+        }
+    },
+    computed: {
+        inputHot() {
+            return !!(this.focusSearch && !this.navSearch)
+        },
+        inputAdvice() {
+            return !!(this.focusSearch && this.navSearch)
         }
     },
     methods: {
         changeInput(val) {
             console.log(val)
             // do somethings
+        },
+        focusInput() {
+            this.focusSearch = true
+        },
+        bourInput() {
+            setTimeout(() => { this.focusSearch = false }, 100)
         }
     }
 }

@@ -5,6 +5,7 @@
                 <my-header />
             </el-header>
             <el-main>main</el-main>
+            <el-footer style="height: auto;">footer</el-footer>
         </el-container>
     </div>
 </template>
