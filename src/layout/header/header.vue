@@ -10,8 +10,8 @@
                     <router-link to="/">大厂回族自治县</router-link>
                     <router-link to="/">廊坊</router-link>]
                 </p>
-                <p class="login"><router-link to="/">立即登录</router-link></p>
-                <p class="reg"><router-link to="/">注册</router-link></p>
+                <p class="login"><router-link to="/login">立即登录</router-link></p>
+                <p class="reg"><router-link to="/regin">注册</router-link></p>
             </el-col>
             <el-col class="header-nr" :span="13">
                 <div class="nav-menu">

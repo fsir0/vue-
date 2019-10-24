@@ -1,7 +1,5 @@
 <template>
-    <div>
-        result page!!!
-    </div>
+    <div>welecome to reg page!</div>
 </template>
 <script>
 export default {}

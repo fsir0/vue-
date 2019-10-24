@@ -1,15 +1,8 @@
 <template>
-  <div>
-
-  </div>
+    <div>welecome to login page!!</div>
 </template>
-
 <script>
-export default {
-
-}
+export default {}
 </script>
-
 <style>
-
 </style>
