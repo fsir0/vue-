@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App'
+// import LayoutApp from './layout/layout.vue'
 // import VueAxios from 'vue-axios'
 // import axios from 'axios'
 import store from './store/index'

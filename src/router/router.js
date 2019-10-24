@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/views/index.vue'
+import Layout from '@/layout/layout.vue'
 import Login from '@/views/login.vue'
 import Page1 from '@/views/Page1.vue'
+import Index from '@/views/index.vue'
+import Result from '@/views/result.vue'
 
 Vue.use(Router)
 
@@ -12,8 +14,21 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'index',
-            component: Index
+            name: 'home',
+            redirect: '/index',
+            component: Layout,
+            children: [
+                {
+                    path: '/index',
+                    name: 'index',
+                    component: Index
+                },
+                {
+                    path: '/result',
+                    name: 'result',
+                    component: Result
+                }
+            ]
         },
         {
             path: '/login',
