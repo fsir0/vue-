@@ -1,7 +1,12 @@
 import commonApi from '@/api/common.js'
 const state = {
     position: {},
-    headerNav: {}
+    headerNav: {
+        mymt: {},
+        businesscenter: {},
+        mtrules: {},
+        webnav: {}
+    }
 }
 const mutations = {
     // 更新position数据

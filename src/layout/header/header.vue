@@ -13,35 +13,24 @@
             </el-col>
             <el-col class="header-nr" :span="13">
                 <div class="nav-menu">
-                    <router-link to="/" class="menu-name">我的美团</router-link>
+                    <router-link to="/" class="menu-name">{{headerNav.mymt.name}}</router-link>
                     <ul class="menu-list">
-                        <li><router-link to="/">我的订单</router-link></li>
-                        <li><router-link to="/">我的收藏</router-link></li>
-                        <li><router-link to="/">抵用券</router-link></li>
-                        <li><router-link to="/">账户设置</router-link></li>
+                        <li v-for="(ele, inx) in headerNav.mymt.list" :key="inx"><router-link :to="ele.link">{{ele.name}}</router-link></li>
                     </ul>
                 </div>
                 <div class="nav-menu phone-app">
                     <router-link to="/" class="menu-name">手机APP</router-link>
                 </div>
                 <div class="nav-menu store-center">
-                    <router-link to="/" class="menu-name">商家中心</router-link>
+                    <router-link to="/" class="menu-name">{{headerNav.businesscenter.name}}</router-link>
                     <ul class="menu-list">
-                        <li><router-link to="/">商家中心</router-link></li>
-                        <li><router-link to="/">美团只能收银</router-link></li>
-                        <li><router-link to="/">我想合作</router-link></li>
-                        <li><router-link to="/">手机免费开店</router-link></li>
-                        <li><router-link to="/">餐饮代理招募</router-link></li>
-                        <li><router-link to="/">商家开票申请</router-link></li>
-                        <li><router-link to="/">免费合作美团排队</router-link></li>
+                        <li v-for="(ele, inx) in headerNav.businesscenter.list" :key="inx"><router-link :to="ele.link">{{ele.name}}</router-link></li>
                     </ul>
                 </div>
                 <div class="nav-menu">
-                    <router-link to="/" class="menu-name">美团规则</router-link>
+                    <router-link to="/" class="menu-name">{{headerNav.mtrules.name}}</router-link>
                     <ul class="menu-list">
-                        <li><router-link to="/">规则中心</router-link></li>
-                        <li><router-link to="/">规则目录</router-link></li>
-                        <li><router-link to="/">规则评议院</router-link></li>
+                        <li v-for="(ele, inx) in headerNav.mtrules.list" :key="inx"><router-link :to="ele.link">{{ele.name}}</router-link></li>
                     </ul>
                 </div>
                 <div class="nav-menu web-more">
