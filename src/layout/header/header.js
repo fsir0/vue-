@@ -1,4 +1,5 @@
 import { elRow, elCol, elInput, elButton } from 'element-ui'
+import { mapState } from 'vuex'
 export default {
     name: 'my-header',
     component: {
@@ -7,6 +8,11 @@ export default {
         elInput,
         elButton
     },
+    mounted() {
+        const { dispatch } = this.$store
+        dispatch('getPosition', { home: 'test' })
+        dispatch('getHeaderNav', { home: 'test' })
+    },
     data() {
         return {
             navSearch: '',
@@ -14,6 +20,10 @@ export default {
         }
     },
     computed: {
+        ...mapState({
+            position: state => state.layout.position,
+            headerNav: state => state.layout.headerNav
+        }),
         inputHot() {
             return !!(this.focusSearch && !this.navSearch)
         },

@@ -2,13 +2,11 @@
     <div class="header-wrapper">
         <el-row class="header-n">
             <el-col class="header-nl" :span="11">
-                <i class="el-icon-location-outline"></i>
-                <p class="city-name">北京</p>
+                <i class="el-icon-location-outline"/>
+                <p class="city-name">{{position.name}}</p>
                 <p class="city-change"><router-link to="/">切换城市</router-link></p>
-                <p class="city-detail">[
-                    <router-link to="/">门头沟区</router-link>
-                    <router-link to="/">大厂回族自治县</router-link>
-                    <router-link to="/">廊坊</router-link>]
+                <p class="city-detail">
+                    [<router-link v-for="(ele, inx) in position.list" :to="ele.link" :key="inx">{{ele.name}}</router-link>]
                 </p>
                 <p class="login"><router-link to="/login">立即登录</router-link></p>
                 <p class="reg"><router-link to="/regin">注册</router-link></p>

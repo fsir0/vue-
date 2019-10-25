@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 // 引入定义的state
+import layout from './modules/layout'
 import stateTest from './modules/stateTest'
 
 Vue.use(Vuex)
@@ -15,6 +16,7 @@ export default new Vuex.Store({
         }
     },
     modules: {
+        layout,
         stateTest
     }
 })
