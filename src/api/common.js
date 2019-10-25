@@ -122,5 +122,67 @@ export default {
                     }
                 })
             }).catch(err)
+    },
+    // 获取搜索热词服务
+    getHotService(params, suc, err) {
+        Axios.get('http://jsonplaceholder.typicode.com/users', { params })
+            .then(() => {
+                suc({
+                    status: 200,
+                    name: '热词搜索',
+                    list: [
+                        { name: '北京欢乐谷', link: '/' },
+                        { name: '古北水镇', link: '/' },
+                        { name: '八达岭长城', link: '/' },
+                        { name: '米粑粑', link: '/' },
+                        { name: '北京动物园', link: '/' },
+                        { name: '中国国家博物馆', link: '/' },
+                        { name: '圆明园', link: '/' },
+                        { name: '赛纳河酒店', link: '/' }
+                    ]
+                })
+            }).catch(err)
+    },
+    getNearlyHotService(params, suc, err) {
+        Axios.get('http://jsonplaceholder.typicode.com/users', { params })
+            .then(setTimeout(() => {
+                let res = { status: -1 }
+                if (params && /[美食|美|食]/.test(params.keyword)) {
+                    res = {
+                        status: 200,
+                        list: [
+                            { name: '美食', link: '/' },
+                            { name: '美食广场', link: '/' },
+                            { name: '美食 三里屯', link: '/' },
+                            { name: '美食 王府井', link: '/' },
+                            { name: '美食 西单', link: '/' },
+                            { name: '美食 大悦城', link: '/' },
+                            { name: '美食 五道口', link: '/' },
+                            { name: '美食 南锣鼓巷站', link: '/' },
+                            { name: '美食 双井', link: '/' },
+                            { name: '美食 悠唐生活广场', link: '/' }
+                        ]
+                    }
+                } else if (params && /[电影|电|影]/.test(params.keyword)) {
+                    res = {
+                        status: 200,
+                        list: [
+                            { name: '电影', link: '/' },
+                            { name: '电影票', link: '/' },
+                            { name: '电影院 情侣', link: '/' },
+                            { name: '电影主题酒店', link: '/' },
+                            { name: '电影院 私人', link: '/' },
+                            { name: '电影院 昌平区', link: '/' },
+                            { name: '电影院 海淀区', link: '/' },
+                            { name: '电影院 顺义区', link: '/' },
+                            { name: '电影院 房山区', link: '/' },
+                            { name: '电影院 大兴区', link: '/' }
+                        ]
+                    }
+                } else {
+                    res = { status: 200, list: [] }
+                }
+                suc(res)
+            }, 200)).catch(err)
     }
 }

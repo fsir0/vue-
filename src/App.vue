@@ -8,12 +8,7 @@
         <!-- <div v-if="cloadingFlag" class="app-loading"></div> -->
         <div v-if="cloadingFlag" class="my-loading all-loading">
             <div class="my-loading-box">
-                <div class="loading-bol"></div>
-                <div class="loading-bol"></div>
-                <div class="loading-bol"></div>
-                <div class="loading-bol"></div>
-                <div class="loading-bol"></div>
-                <div class="loading-bol"></div>
+                <div v-for="inx in 6" class="loading-bol" :key="inx"></div>
             </div>
         </div>
     </div>
