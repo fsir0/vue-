@@ -184,5 +184,154 @@ export default {
                 }
                 suc(res)
             }, 200)).catch(err)
+    },
+    // 获取底部导航数据
+    getFooterNav(params, suc, err) {
+        Axios.get('http://jsonplaceholder.typicode.com/users', { params })
+            .then(suc({
+                status: 200,
+                list: [
+                    {
+                        name: 'list1',
+                        list: [
+                            {
+                                name: '用户帮助',
+                                list: [
+                                    { name: '申请退款', link: '/' },
+                                    { name: '查看美团券密码', link: '/' },
+                                    { name: '常见问题', link: '/' },
+                                    { name: '用户协议', link: '/' },
+                                    { name: '隐私政策', link: '/' },
+                                    { name: '反诈骗公告', link: '/' },
+                                    { name: '消费者权益保障', link: '/' }
+                                ]
+                            }, {
+                                name: '美团服务',
+                                list: [
+                                    { name: '美团外卖', link: '/' },
+                                    { name: '美团酒店', link: '/' },
+                                    { name: '猫眼电影', link: '/' },
+                                    { name: '美团配送', link: '/' },
+                                    { name: '美团云', link: '/' },
+                                    { name: '大众点评', link: '/' },
+                                    { name: '榛果民宿', link: '/' },
+                                    { name: '无人配送', link: '/' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: 'list2',
+                        list: [
+                            {
+                                name: '商家合作',
+                                list: [
+                                    { name: '美食商家入驻(非外卖)', link: '/' },
+                                    { name: '美团外卖开店申请', link: '/' },
+                                    { name: '美团收银官网', link: '/' },
+                                    { name: '外卖配送加盟申请', link: '/' },
+                                    { name: '美团点评餐饮学院', link: '/' },
+                                    { name: '酒店商家入驻', link: '/' },
+                                    { name: '境内度假商家入驻', link: '/' },
+                                    { name: '综合商家入驻', link: '/' },
+                                    { name: '榛果民宿房东商家入驻', link: '/' },
+                                    { name: '商家开票申请', link: '/' },
+                                    { name: '美团点评智能收银机', link: '/' },
+                                    { name: '美团点评餐饮开放平台', link: '/' },
+                                    { name: '美团点评收单', link: '/' },
+                                    { name: '免费使用美团排队', link: '/' },
+                                    { name: '快驴进货商家合作', link: '/' },
+                                    { name: '美团闪购商家入驻', link: '/' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: 'list3',
+                        list: [
+                            {
+                                name: '代理商加盟',
+                                list: [
+                                    { name: '美团外卖代理商招募', link: '/' },
+                                    { name: '到店餐饮代理商招募', link: '/' },
+                                    { name: '非餐饮代理商招募', link: '/' },
+                                    { name: '美团联盟', link: '/' },
+                                    { name: '美团收银招募线上分销商', link: '/' },
+                                    { name: '美团点评5S服务商招募', link: '/' },
+                                    { name: '美团收单渠道代理商招募', link: '/' }
+                                ]
+                            },
+                            {
+                                name: '美团规则',
+                                list: [
+                                    { name: '规则中心', link: '/' },
+                                    { name: '规则目录', link: '/' },
+                                    { name: '规则评议院', link: '/' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: 'list4',
+                        list: [
+                            {
+                                name: '关注美团',
+                                list: [
+                                    { name: '美团新浪微博', link: '/' }
+                                ]
+                            },
+                            {
+                                name: '公司信息',
+                                list: [
+                                    { name: '关于我们', link: '/' },
+                                    { name: '投资者关系', link: '/' },
+                                    { name: '加入我们', link: '/' },
+                                    { name: '商户诚信公约及管理办法', link: '/' },
+                                    { name: '保险经纪资质', link: '/' }
+                                ]
+                            },
+                            {
+                                name: '廉正举报',
+                                list: [
+                                    { name: '廉正邮箱', link: '/' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: 'list5',
+                        list: [
+                            {
+                                name: '消费者服务热线',
+                                list: [
+                                    { label: '外卖消费者：', name: '123456', link: '/' },
+                                    { label: '外卖消费者：', name: '123457', link: '/' },
+                                    { label: '外卖消费者：', name: '123458', link: '/' }
+                                ]
+                            },
+                            {
+                                name: '商家服务热线',
+                                list: [
+                                    { label: '外卖&餐饮商家：', name: '123456', link: '/' },
+                                    { label: '休闲娱乐、丽人、ktv、教育、结婚、亲子、家装等商家：', name: '123466', link: '/' }
+                                ]
+                            },
+                            {
+                                name: '举报投诉热线',
+                                list: [
+                                    { label: '违法和不良信息举报电话：', name: '123456', link: '/' },
+                                    { label: '举报邮箱', name: 'tousujubao@kenghuo.com', link: '/' }
+                                ]
+                            },
+                            {
+                                name: 'other',
+                                list: [
+                                    { name: '商家自助入驻美团入口', link: '/' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            })).catch(err)
     }
 }

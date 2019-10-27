@@ -10,7 +10,16 @@ const state = {
     },
     hotService: { list: [{}] },
     nearlyHotService: { list: [{}] },
-    nearlyFlag: false
+    nearlyFlag: false,
+    footerNav: {
+        list: [
+            { list: [{ list: [{}] }] },
+            { list: [{ list: [{}] }] },
+            { list: [{ list: [{}] }] },
+            { list: [{ list: [{}] }] },
+            { list: [{ list: [{}] }] }
+        ]
+    }
 }
 const mutations = {
     // 更新position数据
@@ -32,6 +41,10 @@ const mutations = {
     // 更新词条搜索加载中flag
     uNearlyFlag(state, flag) {
         state.nearlyFlag = flag
+    },
+    // 更新footerNav
+    uFooterNav(state, data) {
+        state.footerNav = data
     }
 }
 // 定义actions，采用dispatch处罚actions
@@ -97,6 +110,19 @@ const actions = {
                 console.log(err)
             })
         }, 500)
+    },
+    getFooterNav({ commit }, query) {
+        commit('uLoadingFlag', true)
+        commonApi.getFooterNav(query, res => {
+            commit('uLoadingFlag', false)
+            if (res.status === 200) {
+                commit('uFooterNav', res)
+            }
+        }, err => {
+            commit('uLoadingFlag', false)
+            // eslint-disable-next-line no-console
+            console.log(err)
+        })
     }
 }
 export default { state, mutations, actions }
