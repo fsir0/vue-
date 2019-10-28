@@ -10,7 +10,7 @@ import Page1 from '@/views/Page1.vue'
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
+    mode: 'hash',
     base: process.env.BASE_URL,
     routes: [
         {
