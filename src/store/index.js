@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 // 引入定义的state
 import layout from './modules/layout'
+import index from './modules/index'
 import stateTest from './modules/stateTest'
 
 Vue.use(Vuex)
@@ -28,6 +29,7 @@ export default new Vuex.Store({
     },
     modules: {
         layout,
+        index,
         stateTest
     }
 })
