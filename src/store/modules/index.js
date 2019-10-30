@@ -1,11 +1,24 @@
 import indexApi from '@/api/index.js'
 const state = {
-    navData: {}
+    navData: {
+        data: {
+            list: [
+                {
+                    nameList: [{}],
+                    list: [
+                        {
+                            list: [{}]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }
 const mutations = {
     // 更新navData
     uNavData(state, data) {
-        this.state = data
+        state.navData = data
     }
 }
 const actions = {
@@ -14,7 +27,7 @@ const actions = {
         indexApi.getNavData(query, res => {
             commit('uLoadingFlag', false)
             if (res.status === 200) {
-                commit('uNavData', res.data)
+                commit('uNavData', res)
             }
         }, err => {
             commit('uLoadingFlag', false)

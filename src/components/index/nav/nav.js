@@ -1,9 +1,17 @@
-import { elRow, elCol } from 'element-ui'
+import { elRow, elCol, elCarousel, elCarouselItem, elButton } from 'element-ui'
+import { mapState } from 'vuex'
 export default {
     name: 'my-nav',
     component: {
         elRow,
-        elCol
+        elCol,
+        elCarousel,
+        elCarouselItem,
+        elButton
+    },
+    mounted() {
+        const { dispatch } = this.$store
+        dispatch('getNavData', { home: 'test' })
     },
     data() {
         return {
@@ -14,11 +22,11 @@ export default {
         }
     },
     computed: {
+        ...mapState({
+            firNavData: state => state.index.navData.data
+        }),
         secNavData() {
-            // [{ name: '', link: '', list: [{ name: '', link: '' }] }]
-            // eslint-disable-next-line no-console
-            console.log(this.$store.state)
-            return this.showInx
+            return this.$store.state.index.navData.data.list[this.showInx || 0].list
         }
     },
     methods: {
@@ -28,7 +36,7 @@ export default {
                 clearTimeout(this.updateSecNavTimer)
                 this.updateSecNavTimer = setTimeout(() => {
                     this.showInx = inx
-                }, 100)
+                }, 50)
                 // 首次展示不需要防抖
             } else {
                 this.showInx = inx
@@ -42,7 +50,7 @@ export default {
             clearTimeout(this.clearSecNavTimer)
             this.clearSecNavTimer = setTimeout(() => {
                 this.showSecNav = false
-            }, 100)
+            }, 50)
         },
         enterSecNav() {
             // 进入二级导航框时取消清除二级导航框

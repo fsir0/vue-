@@ -10,9 +10,8 @@ export default {
                         list: [
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '美食', link: '/' }
+                                    { name: '美食', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -53,9 +52,23 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '酒店', link: '/' }
+                                    { name: '外卖', isHot: false, link: '/' }
+                                ],
+                                list: [
+                                    {
+                                        name: '外卖',
+                                        link: '/',
+                                        list: [
+                                            { name: '美团外卖', link: '/' }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                imgUrl: '',
+                                nameList: [
+                                    { name: '酒店', isHot: true, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -72,9 +85,8 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '榛果民宿', link: '/' }
+                                    { name: '榛果民宿', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -110,9 +122,8 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '猫眼电影', link: '/' }
+                                    { name: '猫眼电影', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -135,10 +146,9 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '机票', link: '/' },
-                                    { name: '火车票', link: '/' }
+                                    { name: '机票', isHot: false, link: '/' },
+                                    { name: '火车票', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -160,10 +170,9 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '休闲娱乐', link: '/' },
-                                    { name: 'KTV', link: '/' }
+                                    { name: '休闲娱乐', isHot: false, link: '/' },
+                                    { name: 'KTV', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -199,9 +208,8 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '生活服务', link: '/' }
+                                    { name: '生活服务', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -231,11 +239,10 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '丽人', link: '/' },
-                                    { name: '美发', link: '/' },
-                                    { name: '医学美容', link: '/' }
+                                    { name: '丽人', isHot: false, link: '/' },
+                                    { name: '美发', isHot: false, link: '/' },
+                                    { name: '医学美容', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -259,11 +266,10 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '结婚', link: '/' },
-                                    { name: '婚纱摄影', link: '/' },
-                                    { name: '婚宴', link: '/' }
+                                    { name: '结婚', isHot: false, link: '/' },
+                                    { name: '婚纱摄影', isHot: false, link: '/' },
+                                    { name: '婚宴', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -290,11 +296,10 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '亲子', link: '/' },
-                                    { name: '儿童乐园', link: '/' },
-                                    { name: '幼教', link: '/' }
+                                    { name: '亲子', isHot: false, link: '/' },
+                                    { name: '儿童乐园', isHot: false, link: '/' },
+                                    { name: '幼教', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -346,10 +351,9 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '运动健身', link: '/' },
-                                    { name: '健身中心', link: '/' }
+                                    { name: '运动健身', isHot: false, link: '/' },
+                                    { name: '健身中心', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -379,11 +383,10 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '家装', link: '/' },
-                                    { name: '建材', link: '/' },
-                                    { name: '家居', link: '/' }
+                                    { name: '家装', isHot: false, link: '/' },
+                                    { name: '建材', isHot: false, link: '/' },
+                                    { name: '家居', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -439,10 +442,9 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '学习培新', link: '/' },
-                                    { name: '音乐培训', link: '/' }
+                                    { name: '学习培新', isHot: false, link: '/' },
+                                    { name: '音乐培训', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -501,11 +503,10 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '医疗健康', link: '/' },
-                                    { name: '宠物', link: '/' },
-                                    { name: '爱车', link: '/' }
+                                    { name: '医疗健康', isHot: false, link: '/' },
+                                    { name: '宠物', isHot: false, link: '/' },
+                                    { name: '爱车', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
@@ -557,10 +558,9 @@ export default {
                             },
                             {
                                 imgUrl: '',
-                                isHot: false,
                                 nameList: [
-                                    { name: '酒吧', link: '/' },
-                                    { name: '密室逃脱', link: '/' }
+                                    { name: '酒吧', isHot: false, link: '/' },
+                                    { name: '密室逃脱', isHot: false, link: '/' }
                                 ],
                                 list: [
                                     {
