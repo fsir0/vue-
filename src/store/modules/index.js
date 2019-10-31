@@ -14,7 +14,10 @@ const state = {
             ]
         }
     },
-    floorData: {}
+    floorData: {
+        navList: [{}],
+        contentList: [{ cardList: [{}] }]
+    }
 }
 const mutations = {
     // 更新navData

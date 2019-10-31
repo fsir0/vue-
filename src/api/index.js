@@ -593,6 +593,320 @@ export default {
     // 获取nav数据 url：https://as.meituan.com/ptapi/getScenesList?theme=quality&tab=all&ci=151&limit=12
     getFloorData(params, suc, err) {
         Axios.get('https://as.meituan.com/ptapi/getScenesList', { params })
-            .then(suc).catch(err)
+            .then(res => {
+                if (res) {
+                    suc(res)
+                } else {
+                    suc({
+                        status: 200,
+                        data: {
+                            navList: [
+                                { name: '全部' },
+                                { name: '约会聚餐' },
+                                { name: '丽人spa' },
+                                { name: '电影演出' },
+                                { name: '品质出游' }
+                            ],
+                            contentList: [
+                                {
+                                    inx: '0',
+                                    cardList: [
+                                        {
+                                            imgUrl: 'http://p1.meituan.net/w.h/mogu/a3c70845bffd26ce9df01de67c1971e0735080.jpg',
+                                            title: '内蒙古大厦·玛那自助西餐厅',
+                                            subTitle: '晚市单人自助套餐',
+                                            position: '王府井/东单',
+                                            activePrice: '188',
+                                            originPrice: '门市价¥218',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: 'http://p1.meituan.net/w.h/poi/697cf6a6e1785559a7bb31d0bf03c649110592.jpg',
+                                            title: '北京饭店诺金东33餐厅',
+                                            subTitle: '桌餐C，建议8-10人使用，可免费使用包间',
+                                            position: '王府井/东单',
+                                            activePrice: '5000',
+                                            originPrice: '门市价¥5954',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: 'https://img.meituan.net/w.h/msmerchant/42b9a65b88afab37efd7c2145c8cabda95091.jpg',
+                                            title: 'théATRE 茶聚场（王府中環店）',
+                                            subTitle: '蛋糕2选1,约6英寸，圆形',
+                                            position: '王府井/东单',
+                                            activePrice: '298',
+                                            originPrice: '门市价¥330',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: 'http://p0.meituan.net/w.h/bbia/ac56e0c35cd00ca55903c253498a673f117699.jpg',
+                                            title: '牛叨（崇文门店）',
+                                            subTitle: '牛排经典单人餐',
+                                            position: '崇文门新世界',
+                                            activePrice: '128',
+                                            originPrice: '门市价¥142',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: 'https://img.meituan.net/w.h/msmerchant/913c7d2286d407e79a06bd77514b22df176709.jpg',
+                                            title: '大教堂蛋糕 Kathedral（王府中环店）',
+                                            subTitle: '蛋糕2选1,约6寸，圆形',
+                                            position: '王府井/东单',
+                                            activePrice: '318',
+                                            originPrice: '门市价¥398',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: 'https://img.meituan.net/w.h/msmerchant/3070b16d9d5909693eaff72c1438210d1055965.png',
+                                            title: '京城一锅羊蝎子',
+                                            subTitle: '精品8人餐，提供免费WiFi',
+                                            position: '崇文门新世界',
+                                            activePrice: '617',
+                                            originPrice: '门市价¥772',
+                                            priceSuffix: ''
+                                        }
+                                    ]
+                                },
+                                {
+                                    inx: '1',
+                                    cardList: [
+                                        {
+                                            imgUrl: 'http://p1.meituan.net/w.h/poi/697cf6a6e1785559a7bb31d0bf03c649110592.jpg',
+                                            title: '北京饭店诺金东33餐厅',
+                                            subTitle: '桌餐C，建议8-10人使用，可免费使用包间',
+                                            position: '王府井/东单',
+                                            activePrice: '5000',
+                                            originPrice: '门市价¥5954',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: 'https://img.meituan.net/w.h/msmerchant/7776f22c9d6fd0413b7e52441b3f74557386836.jpg',
+                                            title: '中央电视塔空中观景旋转餐厅',
+                                            subTitle: '午餐+观光',
+                                            position: '航天桥',
+                                            activePrice: '248',
+                                            originPrice: '门市价¥268',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: 'https://img.meituan.net/w.h/msmerchant/639a45dfc021a74e4c363e62488ae940548259.jpg',
+                                            title: '脑子加工厂（前门大栅栏店）',
+                                            subTitle: '经典双人餐，提供免费WiFi',
+                                            position: '天安门广场',
+                                            activePrice: '152',
+                                            originPrice: '门市价¥202.6',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: 'https://img.meituan.net/w.h/msmerchant/05bb74b46e977a1947d27e9cb48ddcd32391357.jpg',
+                                            title: '席上喳喳',
+                                            subTitle: '工作日双人餐，提供免费WiFi',
+                                            position: '王府井/前门',
+                                            activePrice: '198',
+                                            originPrice: '门市价¥310',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: 'https://img.meituan.net/w.h/msmerchant/16baae88c5d8d56af8c9146811147c511422264.png',
+                                            title: '那年约火锅·烤场（回龙观店）',
+                                            subTitle: '任性超级自助套餐',
+                                            position: '回龙观',
+                                            activePrice: '79.9',
+                                            originPrice: '门市价¥580',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: 'https://img.meituan.net/w.h/msmerchant/1f5b280c340fb5d74080ffaebb6ec76476229.jpg',
+                                            title: '杨记兴·臭鳜鱼（王府井店）',
+                                            subTitle: '经典四人餐，提供免费WiFi',
+                                            position: '王府井/东单',
+                                            activePrice: '388',
+                                            originPrice: '门市价¥544',
+                                            priceSuffix: ''
+                                        }
+                                    ]
+                                },
+                                {
+                                    inx: '2',
+                                    cardList: [
+                                        {
+                                            imgUrl: '//p1.meituan.net/merchantpic/19d7ad2f8e4753a50442226610af0074506930.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D2%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
+                                            title: '米娜造型（嘉德公寓店）',
+                                            subTitle: '米娜造型（嘉德公寓店）',
+                                            position: '五棵松',
+                                            activePrice: '',
+                                            originPrice: '',
+                                            priceSuffix: ''
+                                        },
+                                        {
+                                            imgUrl: '//p0.meituan.net/wedding/7f274360936a5233902be9afe5054eef4134276.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D2%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
+                                            title: '谦亨短发设计（新世界店）',
+                                            subTitle: '谦亨短发设计（新世界店）',
+                                            position: '崇文门新世界',
+                                            activePrice: '197',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        },
+                                        {
+                                            imgUrl: '//p0.meituan.net/merchantpic/c4cd218873953a976d9f1c485de2190718522.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D2%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
+                                            title: 'EBI发妆店（崇文门店）',
+                                            subTitle: 'EBI发妆店（崇文门店）',
+                                            position: '崇文门新世界',
+                                            activePrice: '422',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        },
+                                        {
+                                            imgUrl: '//p0.meituan.net/dpmerchantpic/eff3f19bde10e81a76cba12ed81edb66221107.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D2%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
+                                            title: 'Aso Beauty美甲美睫皮肤管理（崇文门店）',
+                                            subTitle: 'Aso Beauty美甲美睫皮肤管理（崇文门店）',
+                                            position: '崇文门新世界',
+                                            activePrice: '196',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        },
+                                        {
+                                            imgUrl: '//p0.meituan.net/wedding/166aad5b3daa18080fd175895ac70460462275.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D2%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
+                                            title: '只劫财不劫色美甲美睫工作室',
+                                            subTitle: '只劫财不劫色美甲美睫工作室',
+                                            position: '崇文门新世界',
+                                            activePrice: '85',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        },
+                                        {
+                                            imgUrl: '//p0.meituan.net/wedding/d5ea26ce7fb499ca3e53b075d8a08bb3243586.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D2%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20',
+                                            title: 'Nail Raven日式美甲美睫（东方广场店）',
+                                            subTitle: 'Nail Raven日式美甲美睫（东方广场店）',
+                                            position: '王府井/东单',
+                                            activePrice: '308',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        }
+                                    ]
+                                },
+                                {
+                                    inx: '3',
+                                    cardList: [
+                                        {
+                                            imgUrl: 'http://p0.meituan.net/deal/201003/wanda.jpg',
+                                            title: '万达影城（CBD店）',
+                                            subTitle: '免押金,可停车,儿童票,IMAX厅,杜比全景声厅,60帧厅,RealD 6FL厅',
+                                            position: '',
+                                            activePrice: '45',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        },
+                                        {
+                                            imgUrl: 'http://p1.meituan.net/poi/ac80e1c0c2eec53930c818da24a0f1e768466.jpg',
+                                            title: '英嘉星美影城（原星美金源IMAX店）',
+                                            subTitle: '免押金,儿童票,IMAX厅,4D厅,巨幕厅,RealD 6FL厅',
+                                            position: '',
+                                            activePrice: '24',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        },
+                                        {
+                                            imgUrl: 'http://p1.meituan.net/deal/__23449013__2674468.jpg',
+                                            title: '中影国际影城小西天中国巨幕头等舱',
+                                            subTitle: '免押金,可停车,有情侣座,儿童票,有WIFI,中国巨幕厅,巨幕厅',
+                                            position: '',
+                                            activePrice: '39',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        },
+                                        {
+                                            imgUrl: 'http://p1.meituan.net/deal/__31137021__2342842.jpg',
+                                            title: '百老汇影城（国瑞购物中心店）',
+                                            subTitle: '免押金,可停车,儿童票,双机3D厅,RealD厅,巨幕厅,60帧厅',
+                                            position: '',
+                                            activePrice: '28.9',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        },
+                                        {
+                                            imgUrl: 'http://p0.meituan.net/deal/__29661209__6853522.jpg',
+                                            title: '中影国际影城（丰台千禧街店）',
+                                            subTitle: '免押金,可停车,有情侣座,儿童票,中国巨幕厅,60帧厅,RealD 6FL厅',
+                                            position: '',
+                                            activePrice: '31.9',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        },
+                                        {
+                                            imgUrl: 'http://p0.meituan.net/poi/0436106d5c1b04cd9b525f06231e86da140545.jpg',
+                                            title: '保利国际影城（绿地缤纷城店）',
+                                            subTitle: '免押金,可停车,有情侣座,儿童票,有WIFI,4D厅,RealD厅',
+                                            position: '',
+                                            activePrice: '28.9',
+                                            originPrice: '',
+                                            priceSuffix: '人均'
+                                        }
+                                    ]
+                                },
+                                {
+                                    inx: '4',
+                                    cardList: [
+                                        {
+                                            imgUrl: 'http://p1.meituan.net/w.h/tdchotel/8d2d8549f205d79fbc2319f65ac1ff821861291.png',
+                                            title: '北京三里屯通盈中心洲际酒店',
+                                            subTitle: '',
+                                            position: '',
+                                            activePrice: '2379',
+                                            originPrice: '',
+                                            priceSuffix: '起'
+                                        },
+                                        {
+                                            imgUrl: 'http://p0.meituan.net/w.h/tdchotel/b90641df1318d69a5592a46afc5908ff710821.png',
+                                            title: '北京维景国际大酒店',
+                                            subTitle: '',
+                                            position: '',
+                                            activePrice: '1569',
+                                            originPrice: '',
+                                            priceSuffix: '起'
+                                        },
+                                        {
+                                            imgUrl: 'http://p0.meituan.net/w.h/tdchotel/1747e5e250fb0ce26d19261bbec4c88e453877.jpg',
+                                            title: '向东方花园国际酒店',
+                                            subTitle: '',
+                                            position: '',
+                                            activePrice: '680',
+                                            originPrice: '',
+                                            priceSuffix: '起'
+                                        },
+                                        {
+                                            imgUrl: 'http://p0.meituan.net/w.h/tdchotel/db53eed65ed6d0dfb83699c6608a9ff5182551.jpg',
+                                            title: '日坛宾馆',
+                                            subTitle: '',
+                                            position: '',
+                                            activePrice: '697',
+                                            originPrice: '',
+                                            priceSuffix: '起'
+                                        },
+                                        {
+                                            imgUrl: 'http://p1.meituan.net/w.h/dnaimgdark/e5bb7737b2e3a0f84353bf9d5cce118d2788828.jpg',
+                                            title: '北京希尔顿酒店',
+                                            subTitle: '',
+                                            position: '',
+                                            activePrice: '1462',
+                                            originPrice: '',
+                                            priceSuffix: '起'
+                                        },
+                                        {
+                                            imgUrl: 'http://p0.meituan.net/w.h/dnaimgdark/07c40e67bc073d082f9d1c9d562432292881497.jpg',
+                                            title: '北京建国门CBD亚朵轻居酒店',
+                                            subTitle: '',
+                                            position: '',
+                                            activePrice: '661',
+                                            originPrice: '',
+                                            priceSuffix: '起'
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    })
+                }
+            }).catch(err)
     }
 }
