@@ -42,30 +42,50 @@
                     <div class="carousel-wrapper">
                         <el-carousel height="240px">
                             <el-carousel-item class="carousel-item-card">
-                                <router-link to="/">1</router-link>
+                                <router-link to="/">
+                                    <img v-lazy="'http://pic.netbian.com/uploads/allimg/191005/165356-15702656367a72.jpg'">
+                                </router-link>
                             </el-carousel-item>
                             <el-carousel-item class="carousel-item-card">
-                                <router-link to="/">2</router-link>
+                                <router-link to="/">
+                                    <img v-lazy="'http://pic.netbian.com/uploads/allimg/180222/231102-151931226201f1.jpg'">
+                                </router-link>
                             </el-carousel-item>
                             <el-carousel-item class="carousel-item-card">
-                                <router-link to="/">3</router-link>
+                                <router-link to="/">
+                                    <img v-lazy="'http://pic.netbian.com/uploads/allimg/190824/212516-15666531161ade.jpg'">
+                                </router-link>
                             </el-carousel-item>
                         </el-carousel>
                     </div>
                     <div class="adver-t">
-                        <router-link to="/">topadver</router-link>
+                        <router-link to="/">
+                            <img v-lazy="'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572513956896&di=a71ffa9bfd2ca3e9e46cb080b890f8c1&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20190129%2F097a6d0e385742ff90e9bac81a341894.jpeg'">
+                        </router-link>
                     </div>
                 </el-row>
                 <el-row class="content-card">
-                    <div class="adver-bl"><router-link to="/">bottom left</router-link></div>
-                    <div class="adver-bm"><router-link to="/">bottom middle</router-link></div>
-                    <div class="adver-br"><router-link to="/">bottom right</router-link></div>
+                    <div class="adver-bl">
+                        <router-link to="/">
+                            <img v-lazy="'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572513690611&di=2274f7ead01f1712d3b91d03c3387969&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201410%2F25%2F220832wlwzqq6ble9ql6rd.jpg'">
+                        </router-link>
+                    </div>
+                    <div class="adver-bm">
+                        <router-link to="/">
+                            <img v-lazy="'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572513899553&di=45de7120275a7d46ab2b70a94219a796&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fb77790459313edfacc99f1be8cec4980f86c72d9.jpg'">
+                        </router-link>
+                    </div>
+                    <div class="adver-br">
+                        <router-link to="/">
+                            <img v-lazy="'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572514050919&di=641ff396fbae8049e78716811b593642&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201508%2F26%2F20150826110740_PYRCi.thumb.700_0.jpeg'">
+                        </router-link>
+                    </div>
                 </el-row>
             </el-col>
             <el-col :span="5" class="user">
                 <el-row class="user-info">
                     <div class="header-img">
-                        <img src="https://s0.meituan.net/bs/fe-web-meituan/e350c4a/img/avatar.jpg" alt="HD-img">
+                        <img v-lazy="'https://s0.meituan.net/bs/fe-web-meituan/e350c4a/img/avatar.jpg'" alt="HD-img">
                     </div>
                     <p class="welcome-text">Hi！你好</p>
                     <el-button type="info" round class="user-button">注册</el-button>
@@ -73,7 +93,7 @@
                 </el-row>
                 <el-row class="app-scan">
                     <div class="app-img">
-                        <img src="https://s1.meituan.net/bs/fe-web-meituan/60ac9a0/img/download-qr.png" alt="手机版App二维码">
+                        <img v-lazy="'https://s1.meituan.net/bs/fe-web-meituan/60ac9a0/img/download-qr.png'" alt="手机版App二维码">
                     </div>
                     <p class="des">美团APP手机版</p>
                     <p class="sl">

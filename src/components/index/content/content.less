@@ -1,5 +1,154 @@
-.content {
-    width: 1190px;
-    background-color: #f0f0f0;
-    margin: 0 auto;
+.content-wrapper {
+    width: 100%;
+    .floor {
+        width: 1190px;
+        margin: 30px auto 0;
+        .floor-nav {
+            width: 100%;
+            height: 44px;
+            line-height: 44px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            overflow: hidden;
+            font-size: 0;
+            color: #fff;
+            background: linear-gradient(to right, rgba(0, 0, 0, .3), rgba(0, 0, 0, .6));
+            .floot-tit {
+                display: inline-block;
+                height: 100%;
+                vertical-align: top;
+                margin: 0 10px 0 13px;
+                font-size: 18px;
+                font-weight: 400;
+            }
+            .nav-card {
+                position: relative;
+                display: inline-block;
+                height: 100%;
+                margin: 0 5px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .active:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: calc(50% - 7px);
+                width: 2px;
+                height: 0;
+                border: 6px solid;
+                border-color: transparent transparent #fff transparent;
+            }
+        }
+        .floor-cont {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 11px 9px 10px;
+            text-align: justify;
+            font-size: 0;
+            background-color: #fff;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border: 1px solid #e5e5e5;
+            border-top: none;
+            .cont-card {
+                box-sizing: border-box;
+                display: inline-block;
+                vertical-align: top;
+                text-align: left;
+                font-size: 12px;
+                width: 390px;
+                height: 314px;
+                border-radius: 4px;
+                padding: 10px;
+                background-color: transparent;
+                transition: background-color ease .4s;
+                &:hover {
+                    background-color: #f4f4f4;
+                }
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                }
+                .cont-img {
+                    width: 100%;
+                    height: 208px;
+                    text-align: center;
+                    line-height: 206px;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    img {
+                        vertical-align: middle;
+                        max-width: 100%;
+                        max-height: 100%;
+                        border-radius: 4px;
+                    }
+                }
+                .cont-des {
+                    position: relative;
+                    width: 100%;
+                    margin-top: 15px;
+                    overflow: hidden;
+                    .cont-tit {
+                        display: block;
+                        font-size: 16px;
+                        color: #222;
+                        height: 22px;
+                        line-height: 22px;
+                        margin-bottom: 8px;
+                        font-weight: 500;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        cursor: pointer;
+                    }
+                    p {
+                        margin: 0;
+                    }
+                    .cont-sub,
+                    .cont-price {
+                        font-size: 12px;
+                        color: #999;
+                        width: 100%;
+                        height: 18px;
+                        line-height: 18px;
+                        margin-bottom: 7px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .currency-symbol {
+                        font-size: 14px;
+                        color: #BE9E4D;
+                        font-weight: 500;
+                    }
+                    .activi-price {
+                        font-size: 22px;
+                        color: #BE9E4D;
+                        margin-right: 4px;
+                        letter-spacing: -0.8px;
+                        cursor: pointer;
+                    }
+                    .price-suffix {
+                        color: #BE9E4D;
+                        font-size: 12px;
+                        letter-spacing: -0.6px;
+                    }
+                    .origin-price {
+                        font-size: 12px;
+                        margin-left: 6px;
+                        text-decoration: line-through;
+                    }
+                    .cont-position {
+                        position: absolute;
+                        bottom: 8px;
+                        right: 0;
+                        font-size: 12px;
+                        color: #999;
+                    }
+                }
+            }
+        }
+    }
 }

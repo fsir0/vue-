@@ -3,10 +3,12 @@ export default {
     data() {
         return {
             msg: 'loading',
-            msgloading: '...'
+            msgloading: '...',
+            navInx: 0
         }
     },
     mounted() {
+        const { dispatch } = this.$store
         setInterval(() => {
             if (this.msgloading.length >= 6) {
                 this.msgloading = '.'
@@ -14,5 +16,11 @@ export default {
                 this.msgloading += '.'
             }
         }, 500)
+        dispatch('getFloorData')
+    },
+    methods: {
+        hoverNav(inx) {
+            this.navInx = inx || 0
+        }
     }
 }

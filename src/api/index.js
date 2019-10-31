@@ -589,5 +589,10 @@ export default {
                     }
                 })
             }).catch(err)
+    },
+    // 获取nav数据 url：https://as.meituan.com/ptapi/getScenesList?theme=quality&tab=all&ci=151&limit=12
+    getFloorData(params, suc, err) {
+        Axios.get('https://as.meituan.com/ptapi/getScenesList', { params })
+            .then(suc).catch(err)
     }
 }

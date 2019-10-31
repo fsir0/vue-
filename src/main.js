@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import App from './App'
-// import LayoutApp from './layout/layout.vue'
-// import VueAxios from 'vue-axios'
-// import axios from 'axios'
 import store from './store/index'
 import router from './router/router'
 import ElementUi from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import LazyLoad from 'vue-lazyload'
 
 Vue.config.productionTip = false
-// 此处引入axios仅为在组建内部也可以使用axios（通常不建议在组建内部直接axios，请求请走api）
-// Vue.use(VueAxios, axios)
 Vue.use(ElementUi)
+Vue.use(LazyLoad, {
+    error: require('@/assets/images/over.jpg'),
+    loading: require('@/assets/images/lan.jpg')
+})
+
 new Vue({
     store,
     router,
