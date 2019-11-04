@@ -1,119 +1,28 @@
 <template>
     <div class="content-wrapper">
         <div class="floor">
+            <input type="hidden" :value="floorNavData">
+            <input type="hidden" :value="floorContData">
             <ul class="floor-nav">
                 <h5 class="floot-tit">有格调</h5>
-                <li :class="navInx == 0 ? 'nav-card active' : 'nav-card'" @mouseenter="hoverNav(0)">全部</li>
-                <li :class="navInx == 1 ? 'nav-card active' : 'nav-card'" @mouseenter="hoverNav(1)">约会聚餐</li>
-                <li :class="navInx == 2 ? 'nav-card active' : 'nav-card'" @mouseenter="hoverNav(2)">丽人SPA</li>
-                <li :class="navInx == 3 ? 'nav-card active' : 'nav-card'" @mouseenter="hoverNav(3)">品质出游</li>
+                <li v-for="(ele, inx) in floorNavData" :class="navInx == inx ? 'nav-card active' : 'nav-card'" @mouseenter="hoverNav(inx)" :key="inx">{{ele.name}}</li>
             </ul>
             <ul class="floor-cont">
-                <li class="cont-card">
-                    <router-link to="/">
+                <li class="cont-card" v-for="(ele, inx) in floorContData" :key="inx">
+                    <router-link :to="ele.link || '/'">
                         <div class="cont-img">
-                            <img v-lazy="'https://p0.meituan.net/msmerchant/a56c4d4082a7b662f19c4b9a6eb56c622342599.jpg@368w_208h_1e_1c'">
+                            <img v-lazy="ele.imgUrl + ''">
                         </div>
                         <div class="cont-des">
-                            <b class="cont-tit">必胜客</b>
-                            <p class="cont-sub">3份超级至尊比萨（普通装铁盘）1份</p>
+                            <b class="cont-tit">{{ele.title}}</b>
+                            <p class="cont-sub">{{ele.subTitle}}</p>
                             <p class="cont-price">
-                                <span class="currency-symbol">&yen;</span>
-                                <span class="activi-price">123</span>
-                                <span class="price-suffix">/人均</span>
-                                <span class="origin-price">门市价&yen;159</span>
+                                <span class="currency-symbol" v-if="ele.activePrice">&yen;</span>
+                                <span class="activi-price" v-if="ele.activePrice">{{ele.activePrice}}</span>
+                                <span class="price-suffix" v-if="ele.activePrice && ele.priceSuffix">{{ele.priceSuffix}}</span>
+                                <span class="origin-price">{{ele.originPrice}}</span>
                             </p>
-                            <p class="cont-position">站前</p>
-                        </div>
-                    </router-link>
-                </li>
-                <li class="cont-card">
-                    <router-link to="/">
-                        <div class="cont-img">
-                            <img v-lazy="'https://p0.meituan.net/msmerchant/a56c4d4082a7b662f19c4b9a6eb56c622342599.jpg@368w_208h_1e_1c'">
-                        </div>
-                        <div class="cont-des">
-                            <b class="cont-tit">必胜客</b>
-                            <p class="cont-sub">3份超级至尊比萨（普通装铁盘）1份</p>
-                            <p class="cont-price">
-                                <span class="currency-symbol">&yen;</span>
-                                <span class="activi-price">123</span>
-                                <span class="price-suffix">/人均</span>
-                                <span class="origin-price">门市价&yen;159</span>
-                            </p>
-                            <p class="cont-position">站前</p>
-                        </div>
-                    </router-link>
-                </li>
-                <li class="cont-card">
-                    <router-link to="/">
-                        <div class="cont-img">
-                            <img v-lazy="'https://p0.meituan.net/msmerchant/a56c4d4082a7b662f19c4b9a6eb56c622342599.jpg@368w_208h_1e_1c'">
-                        </div>
-                        <div class="cont-des">
-                            <b class="cont-tit">必胜客</b>
-                            <p class="cont-sub">3份超级至尊比萨（普通装铁盘）1份</p>
-                            <p class="cont-price">
-                                <span class="currency-symbol">&yen;</span>
-                                <span class="activi-price">123</span>
-                                <span class="price-suffix">/人均</span>
-                                <span class="origin-price">门市价&yen;159</span>
-                            </p>
-                            <p class="cont-position">站前</p>
-                        </div>
-                    </router-link>
-                </li>
-                <li class="cont-card">
-                    <router-link to="/">
-                        <div class="cont-img">
-                            <img v-lazy="'https://p0.meituan.net/msmerchant/a56c4d4082a7b662f19c4b9a6eb56c622342599.jpg@368w_208h_1e_1c'">
-                        </div>
-                        <div class="cont-des">
-                            <b class="cont-tit">必胜客</b>
-                            <p class="cont-sub">3份超级至尊比萨（普通装铁盘）1份</p>
-                            <p class="cont-price">
-                                <span class="currency-symbol">&yen;</span>
-                                <span class="activi-price">123</span>
-                                <span class="price-suffix">/人均</span>
-                                <span class="origin-price">门市价&yen;159</span>
-                            </p>
-                            <p class="cont-position">站前</p>
-                        </div>
-                    </router-link>
-                </li>
-                <li class="cont-card">
-                    <router-link to="/">
-                        <div class="cont-img">
-                            <img v-lazy="'https://p0.meituan.net/msmerchant/a56c4d4082a7b662f19c4b9a6eb56c622342599.jpg@368w_208h_1e_1c'">
-                        </div>
-                        <div class="cont-des">
-                            <b class="cont-tit">必胜客</b>
-                            <p class="cont-sub">3份超级至尊比萨（普通装铁盘）1份</p>
-                            <p class="cont-price">
-                                <span class="currency-symbol">&yen;</span>
-                                <span class="activi-price">123</span>
-                                <span class="price-suffix">/人均</span>
-                                <span class="origin-price">门市价&yen;159</span>
-                            </p>
-                            <p class="cont-position">站前</p>
-                        </div>
-                    </router-link>
-                </li>
-                <li class="cont-card">
-                    <router-link to="/">
-                        <div class="cont-img">
-                            <img v-lazy="'https://p0.meituan.net/msmerchant/a56c4d4082a7b662f19c4b9a6eb56c622342599.jpg@368w_208h_1e_1c'">
-                        </div>
-                        <div class="cont-des">
-                            <b class="cont-tit">必胜客</b>
-                            <p class="cont-sub">3份超级至尊比萨（普通装铁盘）1份</p>
-                            <p class="cont-price">
-                                <span class="currency-symbol">&yen;</span>
-                                <span class="activi-price">123</span>
-                                <span class="price-suffix">/人均</span>
-                                <span class="origin-price">门市价&yen;159</span>
-                            </p>
-                            <p class="cont-position">站前</p>
+                            <p class="cont-position" v-if="ele.position">{{ele.position}}</p>
                         </div>
                     </router-link>
                 </li>

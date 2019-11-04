@@ -52,12 +52,9 @@ const actions = {
             limit: 12
         }, query), res => {
             commit('uLoadingFlag', false)
-            // @todo
-            // eslint-disable-next-line no-console
-            console.log(res)
+            commit('uFloorData', res.data)
         }, err => {
             commit('uLoadingFlag', false)
-            // @todo
             // eslint-disable-next-line no-console
             console.log(err)
         })
