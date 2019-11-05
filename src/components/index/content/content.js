@@ -3,26 +3,12 @@ export default {
     name: 'my-content',
     data() {
         return {
-            msg: 'loading',
-            msgloading: '...',
             navInx: 0
         }
     },
     mounted() {
         const { dispatch } = this.$store
-        setInterval(() => {
-            if (this.msgloading.length >= 6) {
-                this.msgloading = '.'
-            } else {
-                this.msgloading += '.'
-            }
-        }, 500)
-        dispatch('getFloorData', {
-            theme: 'quality',
-            tab: 'all',
-            ci: 151,
-            limit: 12
-        })
+        dispatch('getFloorData', {})
     },
     methods: {
         hoverNav(inx) {
@@ -31,7 +17,7 @@ export default {
     },
     computed: {
         ...mapState({
-            floorNavData: state => state.index.floorData.navList
+            floorNavData: state => state.index.floorData
         }),
         floorContData() {
             let _data = this.$store.state.index.floorData.contentList[this.navInx].cardList

@@ -1,11 +1,9 @@
 <template>
     <div class="content-wrapper">
         <div class="floor">
-            <input type="hidden" :value="floorNavData">
-            <input type="hidden" :value="floorContData">
             <ul class="floor-nav">
-                <h5 class="floot-tit">有格调</h5>
-                <li v-for="(ele, inx) in floorNavData" :class="navInx == inx ? 'nav-card active' : 'nav-card'" @mouseenter="hoverNav(inx)" :key="inx">{{ele.name}}</li>
+                <h5 class="floot-tit">{{floorNavData.title}}</h5>
+                <li v-for="(ele, inx) in floorNavData.navList" :class="navInx == inx ? 'nav-card active' : 'nav-card'" @mouseenter="hoverNav(inx)" :key="inx">{{ele.name}}</li>
             </ul>
             <ul class="floor-cont">
                 <li class="cont-card" v-for="(ele, inx) in floorContData" :key="inx">
@@ -27,7 +25,6 @@
                     </router-link>
                 </li>
             </ul>
-            {{msg}}{{msgloading}}
         </div>
     </div>
 </template>

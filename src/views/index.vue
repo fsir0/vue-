@@ -2,6 +2,9 @@
     <div class="index">
         <my-nav />
         <my-content />
+        <my-content />
+        <my-content />
+        <my-content />
     </div>
 </template>
 

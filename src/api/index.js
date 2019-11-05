@@ -597,6 +597,7 @@ export default {
                 suc({
                     status: 200,
                     data: {
+                        title: '有格调',
                         navList: [
                             { name: '全部' },
                             { name: '约会聚餐' },
