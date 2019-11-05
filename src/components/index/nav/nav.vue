@@ -2,7 +2,7 @@
     <div class="nav-wrapper">
         <el-row class="nav-container">
             <el-col :span="5" class="nav">
-                <h5 class="nav-tit">全部分类</h5>
+                <h5 class="nav-tit">{{firNavData.title}}</h5>
                 <ul class="main-nav" @mouseleave="leaveNav">
                     <li class="main-list" v-for="(ele, inx) in firNavData.list" @mouseenter="hoverNav(inx)" :key="inx">
                         <span class="icon-l">

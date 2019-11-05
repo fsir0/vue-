@@ -7,6 +7,7 @@ export default {
                 suc({
                     status: 200,
                     data: {
+                        title: '全部分类',
                         list: [
                             {
                                 imgUrl: '',
