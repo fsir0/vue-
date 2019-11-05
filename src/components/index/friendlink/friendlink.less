@@ -1,0 +1,87 @@
+.friendlink-wrapper {
+    width: 100%;
+    margin-bottom: 40px;
+    ul,
+    li,
+    dl,
+    dt,
+    dd,
+    h5 {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .friendlink-box {
+        width: 1190px;
+        margin: 30px auto 0;
+        box-sizing: border-box;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        .friendlink-title {
+            height: 44px;
+            line-height: 44px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #222;
+            padding: 6px 0 6px 20px;
+        }
+        .firendlink-card {
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: right;
+            &:nth-last-child(1) {
+                margin-bottom: 0;
+                dl {
+                    border: none;
+                }
+            }
+            dl {
+                box-sizing: border-box;
+                display: inline-block;
+                position: relative;
+                text-align: left;
+                width: 1090px;
+                border-bottom: 1px solid #e5e5e5;
+                .friendlink-tit {
+                    position: absolute;
+                    left: -78px;
+                    height: 20px;
+                    line-height: 20px;
+                    font-size: 14px;
+                }
+                dd {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 80px;
+                    height: 20px;
+                    line-height: 20px;
+                    font-size: 12px;
+                    margin-right: 20px;
+                    margin-bottom: 10px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    a {
+                        color: #666;
+                        &:hover {
+                            color: #f80;
+                        }
+                        .hot {
+                            display: inline-block;
+                            width: 38px;
+                            height: 16px;
+                            line-height: 16px;
+                            text-align: center;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: 400;
+                            border-radius: 8px;
+                            color: #fff;
+                            background-color: #ff4848;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

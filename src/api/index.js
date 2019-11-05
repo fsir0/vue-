@@ -936,5 +936,322 @@ export default {
                     }
                 })
             }).catch(err)
+    },
+    // 获取friendlink数据
+    getFriendlinkData(params, suc, err) {
+        Axios.get('http://jsonplaceholder.typicode.com/users', { params })
+            .then(() => {
+                suc({
+                    status: 200,
+                    data: {
+                        title: '美团导航',
+                        list: [
+                            {
+                                title: '热门城市',
+                                list: [
+                                    {
+                                        name: '昆明',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '长春',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '贵阳',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '北京',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '大连',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '东莞',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '青岛',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '南宁',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '无锡',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '天津',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '温州',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '合肥',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '成都',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '杭州',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '宁波',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '深圳',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '广州',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '福州',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '郑州',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '济南',
+                                        link: '/',
+                                        isHot: false
+                                    }
+                                ]
+                            }, {
+                                title: '热门分类',
+                                list: [
+                                    {
+                                        name: '酒店',
+                                        link: '/',
+                                        isHot: true
+                                    },
+                                    {
+                                        name: '美食',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '休闲娱乐',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '运动健身',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '生活服务',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '上门服务',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '购物',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '时尚购',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '本地购物',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '结婚',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '摄影写真',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '宴会',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '丽人',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '母婴亲子',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '学习培训',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '家装',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '汽车服务',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '医疗',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '宠物',
+                                        link: '/',
+                                        isHot: false
+                                    }
+                                ]
+                            }, {
+                                title: '周边热门',
+                                list: [
+                                    {
+                                        name: '大厂回族自治县酒店',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '廊坊美食',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '廊坊休闲娱乐',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '大厂回族自治县运动健身',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '门头沟区生活服务',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '廊坊上门服务',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '门头沟区购物',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '廊坊时尚购',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '大厂回族自治县本地购物',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '门头沟区结婚',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '大厂回族自治县摄影写真',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '门头沟区宴会',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '廊坊丽人',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '廊坊母婴亲子',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '大厂回族自治县学习培训',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '大厂回族自治县家装',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '门头沟区汽车服务',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '大厂回族自治县医疗',
+                                        link: '/',
+                                        isHot: false
+                                    },
+                                    {
+                                        name: '大厂回族自治县宠',
+                                        link: '/',
+                                        isHot: false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                })
+            }).catch(err)
     }
 }
