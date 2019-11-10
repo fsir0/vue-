@@ -13,7 +13,58 @@
                 </el-col>
             </el-row>
         </el-header>
-        <el-main class="reg-content">Main</el-main>
+        <el-main class="content-wrapper">
+            <el-row class="reg-content">
+                <div class="content-row">
+                    <span class="label">手机号</span>
+                    <input class="valid-input" type="text" maxlength="11">
+                    <span class="message">
+                        <i class="el-icon-remove"/>
+                        <i class="el-icon-success"/>
+                        请输入你的手机号码
+                    </span>
+                    <span class="pre-message">
+                        注册成功后，全美团通用
+                    </span>
+                </div>
+                <div class="content-row">
+                    <span class="get-valid-num">免费获取短信动态码</span>
+                </div>
+                <div class="content-row">
+                    <span class="label">短信动态码</span>
+                    <input class="valid-input" type="text">
+                    <span class="message">
+                        <i class="el-icon-remove"/>
+                        <i class="el-icon-success"/>
+                        输入错误，请重新输入
+                    </span>
+                </div>
+                <div class="content-row">
+                    <span class="stronger-l">弱</span>
+                    <span class="stronger-m">中</span>
+                    <span class="stronger-h">强</span>
+                </div>
+                <div class="content-row">
+                    <span class="label">确认密码</span>
+                    <input class="valid-input" type="text">
+                    <span class="message">
+                        <i class="el-icon-remove"/>
+                        <i class="el-icon-success"/>
+                        两次输入的密码不一致，请重新输入
+                    </span>
+                </div>
+                <div class="cotent-row">
+                    <span class="submit-btn">同意以下协议并注册</span>
+                </div>
+                <div class="content-row">
+                    <router-link to="/">《美团网用户协议》</router-link>
+                    <router-link to="/">《美团网隐私协议》</router-link>
+                </div>
+            </el-row>
+            <el-row class="content-bottom">
+                <router-link to="/">©meituan.com  京ICP证070791号  京公网安备11010502025545号</router-link>
+            </el-row>
+        </el-main>
     </el-container>
 </template>
 <script>
@@ -71,9 +122,54 @@ body {
             }
         }
     }
-    .reg-content {
+    .content-wrapper {
         width: 960px;
         margin: 10px auto 40px;
+        .reg-content {
+            width: 100%;
+            margin-bottom: 60px;
+            .content-row {
+                position: relative;
+                width: 100%;
+                padding-left: 110px;
+                .label {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100px;
+                    height: 36px;
+                    line-height: 36px;
+                    text-align: right;
+                    font-size: 14px;
+                    color: #333;
+                }
+                .valid-input {
+                    box-sizing: border-box;
+                    width: 260px;
+                    height: 36px;
+                    padding: 5px;
+                    border: 1px solid #aaa;
+                    outline: none;
+                    margin-right: 10px;
+                    &:focus {
+                        border-color: #f80;
+                    }
+                }
+                .message {
+                    display: inline-block;
+                    height: 36px;
+                    line-height: 36px;
+                }
+            }
+        }
+        .content-bottom {
+            text-align: center;
+            a {
+                color: #999;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
     }
 }
 </style>
