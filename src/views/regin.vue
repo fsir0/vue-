@@ -40,9 +40,18 @@
                     </span>
                 </div>
                 <div class="content-row">
-                    <span class="stronger-l">弱</span>
-                    <span class="stronger-m">中</span>
-                    <span class="stronger-h">强</span>
+                    <span class="label">创建密码</span>
+                    <input class="valid-input" type="text">
+                    <span class="message">
+                        <i class="el-icon-remove"/>
+                        <i class="el-icon-success"/>
+                        密码太短，至少8个字符
+                    </span>
+                </div>
+                <div class="content-row stronger-wrapper stronger-l">
+                    <span class="stronger">弱</span>
+                    <span class="stronger">中</span>
+                    <span class="stronger">强</span>
                 </div>
                 <div class="content-row">
                     <span class="label">确认密码</span>
@@ -53,7 +62,7 @@
                         两次输入的密码不一致，请重新输入
                     </span>
                 </div>
-                <div class="cotent-row">
+                <div class="content-row">
                     <span class="submit-btn">同意以下协议并注册</span>
                 </div>
                 <div class="content-row">
@@ -61,10 +70,10 @@
                     <router-link to="/">《美团网隐私协议》</router-link>
                 </div>
             </el-row>
-            <el-row class="content-bottom">
-                <router-link to="/">©meituan.com  京ICP证070791号  京公网安备11010502025545号</router-link>
-            </el-row>
         </el-main>
+        <el-footer class="content-bottom">
+            <router-link to="/">©meituan.com  京ICP证070791号  京公网安备11010502025545号</router-link>
+        </el-footer>
     </el-container>
 </template>
 <script>
@@ -127,15 +136,13 @@ body {
         margin: 10px auto 40px;
         .reg-content {
             width: 100%;
-            margin-bottom: 60px;
             .content-row {
                 position: relative;
-                width: 100%;
-                padding-left: 110px;
+                padding: 6px 0 6px 110px;
                 .label {
                     position: absolute;
                     left: 0;
-                    top: 0;
+                    top: 6px;
                     width: 100px;
                     height: 36px;
                     line-height: 36px;
@@ -155,20 +162,106 @@ body {
                         border-color: #f80;
                     }
                 }
+                .valid-faild {
+                    border-color: #f76120;
+                }
                 .message {
                     display: inline-block;
                     height: 36px;
                     line-height: 36px;
+                    font-size: #666;
+                    .el-icon-remove {
+                        color: #f80;
+                    }
+                    .el-icon-success {
+                        color: #0c2;
+                    }
+                }
+                .pre-message {
+                    display: inline-block;
+                    color: #999;
+                    font-size: 12px;
+                }
+                .get-valid-num {
+                    display: inline-block;
+                    padding: 4px 6px;
+                    font-size: 12px;
+                    color: #333;
+                    border: 1px solid #e5e5e5;
+                    background: linear-gradient(to bottom, #fefefe, #ccc);
+                    box-shadow: 0 2px 5px -4px #aaa;
+                    cursor: pointer;
+                    user-select: none;
+                }
+                .submit-btn {
+                    display: inline-block;
+                    width: 180px;
+                    height: 34px;
+                    background: linear-gradient(to right, #fb0, #f80);
+                    color: #222;
+                    font-weight: 700;
+                    text-align: center;
+                    line-height: 34px;
+                    font-size: 14px;
+                }
+                a {
+                    font-size: 12px;
+                    cursor: pointer;
+                    color: #f80;
                 }
             }
-        }
-        .content-bottom {
-            text-align: center;
-            a {
-                color: #999;
-                font-size: 12px;
-                cursor: pointer;
+            .stronger-wrapper {
+                position: relative;
+                white-space: nowrap;
+                width: 260px;
+                height: 20px;
+                padding: 0;
+                margin-left: 110px;
+                background-color: #eee;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background-color: #f76120;
+                    transition: all linear .4s;
+                }
+                .stronger {
+                    position: relative;
+                    display: inline-block;
+                    width: 85px;
+                    height: 20px;
+                    text-align: center;
+                    line-height: 20px;
+                    border-right: 2px solid #fff;
+                    color: #fff;
+                    font-size: 12px;
+                }
             }
+            .stronger-l:before {
+                width: 86px;
+                background-color: #f80;
+            }
+            .stronger-m:before {
+                width: 172px;
+                background-color: #fd0;
+            }
+            .stronger-h:before {
+                width: 100%;
+                background-color: #0c2;
+            }
+        }
+    }
+    .content-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        a {
+            color: #999;
+            font-size: 12px;
+            cursor: pointer;
         }
     }
 }
