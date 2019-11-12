@@ -55,6 +55,12 @@ export default {
         enterSecNav() {
             // 进入二级导航框时取消清除二级导航框
             clearTimeout(this.clearSecNavTimer)
+        },
+        toRegin() {
+            this.$router.push('regin')
+        },
+        toLogin() {
+            this.$router.push('login')
         }
     }
 }

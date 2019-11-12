@@ -88,8 +88,8 @@
                         <img v-lazy="'https://s0.meituan.net/bs/fe-web-meituan/e350c4a/img/avatar.jpg'" alt="HD-img">
                     </div>
                     <p class="welcome-text">Hi！你好</p>
-                    <el-button type="info" round class="user-button">注册</el-button>
-                    <el-button type="info" round class="user-button">立即登录</el-button>
+                    <el-button type="info" round class="user-button" @click="toRegin">注册</el-button>
+                    <el-button type="info" round class="user-button" @click="toLogin">立即登录</el-button>
                 </el-row>
                 <el-row class="app-scan">
                     <div class="app-img">

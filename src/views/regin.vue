@@ -18,7 +18,7 @@
                 <div class="content-row">
                     <span class="label">手机号</span>
                     <input
-                        class="valid-input"
+                        :class="{'valid-input': true, 'valid-faild': (phoneMsg.flag === 2)}"
                         type="text"
                         maxlength="11"
                         v-model="phone"
@@ -38,7 +38,7 @@
                 <div class="content-row">
                     <span class="label">短信动态码</span>
                     <input
-                        class="valid-input"
+                        :class="{'valid-input': true, 'valid-faild': (volidNumMsg.flag === 2)}"
                         type="text"
                         maxlength="6"
                         v-model="volidNum"
@@ -54,7 +54,7 @@
                 <div class="content-row">
                     <span class="label">创建密码</span>
                     <input
-                        class="valid-input"
+                        :class="{'valid-input': true, 'valid-faild': (pswMsg.flag === 2)}"
                         type="password"
                         maxlength="50"
                         v-model="psw"
@@ -75,7 +75,7 @@
                 <div class="content-row">
                     <span class="label">确认密码</span>
                     <input
-                        class="valid-input"
+                        :class="{'valid-input': true, 'valid-faild': (subPswMsg.flag === 2)}"
                         type="password"
                         maxlength="50"
                         v-model="subPsw"
@@ -407,7 +407,7 @@ body {
                     cursor: default;
                 }
                 .valid-input {
-                    vertical-align: middle;
+                    vertical-align: top;
                     box-sizing: border-box;
                     width: 260px;
                     height: 36px;
@@ -424,19 +424,21 @@ body {
                 }
                 .message {
                     display: inline-block;
-                    vertical-align: middle;
+                    vertical-align: top;
                     height: 36px;
                     line-height: 36px;
                     font-size: 12px;
                     font-size: #666;
-                    .el-icon-remove {
+                    i {
+                        height: 36px;
+                        line-height: 36px;
                         font-size: 16px;
-                        vertical-align: middle;
+                        vertical-align: top;
+                    }
+                    .el-icon-remove {
                         color: #f80;
                     }
                     .el-icon-success {
-                        font-size: 16px;
-                        vertical-align: middle;
                         color: #0c2;
                     }
                 }
