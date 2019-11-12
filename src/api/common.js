@@ -320,13 +320,19 @@ export default {
                                 name: '举报投诉热线',
                                 list: [
                                     { label: '违法和不良信息举报电话：', name: '123456', link: '/' },
-                                    { label: '举报邮箱', name: 'tousujubao@kenghuo.com', link: '/' }
+                                    { label: '举报邮箱：', name: 'tousujubao@kenghuo.com', link: '/' }
                                 ]
                             },
                             {
                                 name: 'other',
                                 list: [
                                     { name: '商家自助入驻美团入口', link: '/' }
+                                ]
+                            },
+                            {
+                                name: 'other',
+                                list: [
+                                    { name: '供应商注册入口', link: '/' }
                                 ]
                             }
                         ]
