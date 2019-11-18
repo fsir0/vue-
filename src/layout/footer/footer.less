@@ -1,6 +1,6 @@
 .footer-wrapper {
     width: 1190px;
-    margin: 0 auto 40px;
+    margin: 0 auto 30px;
     dd,
     dt,
     dl {
@@ -33,6 +33,82 @@
         }
         .business-entry {
             font-size: 14px;
+        }
+    }
+    .industral-registion {
+        margin-top: 50px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        .indus-l {
+            text-align: left;
+            font-size: 12px;
+            p {
+                margin: 0;
+                line-height: 20px;
+                color: #999;
+                overflow: hidden;
+                span {
+                    margin-right: 20px;
+                }
+                a {
+                    color: #999;
+                    margin-right: 20px;
+                    &:hover {
+                        color: #f80;
+                    }
+                }
+            }
+        }
+        .indus-r {
+            text-align: right;
+            font-size: 12px;
+            .indus-num {
+                line-height: 20px;
+                a {
+                    color: #999;
+                    &:hover {
+                        color: #f80;
+                    }
+                }
+            }
+            .indus-imgs {
+                padding-top: 6px;
+                a {
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-right: 2px;
+                    height: 38px;
+                    line-height: 38px;
+                    color: #999;
+                    &:hover {
+                        color: #f80;
+                    }
+                    span {
+                        padding: 0 5px;
+                    }
+                    img {
+                        max-height: 38px;
+                        vertical-align: middle;
+                    }
+                    .img {
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 107px;
+                        height: 38px;
+                        background: url('https://s0.meituan.net/bs/fe-web-meituan/8a39c6b/img/sprites/footer.png') no-repeat;
+                    }
+                    &:nth-child(2) .img {
+                        width: 109px;
+                        background-position: 0 -167px;
+                    }
+                    &:nth-child(3) .img {
+                        background-position: 0 -127px;
+                    }
+                    &:nth-child(4) .img {
+                        background-position: 0 -40px;
+                    }
+                }
+            }
         }
     }
 }

@@ -18,3 +18,26 @@ new Vue({
     router,
     render: h => h(App)
 }).$mount('#app')
+
+window.Cookie = {
+    set(name, value, path, expires, domain) {
+        if (!name || value === undefined) {
+            return
+        }
+        expires = expires ? new Date(new Date().getTime() + expires).toGMTString() : ''
+        document.cookie = name + '=' + escape(value) +
+            ';path=' + (path || '/') +
+            ';expires=' + expires +
+            ';domain=' + (domain || '') + ';'
+    },
+    get(name, err) {
+        if (!name || !document.cookie.length) {
+            return
+        }
+        let _n = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'))
+        return _n != null ? _n[2] : err
+    },
+    del(name) {
+        return this.set(name, '', '', -1)
+    }
+}

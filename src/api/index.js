@@ -612,17 +612,17 @@ export default {
                                 cardList: [
                                     {
                                         link: '/',
-                                        imgUrl: 'http://p1.meituan.net/w.h/mogu/a3c70845bffd26ce9df01de67c1971e0735080.jpg',
-                                        title: '内蒙古大厦·玛那自助西餐厅',
-                                        subTitle: '晚市单人自助套餐',
-                                        position: '王府井/东单',
-                                        activePrice: '188',
-                                        originPrice: '门市价¥218',
+                                        imgUrl: 'https://p0.meituan.net/bbia/d6d05e743de9a4a669186dd1ae8dfabb308781.jpg@368w_208h_1e_1c',
+                                        title: '好利来（家乐福店）',
+                                        subTitle: '巧克力诱惑1个，约20cm，圆形',
+                                        position: '胜利路沿线',
+                                        activePrice: '178',
+                                        originPrice: '门市价¥208',
                                         priceSuffix: ''
                                     },
                                     {
                                         link: '/',
-                                        imgUrl: 'http://p1.meituan.net/w.h/poi/697cf6a6e1785559a7bb31d0bf03c649110592.jpg',
+                                        imgUrl: 'https://p1.meituan.net/msmerchant/7eecf10ce5921e64e981d45e6caa086f126936.jpg@368w_208h_1e_1c',
                                         title: '北京饭店诺金东33餐厅',
                                         subTitle: '桌餐C，建议8-10人使用，可免费使用包间',
                                         position: '王府井/东单',
@@ -632,7 +632,7 @@ export default {
                                     },
                                     {
                                         link: '/',
-                                        imgUrl: 'https://img.meituan.net/w.h/msmerchant/42b9a65b88afab37efd7c2145c8cabda95091.jpg',
+                                        imgUrl: 'https://p1.meituan.net/msmerchant/a5e8c7b80008ed929c4e92aba382a007361190.jpg@368w_208h_1e_1c',
                                         title: 'théATRE 茶聚场（王府中環店）',
                                         subTitle: '蛋糕2选1,约6英寸，圆形',
                                         position: '王府井/东单',
@@ -642,7 +642,7 @@ export default {
                                     },
                                     {
                                         link: '/',
-                                        imgUrl: 'http://p0.meituan.net/w.h/bbia/ac56e0c35cd00ca55903c253498a673f117699.jpg',
+                                        imgUrl: 'https://p1.meituan.net/mogu/c1d89d6f5220605b1d952030fdb7d2da25284.jpg@368w_208h_1e_1c',
                                         title: '牛叨（崇文门店）',
                                         subTitle: '牛排经典单人餐',
                                         position: '崇文门新世界',
@@ -652,7 +652,7 @@ export default {
                                     },
                                     {
                                         link: '/',
-                                        imgUrl: 'https://img.meituan.net/w.h/msmerchant/913c7d2286d407e79a06bd77514b22df176709.jpg',
+                                        imgUrl: 'https://img.meituan.net/msmerchant/81ca620f4a7b4e25ac1127458c5e864a233080.jpg@380w_214h_1e_1c',
                                         title: '大教堂蛋糕 Kathedral（王府中环店）',
                                         subTitle: '蛋糕2选1,约6寸，圆形',
                                         position: '王府井/东单',
@@ -662,7 +662,7 @@ export default {
                                     },
                                     {
                                         link: '/',
-                                        imgUrl: 'https://img.meituan.net/w.h/msmerchant/3070b16d9d5909693eaff72c1438210d1055965.png',
+                                        imgUrl: 'https://img.meituan.net/msmerchant/f03024397ade330b622cd8d6361c347a126644.jpg@380w_214h_1e_1c',
                                         title: '京城一锅羊蝎子',
                                         subTitle: '精品8人餐，提供免费WiFi',
                                         position: '崇文门新世界',
