@@ -13,6 +13,16 @@ export default {
         elPagination,
         elButton
     },
+    beforeRouteEnter(to, from, next) {
+        // console.log('helloworld的组件独享路由守卫')
+        // let answer = window.confirm('来试试page1页面吧！')
+        // if (answer) {
+        //     next()
+        // } else {
+        //     next(false)
+        // }
+        next()
+    },
     data() {
         return {
             text: '',
