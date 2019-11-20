@@ -14,6 +14,10 @@ export default {
     components: {
         HellowWorld
     },
+    beforeRouteEnter(to, from, next) {
+        // console.log('page1的首位1')
+        next()
+    },
     methods: {
         countAdd () {
             this.$store.dispatch('dispatchAdd')

@@ -43,7 +43,7 @@
                         <el-carousel height="240px">
                             <el-carousel-item class="carousel-item-card">
                                 <router-link to="/">
-                                    <img v-lazy="'http://pic.netbian.com/uploads/allimg/191005/165356-15702656367a72.jpg'">
+                                    <img v-lazy="'http://pic.netbian.com/uploads/allimg/190922/212043-1569158443de0c.jpg'">
                                 </router-link>
                             </el-carousel-item>
                             <el-carousel-item class="carousel-item-card">
