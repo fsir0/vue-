@@ -407,7 +407,7 @@ body {
                     cursor: default;
                 }
                 .valid-input {
-                    vertical-align: top;
+                    vertical-align: middle;
                     box-sizing: border-box;
                     width: 260px;
                     height: 36px;
@@ -424,7 +424,7 @@ body {
                 }
                 .message {
                     display: inline-block;
-                    vertical-align: top;
+                    vertical-align: middle;
                     height: 36px;
                     line-height: 36px;
                     font-size: 12px;

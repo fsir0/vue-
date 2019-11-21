@@ -213,7 +213,9 @@
         }
     }
     .input-area {
+        position: relative;
         width: 100%;
+        height: 40px;
         border-radius: 4px;
         .search-btn {
             width: 100%;
@@ -228,7 +230,8 @@
         }
         .inp-list {
             position: relative;
-            z-index: 1;
+            height: 100%;
+            z-index: 3;
             dl {
                 position: absolute;
                 box-sizing: border-box;
@@ -247,6 +250,8 @@
                 }
             }
             .input-hot {
+                position: absolute;
+                top: 100%;
                 height: 60px;
                 padding-top: 8px;
                 overflow: hidden;
@@ -269,7 +274,8 @@
                 }
             }
             .input-advice {
-                position: relative;
+                position: absolute;
+                top: 100%;
                 min-height: 30px;
                 padding-bottom: 10px;
                 dd {
