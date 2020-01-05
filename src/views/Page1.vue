@@ -15,7 +15,7 @@ export default {
         HellowWorld
     },
     methods: {
-        countAdd () {
+        countAdd() {
             this.$store.dispatch('dispatchAdd')
             if (this.stateCount < 0) {
                 this.$store.dispatch('duWarning', '996')

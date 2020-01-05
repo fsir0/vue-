@@ -446,18 +446,22 @@ body {
                     display: inline-block;
                     vertical-align: middle;
                     color: #999;
+                    line-height: 36px;
                     font-size: 12px;
                 }
                 .get-valid-num {
                     display: inline-block;
-                    padding: 4px 6px;
+                    padding: 2px 6px;
                     font-size: 12px;
                     color: #333;
-                    border: 1px solid #e5e5e5;
-                    background: linear-gradient(to bottom, #fefefe, #ccc);
-                    box-shadow: 0 2px 5px -4px #aaa;
+                    border-bottom: 1px solid #aaa;
+                    background: #e3e3e3;
                     cursor: pointer;
                     user-select: none;
+                    &:hover {
+                        background: #e9e9e9;
+                        border-bottom-color: #b3b3b3;
+                    }
                 }
                 .submit-btn {
                     display: inline-block;
