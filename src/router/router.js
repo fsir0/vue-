@@ -4,6 +4,7 @@ import Layout from '@/layout/layout.vue'
 import Login from '@/views/login.vue'
 import Regin from '@/views/regin.vue'
 import Index from '@/views/index.vue'
+import ChangeCity from '@/views/changeCity.vue'
 import Result from '@/views/result.vue'
 import Page1 from '@/views/Page1.vue'
 import hell from '@/components/page1/component1/helloWorld.vue'
@@ -37,6 +38,11 @@ export default new Router({
                             next(false)
                         }
                     }
+                },
+                {
+                    path: '/changeCity',
+                    name: 'changeCity',
+                    component: ChangeCity
                 },
                 {
                     path: 'page1',

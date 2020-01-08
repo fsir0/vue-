@@ -4,7 +4,7 @@
             <el-col class="header-nl" :span="11">
                 <i class="el-icon-location-outline"/>
                 <p class="city-name">{{position.name}}</p>
-                <p class="city-change"><router-link to="/">切换城市</router-link></p>
+                <p class="city-change"><router-link to="/changeCity">切换城市</router-link></p>
                 <p class="city-detail">
                     [<router-link v-for="(ele, inx) in position.list" :to="(ele.link || '')" :key="inx">{{ele.name}}</router-link>]
                 </p>

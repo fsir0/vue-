@@ -130,13 +130,14 @@
                                 color: #999;
                                 &:after {
                                     content: '';
+                                    position: relative;
                                     display: inline-block;
-                                    vertical-align: middle;
+                                    vertical-align: top;
+                                    top: 6px;
                                     width: 5px;
                                     height: 5px;
-                                    border: 1px solid transparent;
-                                    border-top-color: #999;
-                                    border-right-color: #999;
+                                    border-top: 1px solid #999;
+                                    border-right: 1px solid #999;
                                     transform: rotate(45deg);
                                 }
                             }
