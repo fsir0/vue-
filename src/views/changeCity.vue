@@ -1,8 +1,8 @@
 <template>
     <div class="change-city">
-        <search-city/>
-        <hot-city/>
-        <city-list/>
+        <search-city />
+        <hot-city />
+        <city-list />
     </div>
 </template>
 
@@ -21,4 +21,11 @@ export default {
 </script>
 
 <style lang="less">
+.change-city {
+    width: 1190px;
+    margin: 20px auto 30px;
+    padding: 20px;
+    border: 1px solid #eee;
+    background-color: #fff;
+}
 </style>
