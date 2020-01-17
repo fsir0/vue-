@@ -10,6 +10,10 @@ export default {
             // eslint-disable-next-line no-console
             console.log(name)
             this.province = name
+        },
+        showprovince() {
+            // eslint-disable-next-line no-console
+            console.log('show')
         }
     }
 }
