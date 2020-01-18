@@ -3,9 +3,9 @@
         <el-row>
             <el-col :span="12">
                 <span class="label">按省份选择：</span>
-                <div class="province-choose" @click="showprovince">
+                <div class="province-choose" @click.stop="showprovince">
                     <span class="province-name">{{province}}</span>
-                    <dl class="province-list" @click.stop>
+                    <dl v-show="provinceShow" class="province-list" @click.stop>
                         <dt class="province-list-tit">省份</dt>
                         <dd class="province-card">
                             <a class="active" href="javascript:;">山东</a>
