@@ -10,10 +10,10 @@
                         <dd class="province-card">
                             <a class="active" href="javascript:;">山东</a>
                             <a href="javascript:;" @click="changeProvince('山东')">山东</a>
-                            <a href="javascript:;">山西</a>
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
+                            <a href="javascript:;" @click="changeProvince('山西')">山西</a>
+                            <a href="javascript:;" @click="changeProvince('山东')">山东</a>
+                            <a href="javascript:;" @click="changeProvince('山南')">山南</a>
+                            <a href="javascript:;" @click="changeProvince('山北')">山北</a>
                             <a href="javascript:;">山东</a>
                             <a href="javascript:;">山东</a>
                             <a href="javascript:;">山东</a>

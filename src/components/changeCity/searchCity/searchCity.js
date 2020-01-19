@@ -22,7 +22,6 @@ export default {
         },
         showprovince() {
             // eslint-disable-next-line no-console
-            console.log('show')
             this.provinceShow = true
         }
     }

@@ -1,8 +1,8 @@
-import Axios from 'axios'
+import Axios from '@/apiFilter/Axios.js'
 export default {
     // 导航数据
     getNavData(params, suc, err) {
-        Axios.get('http://jsonplaceholder.typicode.com/users', { params })
+        Axios.get('users', { params })
             .then(() => {
                 suc({
                     status: 200,
@@ -593,7 +593,7 @@ export default {
     },
     // 获取nav数据 url：https://as.meituan.com/ptapi/getScenesList?theme=quality&tab=all&ci=151&limit=12
     getFloorData(params, suc, err) {
-        Axios.get('http://jsonplaceholder.typicode.com/users', { params })
+        Axios.get('users', { params })
             .then(res => {
                 suc({
                     status: 200,
@@ -939,7 +939,7 @@ export default {
     },
     // 获取friendlink数据
     getFriendlinkData(params, suc, err) {
-        Axios.get('http://jsonplaceholder.typicode.com/users', { params })
+        Axios.get('users', { params })
             .then(() => {
                 suc({
                     status: 200,

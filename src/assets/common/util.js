@@ -53,5 +53,19 @@ export default {
         default:
             return _date
         }
+    },
+    /**
+     * 序列化Object参数
+     * @param params Object 参数对象
+     */
+    serializeParams(params) {
+        if (typeof params !== 'object') {
+            return
+        }
+        let _str = ''
+        for (let prop in params) {
+            _str += prop + '=' + (typeof params[prop] === 'object' ? JSON.stringify(params[prop]) : (params[prop] === undefined ? '' : params[prop])) + '&'
+        }
+        return _str === '' ? '' : _str.substr(0, _str.length - 1)
     }
 }
