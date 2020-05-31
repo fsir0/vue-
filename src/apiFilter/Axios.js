@@ -7,7 +7,7 @@ Axios.interceptors.request.use(
         res.baseURL = config.baseURL || ''
         // 设置跨域请求时withCredentials为true
         res.withCredentials = true
-        res.timeout = 6000
+        res.timeout = 8000
         return res
     },
     err => Promise.reject(err)
