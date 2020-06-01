@@ -3,52 +3,32 @@
         <el-row>
             <el-col :span="12">
                 <span class="label">按省份选择：</span>
-                <div class="province-choose" @click.stop="showprovince">
+                <div class="province-choose" @click.stop="showProvince">
                     <span class="province-name">{{province}}</span>
                     <dl v-show="provinceShow" class="province-list" @click.stop>
                         <dt class="province-list-tit">省份</dt>
-                        <dd class="province-card">
-                            <a class="active" href="javascript:;">山东</a>
-                            <a href="javascript:;" @click="changeProvince('山东')">山东</a>
-                            <a href="javascript:;" @click="changeProvince('山西')">山西</a>
-                            <a href="javascript:;" @click="changeProvince('山东')">山东</a>
-                            <a href="javascript:;" @click="changeProvince('山南')">山南</a>
-                            <a href="javascript:;" @click="changeProvince('山北')">山北</a>
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
-                        </dd>
-                        <dd class="province-card">
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
-                            <a href="javascript:;">山东</a>
+                        <dd class="province-card" v-for="(ele, index) in provinceList" :key="'col' + index" >
+                            <a
+                                v-for="(el, inx) in ele"
+                                :key="'row' + inx"
+                                :class="{'active': province == el}"
+                                href="javascript:;"
+                                @click="changeProvince(el)"
+                            >{{el}}</a>
                         </dd>
                     </dl>
                 </div>
-                <div class="city-choose">
+                <div class="city-choose" @click.stop="showCity">
                     <span class="city-name">城市</span>
-                    <dl class="city-list">
+                    <dl v-show="cityShow" class="city-list" @click.stop>
                         <dt class="city-list-tit">城市</dt>
-                        <dd class="city-card">
-                            <router-link to="/index">青岛</router-link>
-                            <router-link to="/index">青岛</router-link>
-                            <router-link to="/index">青岛</router-link>
-                            <router-link to="/index">青岛</router-link>
-                            <router-link to="/index">青岛</router-link>
-                            <router-link to="/index">青岛</router-link>
-                            <router-link to="/index">青岛</router-link>
-                        </dd>
-                        <dd class="city-card">
-                            <router-link to="/index">青岛</router-link>
-                            <router-link to="/index">青岛</router-link>
-                            <router-link to="/index">青岛</router-link>
-                            <router-link to="/index">青岛</router-link>
-                            <router-link to="/index">青岛</router-link>
+                        <dd class="city-card" v-for="(ele, index) in cityList" :key="'col' + index" >
+                            <a
+                                v-for="(el, inx) in ele"
+                                :key="'row' + inx"
+                                href="javascript:;"
+                                @click="changeCity(el)"
+                            >{{el}}</a>
                         </dd>
                     </dl>
                 </div>
