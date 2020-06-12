@@ -3,7 +3,8 @@ export default {
     name: 'my-content',
     data() {
         return {
-            navInx: 0
+            navInx: 0,
+            navTimer: null
         }
     },
     mounted() {
@@ -12,7 +13,10 @@ export default {
     },
     methods: {
         hoverNav(inx) {
-            this.navInx = inx || 0
+            this.navTimer && clearTimeout(this.navTimer)
+            this.navTimer = setTimeout(() => {
+                this.navInx = inx || 0
+            }, 100)
         }
     },
     computed: {
