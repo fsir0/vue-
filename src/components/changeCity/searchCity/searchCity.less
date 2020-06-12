@@ -72,7 +72,7 @@
                 overflow: hidden;
                 a {
                     display: block;
-                    width: 40px;
+                    padding: 0 10px;
                     height: 20px;
                     font-size: 12px;
                     line-height: 20px;
@@ -113,6 +113,9 @@
             border-style: solid;
             border-width: 5px 4px 0 4px;
             border-color: #666 transparent;
+        }
+        &.not-select {
+            cursor: not-allowed;
         }
         .city-name {
             font-size: 14px;
@@ -160,12 +163,12 @@
                 overflow: hidden;
                 a {
                     display: block;
-                    width: 40px;
+                    padding: 0 10px;
                     height: 20px;
                     font-size: 12px;
                     line-height: 20px;
                     color: #666;
-                    text-align: center;
+                    text-align: left;
                     margin: 6px 38px 6px 0;
                     border-radius: 10px;
                     cursor: pointer;

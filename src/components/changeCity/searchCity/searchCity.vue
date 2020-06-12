@@ -18,7 +18,7 @@
                         </dd>
                     </dl>
                 </div>
-                <div class="city-choose" @click.stop="showCity">
+                <div :class="{'city-choose': true, 'not-select': province === '省份'}" @click.stop="showCity">
                     <span class="city-name">城市</span>
                     <dl v-show="cityShow" class="city-list" @click.stop>
                         <dt class="city-list-tit">城市</dt>
