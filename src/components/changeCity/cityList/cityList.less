@@ -1,6 +1,6 @@
 .city-list {
     border-top: 1px solid #e5e5e5;
-    padding: 30px 0;
+    padding: 30px 0 0;
     .label {
         font-size: 16px;
         font-weight: bold;
@@ -26,6 +26,41 @@
                 color: #222222;
                 font-weight: 500;
                 background-color: #f8f8f8;
+            }
+        }
+    }
+    .city-list-card {
+        padding: 20px 10px;
+        margin: 0;
+        dt,
+        dd {
+            margin: 0;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .city-list-letter-title {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            background-color: #ffd000;
+            color: #222;
+        }
+        .city-list-letters-card {
+            box-sizing: border-box;
+            max-width: calc(100% - 50px);
+            a {
+                display: inline-block;
+                margin: 10px 20px;
+                color: #666;
+                &.advice {
+                    color: #f60;
+                }
+                &:hover {
+                    color: #222;
+                    font-weight: 500;
+                }
             }
         }
     }
