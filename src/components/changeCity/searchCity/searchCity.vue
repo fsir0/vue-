@@ -35,6 +35,9 @@
             </el-col>
             <el-col :span="12">
                 <span class="label">直接搜索：</span>
+                <div class="search-city-input-wrapper">
+                    <el-input placeholder="请输入城市中文或拼音"></el-input>
+                </div>
             </el-col>
         </el-row>
     </div>
