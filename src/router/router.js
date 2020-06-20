@@ -8,6 +8,7 @@ import ChangeCity from '@/views/changeCity.vue'
 import Result from '@/views/result.vue'
 import Page1 from '@/views/Page1.vue'
 import hell from '@/components/page1/component1/helloWorld.vue'
+import ResultDetail from '@/views/resultDetail.vue'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
                             next(false)
                         }
                     }
+                },
+                {
+                    path: 'result/:id',
+                    name: 'result/page',
+                    component: ResultDetail
                 },
                 {
                     path: '/changeCity',
