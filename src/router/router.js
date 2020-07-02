@@ -32,12 +32,13 @@ export default new Router({
                     name: 'result',
                     component: Result,
                     beforeEnter(to, from, next) {
-                        let answer = window.confirm('你确定看详情页了吗？')
-                        if (answer) {
-                            next()
-                        } else {
-                            next(false)
-                        }
+                        next()
+                        // let answer = window.confirm('你确定看详情页了吗？')
+                        // if (answer) {
+                        //     next()
+                        // } else {
+                        //     next(false)
+                        // }
                     }
                 },
                 {

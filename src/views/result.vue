@@ -7,25 +7,28 @@
         <div class="result-content-wrapper">
             <div class="result-main-content">
                 <div class="result-filter-wrapper">
-                    filter-wrapper
+                    <result-filter />
                 </div>
             </div>
             <div class="result-guess-like">
-                <h4 class="result-guess-title">猜你喜欢</h4>
-                <ul class="guess-wrapper">
-                    <li class="guess-card"></li>
-                </ul>
+                <right-nav />
             </div>
         </div>
     </div>
 </template>
 <script>
 import { elBreadcrumb, elBreadcrumbItem } from 'element-ui'
+import resultFilter from '@/components/result/filter/filter.vue'
+import rightNav from '@/components/result/rightNav/rightNav.vue'
 export default {
     name: 'result',
     component: {
         elBreadcrumb,
         elBreadcrumbItem
+    },
+    components: {
+        resultFilter,
+        rightNav
     },
     data() {
         return {
@@ -63,19 +66,6 @@ export default {
             &::after {
                 content: '';
                 clear: both;
-            }
-            .result-guess-title {
-                margin: 0 0 12px;
-                font-size: 16px;
-                line-height: 22px;
-                color: #333;
-            }
-            .guess-wrapper {
-                width: 100%;
-                .guess-card {
-                    width: 100%;
-                    margin-bottom: 20px;
-                }
             }
         }
     }
