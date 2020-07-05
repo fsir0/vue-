@@ -1,6 +1,6 @@
 <template>
-    <div :class="{'filter-location-wrapper': true, 'active': active}">
-        <span @click="() => { showBoxFlag = !showBoxFlag }">{{selectItem || name}}</span>
+    <div :class="{'filter-location-wrapper': true, 'active': active}" ref="filterLocationWrapper">
+        <span>{{selectItem || name}}</span>
         <transition name="el-zoom-in-top">
             <div v-show="showBoxFlag" class="filter-location-modal">
                 <b class="filter-location-tit">{{name}}</b>
@@ -42,10 +42,34 @@ export default {
             selectItem: ''
         }
     },
+    mounted() {
+        const me = this
+        const $wrapper = this.$refs.filterLocationWrapper
+        let timer = null
+        $wrapper.onmouseenter = () => {
+            timer && clearTimeout(timer)
+            me.showBoxFlag = true
+        }
+        $wrapper.onmouseleave = () => {
+            timer = setTimeout(() => {
+                me.showBoxFlag = false
+            }, 100)
+        }
+    },
     methods: {
         handleSelectItem(item) {
             this.selectItem = item || ''
+            // 关闭弹窗
+            this.showBoxFlag = false
+            // 触发组件方法并传出当前选中值
             this.$emit('selectChange', item || this.name)
+        }
+    },
+    watch: {
+        active(value) {
+            if (!value) {
+                this.selectItem = ''
+            }
         }
     }
 }

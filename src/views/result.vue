@@ -7,7 +7,7 @@
         <div class="result-content-wrapper">
             <div class="result-main-content">
                 <div class="result-filter-wrapper">
-                    <result-filter />
+                    <result-filter @selectChange="handleSelectChange" />
                 </div>
             </div>
             <div class="result-guess-like">
@@ -33,6 +33,12 @@ export default {
     data() {
         return {
             data: 'result page!!!'
+        }
+    },
+    methods: {
+        handleSelectChange(value) {
+            // eslint-disable-next-line no-console
+            console.log(value)
         }
     }
 }
