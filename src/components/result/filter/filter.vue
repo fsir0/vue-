@@ -1,25 +1,27 @@
 <template>
     <div class="result-filter">
-        <div class="filter-result-wrapper">
-            <span class="wrapper-label">已选条件</span>
-            <ul class="filter-result-list">
-                <li
-                    class="filter-card"
-                    v-show="filteredParams.classification"
-                    @click="() => { handleChangeClassification() }"
-                >{{filteredParams.classification}}</li>
-                <li
-                    class="filter-card"
-                    v-show="filteredParams.localArea"
-                    @click="() => { handleChangeSelect() }"
-                >{{filteredParams.localArea}}</li>
-                <li
-                    class="filter-clear-all"
-                    v-show="filteredParams.classification || filteredParams.localArea"
-                    @click="handleClearSelect"
-                >清除全部</li>
-            </ul>
-        </div>
+        <transition name="el-zoom-in-top">
+            <div v-show="filteredParams.classification || filteredParams.localArea" class="filter-result-wrapper">
+                <span class="wrapper-label">已选条件</span>
+                <ul class="filter-result-list">
+                    <li
+                        class="filter-card"
+                        v-show="filteredParams.classification"
+                        @click="() => { handleChangeClassification() }"
+                    >{{filteredParams.classification}}</li>
+                    <li
+                        class="filter-card"
+                        v-show="filteredParams.localArea"
+                        @click="() => { handleChangeSelect() }"
+                    >{{filteredParams.localArea}}</li>
+                    <li
+                        class="filter-clear-all"
+                        v-show="filteredParams.classification || filteredParams.localArea"
+                        @click="handleClearSelect"
+                    >清除全部</li>
+                </ul>
+            </div>
+        </transition>
         <div class="filter-item-wrapper">
             <span class="wrapper-label">分类</span>
             <dl class="filter-list">

@@ -9,9 +9,12 @@
                 <div class="result-filter-wrapper">
                     <result-filter @selectChange="handleSelectChange" />
                 </div>
+                <div class="result-list-wrapper">
+                    <result-list />
+                </div>
             </div>
             <div class="result-guess-like">
-                <right-nav />
+                <right-nav :navList="guessYouLikeList" />
             </div>
         </div>
     </div>
@@ -20,6 +23,7 @@
 import { elBreadcrumb, elBreadcrumbItem } from 'element-ui'
 import resultFilter from '@/components/result/filter/filter.vue'
 import rightNav from '@/components/result/rightNav/rightNav.vue'
+import resultList from '@/components/result/list/list.vue'
 export default {
     name: 'result',
     component: {
@@ -28,11 +32,93 @@ export default {
     },
     components: {
         resultFilter,
-        rightNav
+        rightNav,
+        resultList
     },
     data() {
         return {
-            data: 'result page!!!'
+            guessYouLikeList: [
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p0.meituan.net/bbia/062a186c23cfb9ebe34e95ca235ff660535199.jpg@380w_214h_1e_1c',
+                    name: '华莱士炸鸡汉堡（石油大学店）',
+                    desc: '昌平镇',
+                    price: '18.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p1.meituan.net//bbia/66fd7b3ea9b59d4687b42e07a514013593187.jpg@188w_106h_1e_1c',
+                    name: '屯老二农家铁锅炖（松园店）',
+                    desc: '昌平镇',
+                    price: '88.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p0.meituan.net/bbia/062a186c23cfb9ebe34e95ca235ff660535199.jpg@380w_214h_1e_1c',
+                    name: '华莱士炸鸡汉堡（石油大学店）',
+                    desc: '昌平镇',
+                    price: '18.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p1.meituan.net//bbia/66fd7b3ea9b59d4687b42e07a514013593187.jpg@188w_106h_1e_1c',
+                    name: '屯老二农家铁锅炖（松园店）',
+                    desc: '昌平镇',
+                    price: '88.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p0.meituan.net/bbia/062a186c23cfb9ebe34e95ca235ff660535199.jpg@380w_214h_1e_1c',
+                    name: '华莱士炸鸡汉堡（石油大学店）',
+                    desc: '昌平镇',
+                    price: '18.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p1.meituan.net//bbia/66fd7b3ea9b59d4687b42e07a514013593187.jpg@188w_106h_1e_1c',
+                    name: '屯老二农家铁锅炖（松园店）',
+                    desc: '昌平镇',
+                    price: '88.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p0.meituan.net/bbia/062a186c23cfb9ebe34e95ca235ff660535199.jpg@380w_214h_1e_1c',
+                    name: '华莱士炸鸡汉堡（石油大学店）',
+                    desc: '昌平镇',
+                    price: '18.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p1.meituan.net//bbia/66fd7b3ea9b59d4687b42e07a514013593187.jpg@188w_106h_1e_1c',
+                    name: '屯老二农家铁锅炖（松园店）',
+                    desc: '昌平镇',
+                    price: '88.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p0.meituan.net/bbia/062a186c23cfb9ebe34e95ca235ff660535199.jpg@380w_214h_1e_1c',
+                    name: '华莱士炸鸡汉堡（石油大学店）',
+                    desc: '昌平镇',
+                    price: '18.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p1.meituan.net//bbia/66fd7b3ea9b59d4687b42e07a514013593187.jpg@188w_106h_1e_1c',
+                    name: '屯老二农家铁锅炖（松园店）',
+                    desc: '昌平镇',
+                    price: '88.0'
+                }
+            ]
         }
     },
     methods: {
@@ -60,6 +146,15 @@ export default {
                 width: 100%;
                 border: 1px solid #e5e5e5;
                 background-color: #fff;
+            }
+            .result-list-wrapper {
+                box-sizing: border-box;
+                width: 100%;
+                margin-top: 10px;
+                // border: 1px solid #e5e5e5;
+                // background-color: #fff;
+                // margin-top: 10px;
+                // padding: 10px 20px 0;
             }
         }
         .result-guess-like {

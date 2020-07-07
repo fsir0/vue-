@@ -1,3 +1,8 @@
 export default {
-    name: 'result-nav'
+    name: 'result-nav',
+    props: {
+        navList: {
+            type: Array
+        }
+    }
 }
