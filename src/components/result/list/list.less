@@ -69,5 +69,111 @@
                 }
             }
         }
+        .list {
+            width: 100%;
+            .list-card {
+                width: 100%;
+                height: 125px;
+                border-top: 1px solid #e5e5e5;
+                padding: 20px 0 18px;
+                a {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 0;
+                    .img-box {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                        width: 220px;
+                        height: 100%;
+                        img {
+                            border-radius: 4px;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        .index {
+                            position: absolute;
+                            top: 3px;
+                            left: -3px;
+                            width: 20px;
+                            height: 13px;
+                            line-height: 12px;
+                            text-align: center;
+                            font-size: 12px;
+                            color: #fff;
+                            background-color: #FB6433;
+                        }
+                    }
+                    .card-info {
+                        display: inline-block;
+                        vertical-align: top;
+                        width: calc(100% - 220px);
+                        box-sizing: border-box;
+                        padding-left: 20px;
+                        padding-top: 5px;
+                        font-size: 12px;
+                        h5 {
+                            margin: 0;
+                            font-size: 16px;
+                            color: #222;
+                            line-height: 22px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        p {
+                            margin: 12px 0 0;
+                            color: #666;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            .el-rate {
+                                display: inline-block;
+                                vertical-align: top;
+                            }
+                            .comment {
+                                color: #f60;
+                                margin-left: 10px;
+                            }
+                            .price {
+                                display: inline-block;
+                                vertical-align: top;
+                                margin-left: 4px;
+                                &::before {
+                                    content: '¥';
+                                    display: inline-block;
+                                    vertical-align: bottom;
+                                    margin-right: 2px;
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .no-data {
+                margin: 0;
+                padding: 20px 0 18px;
+                border-top: 1px solid #e5e5e5;
+                text-align: center;
+                font-size: 16px;
+                font-size: #666;
+            }
+        }
+    }
+    .list-pagination {
+        text-align: center;
+        margin: 40px 0 30px;
+        .el-pagination {
+            .el-pager li {
+                border-radius: 50%;
+            }
+            .btn-prev,
+            .btn-next {
+                border-radius: 50%;
+            }
+        }
     }
 }

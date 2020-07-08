@@ -10,7 +10,11 @@
                     <result-filter @selectChange="handleSelectChange" />
                 </div>
                 <div class="result-list-wrapper">
-                    <result-list />
+                    <result-list
+                        :resultList="resultList"
+                        :pageTotal="resultListTotal"
+                        @changeParams="handleSelectResult"
+                    />
                 </div>
             </div>
             <div class="result-guess-like">
@@ -118,13 +122,170 @@ export default {
                     desc: '昌平镇',
                     price: '88.0'
                 }
-            ]
+            ],
+            resultList: [
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/msmerchant/d9a00011fc2f78290344d792507bccac182460.jpg@220w_125h_1e_1c',
+                    name: '小花龙虾·创意川菜（双井店）',
+                    rate: 3.3,
+                    commentNum: '98',
+                    address: '朝阳区垂杨柳中街8号1楼底商（京客隆隔壁）',
+                    price: '117'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/600.600/msmerchant/68d33443171e88efcb387bf20fab666f86997.jpg@220w_125h_1e_1c',
+                    name: '最爱时尚蛋糕房（劲松店）',
+                    rate: 4.4,
+                    commentNum: '1610',
+                    address: '朝阳区南磨房南里7号民政局东行50米路南',
+                    price: '67'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/msmerchant/d9a00011fc2f78290344d792507bccac182460.jpg@220w_125h_1e_1c',
+                    name: '小花龙虾·创意川菜（双井店）',
+                    rate: 3.3,
+                    commentNum: '98',
+                    address: '朝阳区垂杨柳中街8号1楼底商（京客隆隔壁）',
+                    price: '117'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/600.600/msmerchant/68d33443171e88efcb387bf20fab666f86997.jpg@220w_125h_1e_1c',
+                    name: '最爱时尚蛋糕房（劲松店）',
+                    rate: 4.4,
+                    commentNum: '1610',
+                    address: '朝阳区南磨房南里7号民政局东行50米路南',
+                    price: '67'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/msmerchant/d9a00011fc2f78290344d792507bccac182460.jpg@220w_125h_1e_1c',
+                    name: '小花龙虾·创意川菜（双井店）',
+                    rate: 3.3,
+                    commentNum: '98',
+                    address: '朝阳区垂杨柳中街8号1楼底商（京客隆隔壁）',
+                    price: '117'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/600.600/msmerchant/68d33443171e88efcb387bf20fab666f86997.jpg@220w_125h_1e_1c',
+                    name: '最爱时尚蛋糕房（劲松店）',
+                    rate: 4.4,
+                    commentNum: '1610',
+                    address: '朝阳区南磨房南里7号民政局东行50米路南',
+                    price: '67'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/msmerchant/d9a00011fc2f78290344d792507bccac182460.jpg@220w_125h_1e_1c',
+                    name: '小花龙虾·创意川菜（双井店）',
+                    rate: 3.3,
+                    commentNum: '98',
+                    address: '朝阳区垂杨柳中街8号1楼底商（京客隆隔壁）',
+                    price: '117'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/600.600/msmerchant/68d33443171e88efcb387bf20fab666f86997.jpg@220w_125h_1e_1c',
+                    name: '最爱时尚蛋糕房（劲松店）',
+                    rate: 4.4,
+                    commentNum: '1610',
+                    address: '朝阳区南磨房南里7号民政局东行50米路南',
+                    price: '67'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/msmerchant/d9a00011fc2f78290344d792507bccac182460.jpg@220w_125h_1e_1c',
+                    name: '小花龙虾·创意川菜（双井店）',
+                    rate: 3.3,
+                    commentNum: '98',
+                    address: '朝阳区垂杨柳中街8号1楼底商（京客隆隔壁）',
+                    price: '117'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/600.600/msmerchant/68d33443171e88efcb387bf20fab666f86997.jpg@220w_125h_1e_1c',
+                    name: '最爱时尚蛋糕房（劲松店）',
+                    rate: 4.4,
+                    commentNum: '1610',
+                    address: '朝阳区南磨房南里7号民政局东行50米路南',
+                    price: '67'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/msmerchant/d9a00011fc2f78290344d792507bccac182460.jpg@220w_125h_1e_1c',
+                    name: '小花龙虾·创意川菜（双井店）',
+                    rate: 3.3,
+                    commentNum: '98',
+                    address: '朝阳区垂杨柳中街8号1楼底商（京客隆隔壁）',
+                    price: '117'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/600.600/msmerchant/68d33443171e88efcb387bf20fab666f86997.jpg@220w_125h_1e_1c',
+                    name: '最爱时尚蛋糕房（劲松店）',
+                    rate: 4.4,
+                    commentNum: '1610',
+                    address: '朝阳区南磨房南里7号民政局东行50米路南',
+                    price: '67'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/msmerchant/d9a00011fc2f78290344d792507bccac182460.jpg@220w_125h_1e_1c',
+                    name: '小花龙虾·创意川菜（双井店）',
+                    rate: 3.3,
+                    commentNum: '98',
+                    address: '朝阳区垂杨柳中街8号1楼底商（京客隆隔壁）',
+                    price: '117'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/600.600/msmerchant/68d33443171e88efcb387bf20fab666f86997.jpg@220w_125h_1e_1c',
+                    name: '最爱时尚蛋糕房（劲松店）',
+                    rate: 4.4,
+                    commentNum: '1610',
+                    address: '朝阳区南磨房南里7号民政局东行50米路南',
+                    price: '67'
+                },
+                {
+                    linkUrl: '',
+                    imgUrl:
+                        'https://img.meituan.net/msmerchant/d9a00011fc2f78290344d792507bccac182460.jpg@220w_125h_1e_1c',
+                    name: '小花龙虾·创意川菜（双井店）',
+                    rate: 3.3,
+                    commentNum: '98',
+                    address: '朝阳区垂杨柳中街8号1楼底商（京客隆隔壁）',
+                    price: '117'
+                }
+            ],
+            resultListTotal: 1000
         }
     },
     methods: {
         handleSelectChange(value) {
             // eslint-disable-next-line no-console
             console.log(value)
+        },
+        handleSelectResult(params) {
+            // eslint-disable-next-line no-console
+            console.log(params)
         }
     }
 }
