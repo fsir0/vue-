@@ -1,7 +1,7 @@
 <template>
     <div class="result-wrapper">
         <el-breadcrumb separator-class="el-icon-arrow-right" class="result-breadcrumb">
-            <el-breadcrumb-item to="index">首页</el-breadcrumb-item>
+            <el-breadcrumb-item to="/index">首页</el-breadcrumb-item>
             <el-breadcrumb-item>结果页</el-breadcrumb-item>
         </el-breadcrumb>
         <div class="result-content-wrapper">
@@ -312,10 +312,6 @@ export default {
                 box-sizing: border-box;
                 width: 100%;
                 margin-top: 10px;
-                // border: 1px solid #e5e5e5;
-                // background-color: #fff;
-                // margin-top: 10px;
-                // padding: 10px 20px 0;
             }
         }
         .result-guess-like {

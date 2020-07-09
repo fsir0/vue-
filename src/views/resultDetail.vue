@@ -1,10 +1,43 @@
 <template>
-    <div class="result-detail">detail-page 1111{{currentId}}</div>
+    <div class="result-detail">
+        <el-breadcrumb separator-class="el-icon-arrow-right" class="result-breadcrumb">
+            <el-breadcrumb-item to="/index">首页</el-breadcrumb-item>
+            <el-breadcrumb-item to="/result">美食</el-breadcrumb-item>
+            <el-breadcrumb-item>结果页</el-breadcrumb-item>
+        </el-breadcrumb>
+        <div class="result-detail-wrapper">
+            <detail />
+        </div>
+        <div class="result-content-wrapper">
+            <div class="result-main-content">
+                <discount />
+                <advice />
+                <comments />
+            </div>
+            <div class="result-guess-like">
+                <right-nav />
+            </div>
+        </div>
+        <div class="result-nearly-story"></div>
+        detail-page {{currentId}}
+    </div>
 </template>
 
 <script>
+import detail from '@/components/resultDetail/detail/detail.vue'
+import discount from '@/components/resultDetail/discount/discount.vue'
+import advice from '@/components/resultDetail/advice/advice.vue'
+import comments from '@/components/resultDetail/comments/comments.vue'
+import rightNav from '@/components/result/rightNav/rightNav.vue'
 export default {
     name: 'resultDetail',
+    components: {
+        detail,
+        discount,
+        advice,
+        comments,
+        rightNav
+    },
     data() {
         return {
             currentId: ''
@@ -18,6 +51,19 @@ export default {
 
 <style lang="less">
 .result-detail {
-    width: 100%;
+    width: 1190px;
+    margin: 0 auto 30px;
+    .el-breadcrumb {
+        padding: 15px 0;
+    }
+    .result-detail-wrapper {
+        box-sizing: border-box;
+        width: 100%;
+        margin-bottom: 40px;
+        padding: 20px 20px 33px;
+        border: 1px solid #e5e5e5;
+        border-radius: 10px;
+        box-shadow: 0 5px 14px 0 rgba(0, 0, 0, .1);
+    }
 }
 </style>
