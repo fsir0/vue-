@@ -18,8 +18,11 @@
                 <right-nav />
             </div>
         </div>
-        <div class="result-nearly-story"></div>
-        detail-page {{currentId}}
+        <div class="result-nearly-story">
+            <near-story />
+        </div>
+        <!-- @todo -->
+        {{currentId}}
     </div>
 </template>
 
@@ -29,6 +32,7 @@ import discount from '@/components/resultDetail/discount/discount.vue'
 import advice from '@/components/resultDetail/advice/advice.vue'
 import comments from '@/components/resultDetail/comments/comments.vue'
 import rightNav from '@/components/result/rightNav/rightNav.vue'
+import nearStory from '@/components/resultDetail/nearStory/nearStory.vue'
 export default {
     name: 'resultDetail',
     components: {
@@ -36,7 +40,8 @@ export default {
         discount,
         advice,
         comments,
-        rightNav
+        rightNav,
+        nearStory
     },
     data() {
         return {
@@ -60,7 +65,7 @@ export default {
         box-sizing: border-box;
         width: 100%;
         margin-bottom: 40px;
-        padding: 20px 20px 33px;
+        padding: 20px 20px 25px;
         border: 1px solid #e5e5e5;
         border-radius: 10px;
         box-shadow: 0 5px 14px 0 rgba(0, 0, 0, .1);
