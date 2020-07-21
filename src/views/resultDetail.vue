@@ -1,6 +1,6 @@
 <template>
     <div class="result-detail">
-        <el-breadcrumb separator-class="el-icon-arrow-right" class="result-breadcrumb">
+        <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item to="/index">首页</el-breadcrumb-item>
             <el-breadcrumb-item to="/result">美食</el-breadcrumb-item>
             <el-breadcrumb-item>结果页</el-breadcrumb-item>
@@ -69,6 +69,25 @@ export default {
         border: 1px solid #e5e5e5;
         border-radius: 10px;
         box-shadow: 0 5px 14px 0 rgba(0, 0, 0, .1);
+    }
+    .result-content-wrapper {
+        &::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .result-main-content {
+            box-sizing: border-box;
+            float: left;
+            width: 950px;
+        }
+        .result-guess-like {
+            box-sizing: border-box;
+            float: right;
+            width: 230px;
+            margin-top: 20px;
+            border: 1px solid #e5e5e5;
+        }
     }
 }
 </style>

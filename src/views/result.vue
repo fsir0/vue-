@@ -1,6 +1,6 @@
 <template>
     <div class="result-wrapper">
-        <el-breadcrumb separator-class="el-icon-arrow-right" class="result-breadcrumb">
+        <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item to="/index">首页</el-breadcrumb-item>
             <el-breadcrumb-item>结果页</el-breadcrumb-item>
         </el-breadcrumb>
@@ -294,7 +294,7 @@ export default {
 .result-wrapper {
     width: 1190px;
     margin: 0 auto 30px;
-    .result-breadcrumb {
+    .el-breadcrumb {
         padding: 15px 0;
     }
     .result-content-wrapper {
