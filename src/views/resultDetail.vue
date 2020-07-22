@@ -3,7 +3,7 @@
         <el-breadcrumb separator-class="el-icon-arrow-right">
             <el-breadcrumb-item to="/index">首页</el-breadcrumb-item>
             <el-breadcrumb-item to="/result">美食</el-breadcrumb-item>
-            <el-breadcrumb-item>结果页</el-breadcrumb-item>
+            <el-breadcrumb-item>结果页{{currentId}}</el-breadcrumb-item>
         </el-breadcrumb>
         <div class="result-detail-wrapper">
             <detail />
@@ -15,14 +15,12 @@
                 <comments />
             </div>
             <div class="result-guess-like">
-                <right-nav />
+                <right-nav :navList="guessYouLikeList"/>
             </div>
         </div>
         <div class="result-nearly-story">
             <near-story />
         </div>
-        <!-- @todo -->
-        {{currentId}}
     </div>
 </template>
 
@@ -45,7 +43,89 @@ export default {
     },
     data() {
         return {
-            currentId: ''
+            currentId: '',
+            guessYouLikeList: [
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p0.meituan.net/bbia/062a186c23cfb9ebe34e95ca235ff660535199.jpg@380w_214h_1e_1c',
+                    name: '华莱士炸鸡汉堡（石油大学店）',
+                    desc: '昌平镇',
+                    price: '18.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p1.meituan.net//bbia/66fd7b3ea9b59d4687b42e07a514013593187.jpg@188w_106h_1e_1c',
+                    name: '屯老二农家铁锅炖（松园店）',
+                    desc: '昌平镇',
+                    price: '88.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p0.meituan.net/bbia/062a186c23cfb9ebe34e95ca235ff660535199.jpg@380w_214h_1e_1c',
+                    name: '华莱士炸鸡汉堡（石油大学店）',
+                    desc: '昌平镇',
+                    price: '18.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p1.meituan.net//bbia/66fd7b3ea9b59d4687b42e07a514013593187.jpg@188w_106h_1e_1c',
+                    name: '屯老二农家铁锅炖（松园店）',
+                    desc: '昌平镇',
+                    price: '88.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p0.meituan.net/bbia/062a186c23cfb9ebe34e95ca235ff660535199.jpg@380w_214h_1e_1c',
+                    name: '华莱士炸鸡汉堡（石油大学店）',
+                    desc: '昌平镇',
+                    price: '18.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p1.meituan.net//bbia/66fd7b3ea9b59d4687b42e07a514013593187.jpg@188w_106h_1e_1c',
+                    name: '屯老二农家铁锅炖（松园店）',
+                    desc: '昌平镇',
+                    price: '88.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p0.meituan.net/bbia/062a186c23cfb9ebe34e95ca235ff660535199.jpg@380w_214h_1e_1c',
+                    name: '华莱士炸鸡汉堡（石油大学店）',
+                    desc: '昌平镇',
+                    price: '18.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p1.meituan.net//bbia/66fd7b3ea9b59d4687b42e07a514013593187.jpg@188w_106h_1e_1c',
+                    name: '屯老二农家铁锅炖（松园店）',
+                    desc: '昌平镇',
+                    price: '88.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p0.meituan.net/bbia/062a186c23cfb9ebe34e95ca235ff660535199.jpg@380w_214h_1e_1c',
+                    name: '华莱士炸鸡汉堡（石油大学店）',
+                    desc: '昌平镇',
+                    price: '18.0'
+                },
+                {
+                    link: '',
+                    imgUrl:
+                        'https://p1.meituan.net//bbia/66fd7b3ea9b59d4687b42e07a514013593187.jpg@188w_106h_1e_1c',
+                    name: '屯老二农家铁锅炖（松园店）',
+                    desc: '昌平镇',
+                    price: '88.0'
+                }
+            ]
         }
     },
     mounted() {
@@ -85,8 +165,10 @@ export default {
             box-sizing: border-box;
             float: right;
             width: 230px;
-            margin-top: 20px;
+            margin-top: 34px;
+            border-radius: 4px;
             border: 1px solid #e5e5e5;
+            padding: 16px 20px 0;
         }
     }
 }

@@ -1,0 +1,79 @@
+.near-story {
+    width: 100%;
+    margin-bottom: 40px;
+    .floor-title {
+        margin: 0 0 8px;
+        line-height: 26px;
+        font-size: 20px;
+        color: #222;
+    }
+    .near-story-list {
+        box-sizing: border-box;
+        border: 1px solid #e5e5e5;
+        background-color: #fff;
+        border-radius: 4px;
+        padding: 20px 9px 0;
+        font-size: 0;
+        .near-story-card {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            width: 214px;
+            height: 240px;
+            margin: 0 10px 20px;
+            cursor: pointer;
+            .story-image {
+                width: 214px;
+                height: 120px;
+                text-align: center;
+                line-height: 120px;
+                border-radius: 4px;
+                overflow: hidden;
+                img {
+                    max-width: 214px;
+                    max-height: 120px;
+                }
+            }
+            .story-name {
+                font-size: 16px;
+                line-height: 22px;
+                color: #222;
+                margin: 10px 0 6px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .story-source {
+                font-size: 12px;
+                color: #999;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                span + span {
+                    margin-left: 10px;
+                }
+            }
+            .story-describe {
+                font-size: 12px;
+                color: #999;
+            }
+            .story-price {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-size: 22px;
+                line-height: 27px;
+                color: #f60;
+                &::before {
+                    content: '¥';
+                    font-size: 14px;
+                    margin-right: 2px;
+                }
+                &::after {
+                    content: '起';
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
