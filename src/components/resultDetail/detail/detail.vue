@@ -11,7 +11,7 @@
             <span class="price">人均 ¥64</span>
             <span class="safe-authentication">食品安全档案</span>
             <div class="communicate">
-                <p>地址：朝阳区安苑东里1区2号楼<i class="location el-icon-location"></i></p>
+                <p>地址：朝阳区安苑东里1区2号楼<i class="location el-icon-location" @click="handleShowPosition"></i></p>
                 <p>电话：010-64988301</p>
                 <p>营业时间：周一至周日 10:30-22:00</p>
             </div>
@@ -48,6 +48,9 @@
                 </li>
             </ul>
         </div>
+        <el-dialog width="700px" class="map-position-dialog" :visible="positionDialogShow" :before-close="() => { positionDialogShow = false }">
+            <div class="map-position-wrapper" ref="mapWrapper"></div>
+        </el-dialog>
     </div>
 </template>
 <script src="./detail.js"></script>
